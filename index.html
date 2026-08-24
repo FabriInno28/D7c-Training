@@ -1,10 +1,228 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F7F5EF"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css"><title>10 Minuten</title></head><body>
-<main id="app">
-<section id="world" class="screen active">
-<header><div class="brand">10' <span>MINUTEN</span></div><div class="micro">FÜR EINEN KÖRPER, DEM DU VERTRAUEN KANNST.</div></header>
-<div class="intro"><div><div class="eyebrow">WAS BRAUCHST DU HEUTE?</div><h1>STÄRKER.<br>SCHNELLER.<br>RUHIGER.</h1><p>Wähle dein Training. Schau einmal hin. Dann trainiere.</p></div><div class="promise"><b>10 MINUTEN.</b><br>Du und dein Körper.<br>Los.</div></div>
-<div id="worldCards" class="worldcards"></div>
-</section>
-<section id="session" class="screen"><header><button class="back" data-go="world">← ZURÜCK</button><div class="micro">DEIN TRAINING</div></header><div id="sessionContent"></div></section>
-<section id="detail" class="screen"><header><button class="back" data-go="session">← ÜBERSICHT</button><div class="micro">SO GEHT'S</div></header><div id="detailContent"></div></section>
-</main><script src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F7F5EF">
+<title>10 Minuten</title>
+<style>
+:root{--ink:#101111;--paper:#F7F5EF;--yellow:#FFD400;--white:#fff;--line:#D9D5CB;--muted:#63655F}
+*{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}.app{max-width:1180px;margin:auto;padding:24px 24px 50px}
+header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:17px}
+.brand{font-weight:1000;font-size:20px;letter-spacing:-.04em}.brand b{background:var(--yellow);padding:4px 7px;border-radius:7px}
+.micro{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--muted)}.home{padding-top:42px}.home h1{font-size:clamp(62px,9vw,106px);line-height:.82;letter-spacing:-.075em;margin:10px 0 25px}
+.homelead{font-size:20px;line-height:1.45;color:#4f514d;max-width:670px;margin-bottom:34px}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.choice{background:#fff;border:1px solid var(--line);border-radius:25px;padding:22px;text-align:left;cursor:pointer;min-height:255px;display:flex;flex-direction:column}
+.choice-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:950;letter-spacing:.1em}.choice-top span:first-child{background:var(--yellow);padding:7px 10px;border-radius:8px}
+.choice-top span:last-child{font-size:24px}.choice h2{font-size:32px;letter-spacing:-.045em;margin:34px 0 6px}.choice p{font-size:17px;color:var(--muted);margin:0}.choice-meta{margin-top:auto;padding-top:20px;font-size:11px;font-weight:900;border-top:1px solid var(--line)}
+.session{display:none;padding-top:18px}.session.active{display:block}.home.hidden{display:none}.back{border:0;background:none;padding:5px 0;font-size:11px;font-weight:950;letter-spacing:.12em;cursor:pointer}
+.session-head{display:flex;justify-content:space-between;gap:25px;align-items:end;padding:32px 0 20px}.label{display:inline-block;background:var(--yellow);padding:7px 10px;border-radius:8px;font-size:11px;font-weight:950;letter-spacing:.1em}
+.session-head h1{font-size:clamp(48px,7vw,78px);letter-spacing:-.06em;line-height:.9;margin:10px 0 8px}.session-head p{font-size:18px;color:var(--muted);margin:0}.start{border:0;background:var(--yellow);border-radius:15px;padding:16px 22px;font-weight:950;cursor:pointer;white-space:nowrap}
+.runbar{display:none;background:#101111;color:#fff;border-radius:20px;padding:15px 18px;margin-bottom:16px;grid-template-columns:1fr auto auto;gap:18px;align-items:center}.runbar.on{display:grid}.runbar .small{color:#bdbdb9}.phase{display:block;font-size:18px;margin-top:3px}.clock{font-size:38px;font-weight:950;letter-spacing:-.05em;font-variant-numeric:tabular-nums}.timerbtn{border:0;background:var(--yellow);border-radius:12px;padding:12px 15px;font-weight:950}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.exercise{background:#fff;border:1px solid var(--line);border-radius:23px;padding:17px;min-height:430px;display:flex;flex-direction:column}.ex-top{display:flex;justify-content:space-between;align-items:center}.num{width:37px;height:37px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:950}.duration{font-size:11px;font-weight:950;letter-spacing:.1em}
+.pic{height:190px;display:grid;place-items:center;margin:8px 0}.pic svg{width:100%;height:100%}.exercise h3{font-size:24px;margin:2px 0 8px;letter-spacing:-.03em}.how{font-size:15px;line-height:1.43;margin:0;color:#343632}.focus{margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;line-height:1.4;color:var(--muted)}.focus b{font-size:10px;letter-spacing:.1em;color:var(--ink)}
+.finish{margin-top:14px;background:#101111;color:#fff;border-radius:23px;padding:20px;display:grid;grid-template-columns:70px 1fr;gap:15px;align-items:center}.breath-icon{width:60px;height:60px;border:6px solid var(--yellow);border-radius:50%;display:grid;place-items:center;font-size:28px;color:var(--yellow)}.finish .small{font-size:10px;font-weight:950;letter-spacing:.13em;color:var(--yellow)}.finish h3{font-size:23px;margin:4px 0}.finish p{color:#c9c9c4;margin:0;font-size:14px}
+@media(max-width:780px){.app{padding:16px 15px 34px}.home{padding-top:30px}.home h1{font-size:60px}.choices{grid-template-columns:1fr}.choice{min-height:210px}.choice h2{margin-top:27px}.session-head{display:block;padding-top:26px}.start{width:100%;margin-top:18px}.grid{grid-template-columns:1fr}.exercise{min-height:410px}.runbar{grid-template-columns:1fr auto;gap:12px}.timerbtn{grid-column:1/-1}}
+</style></head>
+<body><main class="app">
+<header><div class="brand"><b>10'</b> MINUTEN</div><div class="micro">STÄRKER · SCHNELLER · RUHIGER</div></header>
+<section class="home" id="home"><h1>WAS BRAUCHST<br>DU HEUTE?</h1><p class="homelead">Wähle ein Training. Schau die vier Übungen einmal an. Starte den Timer. Danach bleibt die Seite ruhig stehen und du trainierst.</p><div class="choices"><button class="choice" data-session="stark">
+      <div class="choice-top"><span>STARK</span><span>→</span></div>
+      <h2>Ich halte dagegen.</h2><p>Beine. Rumpf. Stabilität.</p>
+      <div class="choice-meta">3 Runden · 4 Übungen · ca. 8–10 Min.</div>
+    </button><button class="choice" data-session="schnell">
+      <div class="choice-top"><span>SCHNELL</span><span>→</span></div>
+      <h2>Ich bin zuerst da.</h2><p>Füsse. Erster Schritt. Reaktion.</p>
+      <div class="choice-meta">3 Runden · 4 Übungen · ca. 8–10 Min.</div>
+    </button><button class="choice" data-session="ruhig">
+      <div class="choice-top"><span>RUHIG</span><span>→</span></div>
+      <h2>Ich bleibe klar.</h2><p>Balance. Kontrolle. Fokus.</p>
+      <div class="choice-meta">2 Runden · 4 Übungen · ca. 8–10 Min.</div>
+    </button></div></section>
+<section class="session" id="stark">
+      <button class="back" data-home>← AUSWAHL</button>
+      <div class="session-head">
+        <div><span class="label">STARK</span><h1>Ich halte dagegen.</h1><p>Beine. Rumpf. Stabilität.</p></div>
+        <button class="start" data-start="stark">TRAINING STARTEN</button>
+      </div>
+      <div class="runbar" id="runbar-stark">
+        <div><span class="small">AKTUELL</span><strong class="phase">Bereit.</strong></div>
+        <div class="clock">00:00</div>
+        <button class="timerbtn" data-timer="stark">START</button>
+      </div>
+      <div class="grid">
+        <article class="exercise">
+          <div class="ex-top"><span class="num">1</span><span class="duration">30 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="85" cy="45" r="18" fill="#101111" stroke="none"/><path d="M85 67 L85 127 M85 87 L55 113 M85 87 L115 113 M85 127 L61 177 M85 127 L109 177"/><circle cx="255" cy="70" r="18" fill="#101111" stroke="none"/><path d="M255 92 L245 135 M250 105 L215 120 M250 105 L286 120 M245 135 L212 170 M245 135 L292 166"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M165 65 L165 155 M150 140 L165 155 L180 140"/></g>
+    </svg></div>
+          <h3>Kniebeuge</h3>
+          <p class="how">Füsse etwa schulterbreit. Po nach hinten. Tief und ruhig wieder hoch.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Knie bleiben über den Füssen.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">2</span><span class="duration">30 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="85" cy="45" r="18" fill="#101111" stroke="none"/><path d="M85 67 L85 127 M85 87 L55 113 M85 87 L115 113 M85 127 L61 177 M85 127 L109 177"/><circle cx="260" cy="68" r="18" fill="#101111" stroke="none"/><path d="M260 90 L250 132 M255 105 L230 125 M255 105 L282 125 M250 132 L218 168 M250 132 L305 174"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M170 115 L215 115 M198 98 L215 115 L198 132"/></g>
+    </svg></div>
+          <h3>Rückwärtsschritt</h3>
+          <p class="how">Einen grossen Schritt nach hinten. Beide Knie beugen. Wieder nach vorne drücken.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Vorderes Knie bleibt stabil.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">3</span><span class="duration">30 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="90" cy="145" r="18" fill="#101111" stroke="none"/><path d="M108 145 L165 145 L210 130 M165 145 L145 180 M210 130 L235 175"/><circle cx="265" cy="112" r="18" fill="#101111" stroke="none"/><path d="M247 116 L195 105 L145 140 M195 105 L170 176 M145 140 L122 176"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M205 165 L205 120 M190 135 L205 120 L220 135"/></g>
+    </svg></div>
+          <h3>Beckenheben</h3>
+          <p class="how">Auf den Rücken. Füsse aufstellen. Hüfte hoch und langsam wieder runter.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Bauch und Po bleiben aktiv.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">4</span><span class="duration">25 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="80" cy="105" r="18" fill="#101111" stroke="none"/><path d="M98 112 L165 125 L260 132 M100 120 L78 155 M120 125 L102 158 M260 132 L292 160"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M145 78 L230 78"/></g>
+    </svg></div>
+          <h3>Unterarmstütz</h3>
+          <p class="how">Unterarme auf den Boden. Körper lang machen. Position ruhig halten.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Kein Hohlkreuz. Ruhig atmen.</p>
+        </article></div>
+      <div class="finish">
+        <div class="breath-icon">◎</div>
+        <div><span class="small">FINISH</span><h3>Ruhig atmen</h3><p>$45 Sekunden. Puls runter. Kopf ruhig. Kontrolle zurück.</p></div>
+      </div>
+    </section><section class="session" id="schnell">
+      <button class="back" data-home>← AUSWAHL</button>
+      <div class="session-head">
+        <div><span class="label">SCHNELL</span><h1>Ich bin zuerst da.</h1><p>Füsse. Erster Schritt. Reaktion.</p></div>
+        <button class="start" data-start="schnell">TRAINING STARTEN</button>
+      </div>
+      <div class="runbar" id="runbar-schnell">
+        <div><span class="small">AKTUELL</span><strong class="phase">Bereit.</strong></div>
+        <div class="clock">00:00</div>
+        <button class="timerbtn" data-timer="schnell">START</button>
+      </div>
+      <div class="grid">
+        <article class="exercise">
+          <div class="ex-top"><span class="num">1</span><span class="duration">25 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="50" r="18" fill="#101111" stroke="none"/><path d="M180 72 L180 125 M180 92 L145 115 M180 92 L215 115 M180 125 L145 170 M180 125 L215 170"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M120 185 L150 185 M210 185 L240 185 M130 174 L120 185 L130 196 M230 174 L240 185 L230 196"/></g>
+    </svg></div>
+          <h3>Schnelle Füsse</h3>
+          <p class="how">Kleine schnelle Schritte am Platz. Leise auftreten. Arme locker mitnehmen.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Schnell, aber nicht wild.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">2</span><span class="duration">25 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="62" r="18" fill="#101111" stroke="none"/><path d="M180 84 L170 132 M175 100 L140 120 M175 100 L215 118 M170 132 L125 170 M170 132 L225 162"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M75 120 L120 120 M92 103 L75 120 L92 137 M285 120 L240 120 M268 103 L285 120 L268 137"/></g>
+    </svg></div>
+          <h3>Seitwärts raus</h3>
+          <p class="how">Zwei schnelle Schritte zur Seite. Sofort zurück in die Mitte. Seite wechseln.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Tief bleiben. Kurze Schritte.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">3</span><span class="duration">25 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="48" r="18" fill="#101111" stroke="none"/><path d="M180 70 L180 120 M180 88 L145 108 M180 88 L215 105 M180 120 L152 170 M180 120 L225 130 L245 95"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M250 165 L250 112 M236 126 L250 112 L264 126"/></g>
+    </svg></div>
+          <h3>Knie hoch</h3>
+          <p class="how">Laufe am Platz. Zieh die Knie zügig nach oben. Arme arbeiten mit.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Aufrecht bleiben. Leise landen.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">4</span><span class="duration">20 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="165" cy="72" r="18" fill="#101111" stroke="none"/><path d="M180 84 L210 115 M190 98 L158 112 M190 98 L225 92 M210 115 L165 165 M210 115 L270 150"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M285 90 L330 90 M314 74 L330 90 L314 106"/></g>
+    </svg></div>
+          <h3>Blitzstart</h3>
+          <p class="how">Athletisch stehen. Explosiv zwei Schritte starten. Bremsen. Zurück. Neu bereit.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Die ersten zwei Schritte sind maximal schnell.</p>
+        </article></div>
+      <div class="finish">
+        <div class="breath-icon">◎</div>
+        <div><span class="small">FINISH</span><h3>Ruhig atmen</h3><p>$45 Sekunden. Puls runter. Kopf ruhig. Kontrolle zurück.</p></div>
+      </div>
+    </section><section class="session" id="ruhig">
+      <button class="back" data-home>← AUSWAHL</button>
+      <div class="session-head">
+        <div><span class="label">RUHIG</span><h1>Ich bleibe klar.</h1><p>Balance. Kontrolle. Fokus.</p></div>
+        <button class="start" data-start="ruhig">TRAINING STARTEN</button>
+      </div>
+      <div class="runbar" id="runbar-ruhig">
+        <div><span class="small">AKTUELL</span><strong class="phase">Bereit.</strong></div>
+        <div class="clock">00:00</div>
+        <button class="timerbtn" data-timer="ruhig">START</button>
+      </div>
+      <div class="grid">
+        <article class="exercise">
+          <div class="ex-top"><span class="num">1</span><span class="duration">40 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="48" r="18" fill="#101111" stroke="none"/><path d="M180 70 L180 125 M180 92 L145 110 M180 92 L215 110 M180 125 L175 180 M180 125 L225 140 L240 105"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M85 60 L120 60 M240 60 L275 60"/></g>
+    </svg></div>
+          <h3>Einbeinstand</h3>
+          <p class="how">20 Sekunden auf einem Bein. Dann wechseln. Blick auf einen festen Punkt.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>So wenig wackeln wie möglich.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">2</span><span class="duration">40 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="52" r="18" fill="#101111" stroke="none"/><path d="M180 74 L180 128 M180 94 L145 112 M180 94 L215 112 M180 128 L160 178 M180 128 L200 178"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M118 55 L75 55 M92 40 L75 55 L92 70 M242 55 L285 55 M268 40 L285 55 L268 70"/></g>
+    </svg></div>
+          <h3>Blickwechsel</h3>
+          <p class="how">Stabil stehen. Blick langsam nach links und rechts. Körper bleibt möglichst ruhig.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Nur der Blick wandert.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">3</span><span class="duration">40 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="180" cy="55" r="18" fill="#101111" stroke="none"/><path d="M180 77 L172 128 M176 96 L140 125 M176 96 L215 115 M172 128 L158 180 M172 128 L225 155"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M105 170 L65 170 M82 154 L65 170 L82 186 M255 170 L295 170 M278 154 L295 170 L278 186"/></g>
+    </svg></div>
+          <h3>Antippen</h3>
+          <p class="how">Auf einem Bein stehen. Mit dem freien Fuss vorne, seitlich und hinten antippen.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Immer kontrolliert zur Mitte zurück.</p>
+        </article>
+        <article class="exercise">
+          <div class="ex-top"><span class="num">4</span><span class="duration">40 SEK.</span></div>
+          <div class="pic"><svg viewBox="0 0 360 210" role="img" aria-hidden="true">
+    <g stroke="#101111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="160" cy="78" r="18" fill="#101111" stroke="none"/><path d="M178 88 L220 112 M195 100 L165 130 M195 100 L235 95 M220 112 L180 165 M220 112 L280 125"/></g>
+    <g stroke="#FFD400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M115 70 L145 95 M130 62 L115 70 L118 86"/></g>
+    </svg></div>
+          <h3>Einbeinige Beuge</h3>
+          <p class="how">Auf einem Bein leicht nach vorne beugen. Kurz stabilisieren. Langsam zurück.</p>
+          <p class="focus"><b>ACHTE DARAUF</b><br>Kontrolle ist wichtiger als Tiefe.</p>
+        </article></div>
+      <div class="finish">
+        <div class="breath-icon">◎</div>
+        <div><span class="small">FINISH</span><h3>Ruhig atmen</h3><p>$60 Sekunden. Puls runter. Kopf ruhig. Kontrolle zurück.</p></div>
+      </div>
+    </section>
+</main>
+<script>
+const S={"stark": {"label": "STARK", "claim": "Ich halte dagegen.", "sub": "Beine. Rumpf. Stabilität.", "rounds": 3, "breath": 45, "ex": [["Kniebeuge", 30, "Füsse etwa schulterbreit. Po nach hinten. Tief und ruhig wieder hoch.", "Knie bleiben über den Füssen."], ["Rückwärtsschritt", 30, "Einen grossen Schritt nach hinten. Beide Knie beugen. Wieder nach vorne drücken.", "Vorderes Knie bleibt stabil."], ["Beckenheben", 30, "Auf den Rücken. Füsse aufstellen. Hüfte hoch und langsam wieder runter.", "Bauch und Po bleiben aktiv."], ["Unterarmstütz", 25, "Unterarme auf den Boden. Körper lang machen. Position ruhig halten.", "Kein Hohlkreuz. Ruhig atmen."]]}, "schnell": {"label": "SCHNELL", "claim": "Ich bin zuerst da.", "sub": "Füsse. Erster Schritt. Reaktion.", "rounds": 3, "breath": 45, "ex": [["Schnelle Füsse", 25, "Kleine schnelle Schritte am Platz. Leise auftreten. Arme locker mitnehmen.", "Schnell, aber nicht wild."], ["Seitwärts raus", 25, "Zwei schnelle Schritte zur Seite. Sofort zurück in die Mitte. Seite wechseln.", "Tief bleiben. Kurze Schritte."], ["Knie hoch", 25, "Laufe am Platz. Zieh die Knie zügig nach oben. Arme arbeiten mit.", "Aufrecht bleiben. Leise landen."], ["Blitzstart", 20, "Athletisch stehen. Explosiv zwei Schritte starten. Bremsen. Zurück. Neu bereit.", "Die ersten zwei Schritte sind maximal schnell."]]}, "ruhig": {"label": "RUHIG", "claim": "Ich bleibe klar.", "sub": "Balance. Kontrolle. Fokus.", "rounds": 2, "breath": 60, "ex": [["Einbeinstand", 40, "20 Sekunden auf einem Bein. Dann wechseln. Blick auf einen festen Punkt.", "So wenig wackeln wie möglich."], ["Blickwechsel", 40, "Stabil stehen. Blick langsam nach links und rechts. Körper bleibt möglichst ruhig.", "Nur der Blick wandert."], ["Antippen", 40, "Auf einem Bein stehen. Mit dem freien Fuss vorne, seitlich und hinten antippen.", "Immer kontrolliert zur Mitte zurück."], ["Einbeinige Beuge", 40, "Auf einem Bein leicht nach vorne beugen. Kurz stabilisieren. Langsam zurück.", "Kontrolle ist wichtiger als Tiefe."]]}};
+let state=null, interval=null, remaining=0, running=false, ctx=null;
+function tone(f=700,d=.08,v=.04){try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ctx.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+d);o.stop(ctx.currentTime+d)}catch(e){}}
+document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>openSession(b.dataset.session));
+document.querySelectorAll('[data-home]').forEach(b=>b.onclick=home);
+document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{const k=b.dataset.start;document.querySelector('#runbar-'+k).classList.add('on');startPlan(k)});
+document.querySelectorAll('[data-timer]').forEach(b=>b.onclick=()=>toggleTimer(b.dataset.timer));
+function home(){clearInterval(interval);state=null;document.querySelectorAll('.session').forEach(s=>s.classList.remove('active'));document.querySelector('#home').classList.remove('hidden');scrollTo(0,0)}
+function openSession(k){clearInterval(interval);document.querySelector('#home').classList.add('hidden');document.querySelectorAll('.session').forEach(s=>s.classList.toggle('active',s.id===k));scrollTo(0,0)}
+function phases(k){const s=S[k],p=[];for(let r=1;r<=s.rounds;r++){s.ex.forEach((e,i)=>{p.push({name:`Runde ${r} · ${e[0]}`,secs:e[1]});p.push({name:'Kurze Pause',secs:10,rest:true})})}p.push({name:'Finish · Ruhig atmen',secs:s.breath,breath:true});return p}
+function startPlan(k){clearInterval(interval);state={k,ph:phases(k),i:0};loadPhase();tone(760,.09);run()}
+function loadPhase(){const p=state.ph[state.i];remaining=p.secs;render();}
+function render(){if(!state)return;const bar=document.querySelector('#runbar-'+state.k);bar.querySelector('.phase').textContent=state.ph[state.i].name;bar.querySelector('.clock').textContent=fmt(remaining);bar.querySelector('.timerbtn').textContent=running?'PAUSE':'WEITER';}
+function run(){clearInterval(interval);running=true;render();interval=setInterval(()=>{remaining--;render();if(remaining===3||remaining===2||remaining===1)tone(540,.04,.025);if(remaining<=0){clearInterval(interval);tone(900,.13);state.i++;if(state.i>=state.ph.length){running=false;const bar=document.querySelector('#runbar-'+state.k);bar.querySelector('.phase').textContent='Training fertig.';bar.querySelector('.clock').textContent='✓';bar.querySelector('.timerbtn').textContent='FERTIG';tone(1020,.12);return}loadPhase();run()}},1000)}
+function toggleTimer(k){if(!state){startPlan(k);return}if(running){clearInterval(interval);running=false;render()}else run()}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+</script></body></html>
