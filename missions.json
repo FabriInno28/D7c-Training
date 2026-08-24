@@ -1,0 +1,107 @@
+[
+  {
+    "id": "stark",
+    "label": "STARK",
+    "claim": "Ich halte dagegen.",
+    "desc": "Beine. Rumpf. Stabilität.",
+    "img": "stark.jpg",
+    "rounds": "3 Runden",
+    "pause": "10 Sek. Pause",
+    "ex": [
+      [
+        "Kniebeuge",
+        "30 Sek.",
+        "Füsse etwa schulterbreit. Tief und kontrolliert. Knie bleiben stabil.",
+        "kniebeuge.jpg"
+      ],
+      [
+        "Rückwärtsschritt",
+        "30 Sek.",
+        "Einen Schritt zurück. Tief gehen. Kräftig wieder nach vorne.",
+        "rueckwaertsschritt.jpg"
+      ],
+      [
+        "Beckenheben",
+        "30 Sek.",
+        "Füsse aufstellen. Hüfte hoch. Oben kurz Spannung halten.",
+        "beckenheben.jpg"
+      ],
+      [
+        "Unterarmstütz",
+        "25 Sek.",
+        "Körper wie ein Brett. Bauch fest. Ruhig weiteratmen.",
+        "unterarmstuetz.jpg"
+      ]
+    ]
+  },
+  {
+    "id": "schnell",
+    "label": "SCHNELL",
+    "claim": "Ich bin zuerst da.",
+    "desc": "Erster Schritt. Füsse. Reaktion.",
+    "img": "schnell.jpg",
+    "rounds": "3 Runden",
+    "pause": "10 Sek. Pause",
+    "ex": [
+      [
+        "Blitzstart",
+        "15 Sek.",
+        "Athletisch stehen. Auf dein eigenes Startsignal explosiv zwei Schritte starten. Zurück. Wiederholen.",
+        null
+      ],
+      [
+        "Schnelle Füsse",
+        "20 Sek.",
+        "Kleine schnelle Kontakte am Platz. Leise Füsse. Oberkörper bleibt ruhig.",
+        null
+      ],
+      [
+        "Raus und zurück",
+        "20 Sek.",
+        "Zwei schnelle Schritte zur Seite. Sofort zurück in die Mitte. Seiten wechseln.",
+        null
+      ],
+      [
+        "Reaktion",
+        "20 Sek.",
+        "Wähle spontan links oder rechts. Schnell reagieren, kurz beschleunigen, wieder bereit.",
+        null
+      ]
+    ]
+  },
+  {
+    "id": "ruhig",
+    "label": "RUHIG",
+    "claim": "Ich bleibe klar.",
+    "desc": "Balance. Kontrolle. Fokus.",
+    "img": "ruhig.jpg",
+    "rounds": "2 Runden",
+    "pause": "10 Sek. Pause",
+    "ex": [
+      [
+        "Einbeinstand",
+        "25 Sek. je Seite",
+        "Auf ein Bein. Blick auf einen Punkt. Möglichst ruhig bleiben.",
+        "ruhig.jpg"
+      ],
+      [
+        "Blickwechsel",
+        "25 Sek. je Seite",
+        "Stabil stehen. Blick langsam links und rechts. Körper bleibt ruhig.",
+        null
+      ],
+      [
+        "Antippen",
+        "25 Sek. je Seite",
+        "Auf einem Bein. Vorne, Seite, hinten antippen. Immer zur Mitte zurück.",
+        null
+      ],
+      [
+        "Einbeinige Beuge",
+        "20 Sek. je Seite",
+        "Auf einem Bein leicht nach vorne beugen. Langsam zurück. Kontrolle vor Tiefe.",
+        null
+      ]
+    ]
+  }
+]
