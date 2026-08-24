@@ -1,0 +1,121 @@
+{
+  "stark": {
+    "label": "STARK",
+    "claim": "Ich halte dagegen.",
+    "sub": "Kraft. Stabilität. Körperspannung.",
+    "rounds": 3,
+    "exercise_pause": 8,
+    "round_pause": 15,
+    "breath": 40,
+    "exercises": [
+      {
+        "name": "Kniebeuge",
+        "seconds": 30,
+        "cue": "Po nach hinten. Knie bleiben stabil."
+      },
+      {
+        "name": "Unterarmstütz",
+        "seconds": 35,
+        "cue": "Körper bleibt lang. Bauch fest."
+      },
+      {
+        "name": "Rückwärtsschritt",
+        "segments": [
+          [
+            "RECHTS",
+            15
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            15
+          ]
+        ],
+        "cue": "Grossen Schritt zurück. Kräftig wieder vor."
+      },
+      {
+        "name": "Beckenheben",
+        "seconds": 40,
+        "cue": "Hüfte hoch. Po und Bauch fest."
+      }
+    ]
+  },
+  "schnell": {
+    "label": "SCHNELL",
+    "claim": "Ich bin zuerst da.",
+    "sub": "Schnelligkeit. Reaktion. Explosivität.",
+    "rounds": 4,
+    "exercise_pause": 8,
+    "round_pause": 15,
+    "breath": 40,
+    "exercises": [
+      {
+        "name": "Knie hoch",
+        "seconds": 20,
+        "cue": "Knie schnell hoch. Arme arbeiten mit."
+      },
+      {
+        "name": "Mountain Climber",
+        "seconds": 20,
+        "cue": "Knie schnell wechseln. Bauch bleibt fest."
+      },
+      {
+        "name": "Skater Sprünge",
+        "seconds": 20,
+        "cue": "Seitlich abspringen. Leise und stabil landen."
+      },
+      {
+        "name": "Shoulder Taps",
+        "seconds": 20,
+        "cue": "Schulter abklopfen. Körper bleibt möglichst still."
+      }
+    ]
+  },
+  "ruhig": {
+    "label": "RUHIG",
+    "claim": "Ich bleibe klar.",
+    "sub": "Beweglichkeit. Kontrolle. Runterfahren.",
+    "rounds": 3,
+    "exercise_pause": 8,
+    "round_pause": 15,
+    "breath": 60,
+    "exercises": [
+      {
+        "name": "Tiefe Hocke",
+        "seconds": 35,
+        "cue": "Füsse bleiben flach. Brust bleibt aufrecht."
+      },
+      {
+        "name": "Cat & Cow",
+        "seconds": 30,
+        "cue": "Rücken langsam rund und wieder lang machen."
+      },
+      {
+        "name": "Hüftbeuger Stretch",
+        "segments": [
+          [
+            "RECHTS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            20
+          ]
+        ],
+        "cue": "Becken leicht nach vorne. Oberkörper bleibt aufrecht."
+      },
+      {
+        "name": "Kindstellung",
+        "seconds": 35,
+        "cue": "Arme nach vorne. Ruhig und langsam atmen."
+      }
+    ]
+  }
+}
