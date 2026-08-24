@@ -1,13 +1,11 @@
-10 MIN FINAL · STARK · SCHNELL · RUHIG
+10 MIN FINAL v2
 
-Alle Dateien direkt ins Root des GitHub-Repositories hochladen.
-Keine Unterordner.
-
-Jede Übung kann einzeln gestartet werden.
-Oder das ganze Training läuft automatisch mit:
-- individuellen Übungszeiten
-- klaren Seitenwechseln
-- 8 Sekunden Übungspause
-- 15 Sekunden Rundenpause
-- Atemabschluss
-- Signaltönen, keine Musik
+Neu:
+- Startscreen komplett neu
+- drei grosse Trainingswelten
+- keine Fake-Startflächen in den Bildern
+- alle Übungen direkt anklickbar
+- während Timer: Zurück / Pause / Weiter
+- Schnell und Ruhig mit neu aufgebauten Übersichten
+- Stark bleibt Qualitätsmaster
+- keine Unterordner
