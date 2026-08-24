@@ -2,24 +2,30 @@
   "stark": {
     "label": "STARK",
     "claim": "Ich halte dagegen.",
-    "sub": "Kraft. Stabilität. Körperspannung.",
+    "sub": "Kraft · Stabilität · Körperspannung",
+    "accent": "#FFD400",
     "rounds": 3,
     "exercise_pause": 8,
-    "round_pause": 15,
+    "round_pause": 10,
     "breath": 40,
     "exercises": [
       {
         "name": "Kniebeuge",
+        "image": "stark-kniebeuge.jpg",
         "seconds": 30,
-        "cue": "Po nach hinten. Knie bleiben stabil."
+        "cue": "Po nach hinten.",
+        "focus": "Knie bleiben stabil."
       },
       {
         "name": "Unterarmstütz",
+        "image": "stark-unterarmstuetz.jpg",
         "seconds": 35,
-        "cue": "Körper bleibt lang. Bauch fest."
+        "cue": "Körper bleibt lang.",
+        "focus": "Bauch fest."
       },
       {
         "name": "Rückwärtsschritt",
+        "image": "stark-rueckwaertsschritt.jpg",
         "segments": [
           [
             "RECHTS",
@@ -34,70 +40,74 @@
             15
           ]
         ],
-        "cue": "Grossen Schritt zurück. Kräftig wieder vor."
+        "cue": "Grossen Schritt zurück.",
+        "focus": "Kräftig wieder vor."
       },
       {
         "name": "Beckenheben",
+        "image": "stark-beckenheben.jpg",
         "seconds": 40,
-        "cue": "Hüfte hoch. Po und Bauch fest."
+        "cue": "Hüfte hoch.",
+        "focus": "Po und Bauch fest."
       }
     ]
   },
   "schnell": {
     "label": "SCHNELL",
     "claim": "Ich bin zuerst da.",
-    "sub": "Schnelligkeit. Reaktion. Explosivität.",
+    "sub": "Schnelligkeit · Reaktion · Explosivität",
+    "accent": "#FFD400",
     "rounds": 4,
     "exercise_pause": 8,
-    "round_pause": 15,
+    "round_pause": 10,
     "breath": 40,
     "exercises": [
       {
         "name": "Knie hoch",
+        "image": "schnell-knie-hoch.jpg",
         "seconds": 20,
-        "cue": "Knie schnell hoch. Arme arbeiten mit."
+        "cue": "Knie schnell hoch.",
+        "focus": "Arme arbeiten mit."
       },
       {
-        "name": "Mountain Climber",
+        "name": "Schnelle Bergsteiger",
+        "image": "schnell-bergsteiger.jpg",
         "seconds": 20,
-        "cue": "Knie schnell wechseln. Bauch bleibt fest."
+        "cue": "Knie zügig wechseln.",
+        "focus": "Bauch bleibt fest."
       },
       {
-        "name": "Skater Sprünge",
+        "name": "Seitliche Sprünge",
+        "image": "schnell-seitlich.jpg",
         "seconds": 20,
-        "cue": "Seitlich abspringen. Leise und stabil landen."
+        "cue": "Seitlich kräftig wegdrücken.",
+        "focus": "Leise und stabil landen."
       },
       {
-        "name": "Shoulder Taps",
+        "name": "Schulter tippen",
+        "image": "schnell-schulter.jpg",
         "seconds": 20,
-        "cue": "Schulter abklopfen. Körper bleibt möglichst still."
+        "cue": "Abwechselnd Schulter tippen.",
+        "focus": "Körper bleibt ruhig."
       }
     ]
   },
   "ruhig": {
     "label": "RUHIG",
     "claim": "Ich bleibe klar.",
-    "sub": "Beweglichkeit. Kontrolle. Runterfahren.",
-    "rounds": 3,
+    "sub": "Balance · Kontrolle · Fokus",
+    "accent": "#FFD400",
+    "rounds": 2,
     "exercise_pause": 8,
-    "round_pause": 15,
+    "round_pause": 10,
     "breath": 60,
     "exercises": [
       {
-        "name": "Tiefe Hocke",
-        "seconds": 35,
-        "cue": "Füsse bleiben flach. Brust bleibt aufrecht."
-      },
-      {
-        "name": "Cat & Cow",
-        "seconds": 30,
-        "cue": "Rücken langsam rund und wieder lang machen."
-      },
-      {
-        "name": "Hüftbeuger Stretch",
+        "name": "Einbeinstand",
+        "image": "ruhig-einbeinstand.jpg",
         "segments": [
           [
-            "RECHTS",
+            "LINKS",
             20
           ],
           [
@@ -105,16 +115,72 @@
             5
           ],
           [
-            "LINKS",
+            "RECHTS",
             20
           ]
         ],
-        "cue": "Becken leicht nach vorne. Oberkörper bleibt aufrecht."
+        "cue": "Auf einem Bein stehen.",
+        "focus": "Blick auf einen festen Punkt."
       },
       {
-        "name": "Kindstellung",
-        "seconds": 35,
-        "cue": "Arme nach vorne. Ruhig und langsam atmen."
+        "name": "Blickwechsel",
+        "image": "ruhig-blickwechsel.jpg",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Blick langsam links und rechts.",
+        "focus": "Körper bleibt ruhig."
+      },
+      {
+        "name": "Antippen",
+        "image": "ruhig-antippen.jpg",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Vorne, Seite, hinten antippen.",
+        "focus": "Immer ruhig zur Mitte zurück."
+      },
+      {
+        "name": "Einbeinige Beuge",
+        "image": "ruhig-beuge.jpg",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Leicht nach vorne beugen.",
+        "focus": "Kontrolle vor Tiefe."
       }
     ]
   }
