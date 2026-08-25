@@ -1,8 +1,8 @@
 {
-  "name": "10 Minuten",
-  "short_name": "10 Minuten",
+  "name": "D7c Training",
+  "short_name": "D7c Training",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#F7F5EF",
-  "theme_color": "#FFD400"
+  "background_color": "#0B0C0C",
+  "theme_color": "#0B0C0C"
 }

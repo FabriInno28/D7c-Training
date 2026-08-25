@@ -3,7 +3,6 @@
     "label": "TRAINING A",
     "claim": "Bereit für alles.",
     "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
-    "hero": "stark-kniebeuge.jpg",
     "rounds": 3,
     "exercise_pause": 8,
     "round_pause": 10,
@@ -12,34 +11,33 @@
       {
         "name": "Kniebeuge",
         "category": "Kraft",
-        "image": "stark-kniebeuge.jpg",
+        "icon": "kniebeuge",
         "seconds": 30,
-        "cue": "Po nach hinten, Füsse fest am Boden.",
-        "focus": "Knie bleiben stabil, ruhig weiteratmen."
+        "cue": "Füsse schulterbreit, Po nach hinten absenken.",
+        "focus": "Knie zeigen in Fussrichtung, Fersen bleiben am Boden."
       },
       {
         "name": "Schnelle Bergsteiger",
         "category": "Schnellkraft",
-        "image": "schnell-bergsteiger.jpg",
+        "icon": "bergsteiger",
         "seconds": 20,
-        "cue": "Knie zügig abwechselnd zur Brust ziehen.",
-        "focus": "Leise landen, Bauch bleibt fest."
+        "cue": "Aus dem Stütz die Knie schnell abwechselnd zur Brust ziehen.",
+        "focus": "Rücken bleibt gerade, Landung leise."
       },
       {
         "name": "Einbeinstand",
         "category": "Balance",
-        "image": "ruhig-einbeinstand.jpg",
+        "icon": "einbeinstand",
         "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
         "cue": "Auf einem Bein stehen, Blick auf einen festen Punkt.",
-        "focus": "Ruhig bleiben, nicht wackeln."
+        "focus": "Oberkörper ruhig, Knie leicht gebeugt."
       },
       {
-        "name": "Reaktions-Stopp",
+        "name": "Reaktions-Freeze",
         "category": "Aufmerksamkeit",
-        "image": null,
-        "icon": "⚡",
+        "icon": "freeze",
         "seconds": 30,
-        "cue": "Leise auf der Stelle wippen.",
+        "cue": "Leise auf der Stelle joggen.",
         "focus": "Bei deinem eigenen Gedanken-Signal sofort einfrieren, 3 Sek. halten."
       }
     ]
@@ -48,7 +46,6 @@
     "label": "TRAINING B",
     "claim": "Kopf und Körper wach.",
     "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
-    "hero": "stark-unterarmstuetz.jpg",
     "rounds": 3,
     "exercise_pause": 8,
     "round_pause": 10,
@@ -57,34 +54,34 @@
       {
         "name": "Unterarmstütz",
         "category": "Kraft",
-        "image": "stark-unterarmstuetz.jpg",
+        "icon": "unterarmstuetz",
         "seconds": 30,
-        "cue": "Körper bleibt lang wie ein Brett.",
-        "focus": "Bauch fest, ruhig weiteratmen."
+        "cue": "Unterarme und Zehen am Boden, Körper bildet eine Linie.",
+        "focus": "Bauch anspannen, Po nicht hochschieben."
       },
       {
         "name": "Knie hoch",
         "category": "Schnellkraft",
-        "image": "schnell-knie-hoch.jpg",
+        "icon": "knie-hoch",
         "seconds": 20,
-        "cue": "Knie schnell und hoch, Arme arbeiten mit.",
-        "focus": "Oberkörper bleibt aufrecht und ruhig."
+        "cue": "Auf der Stelle laufen, Knie so hoch wie möglich.",
+        "focus": "Arme pumpen mit, Landung leise auf dem Ballen."
       },
       {
-        "name": "Einbeinige Beuge",
+        "name": "Standwaage",
         "category": "Balance",
-        "image": "ruhig-beuge.jpg",
+        "icon": "standwaage",
         "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
-        "cue": "Auf einem Bein leicht nach vorne beugen.",
-        "focus": "Kontrolle vor Tiefe, langsam zurück."
+        "cue": "Auf einem Bein stehen, Oberkörper nach vorne kippen, anderes Bein nach hinten strecken.",
+        "focus": "Arme helfen beim Gleichgewicht, ganz langsame Bewegung."
       },
       {
         "name": "Blickwechsel",
         "category": "Aufmerksamkeit",
-        "image": "ruhig-blickwechsel.jpg",
+        "icon": "blickwechsel",
         "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
-        "cue": "Blick langsam und stabil links und rechts bewegen.",
-        "focus": "Kopf bleibt ruhig, Körper bleibt fest."
+        "cue": "Stabil stehen, Blick langsam von links nach rechts wandern lassen.",
+        "focus": "Kopf bleibt ruhig, nur die Augen bewegen sich."
       }
     ]
   },
@@ -92,44 +89,42 @@
     "label": "TRAINING C",
     "claim": "Stark bis zum Schluss.",
     "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
-    "hero": "stark-beckenheben.jpg",
     "rounds": 3,
     "exercise_pause": 8,
     "round_pause": 10,
     "breath": 45,
     "exercises": [
       {
-        "name": "Beckenheben",
+        "name": "Wandsitz",
         "category": "Kraft",
-        "image": "stark-beckenheben.jpg",
+        "icon": "wandsitz",
         "seconds": 35,
-        "cue": "Hüfte hoch, oben kurz halten.",
-        "focus": "Po und Bauch fest anspannen."
+        "cue": "Rücken an die Wand, in die Hocke bis die Knie 90° gebeugt sind.",
+        "focus": "Knie über den Fersen, Bauch bleibt angespannt."
       },
       {
-        "name": "Rückwärtsschritt",
+        "name": "Ausfallschritt rückwärts",
         "category": "Schnellkraft",
-        "image": "stark-rueckwaertsschritt.jpg",
+        "icon": "ausfallschritt",
         "segments": [["RECHTS", 15], ["WECHSEL", 5], ["LINKS", 15]],
-        "cue": "Grosser Schritt zurück – explosiv wieder nach vorne.",
-        "focus": "Leise und kontrolliert landen, sofort wieder bereit."
+        "cue": "Grosser Schritt zurück, hinteres Knie fast zum Boden.",
+        "focus": "Explosiv und leise zurück in den Stand."
       },
       {
         "name": "Antippen",
         "category": "Balance",
-        "image": "ruhig-antippen.jpg",
+        "icon": "antippen",
         "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
-        "cue": "Vorne, Seite, hinten leise antippen.",
-        "focus": "Immer ruhig zur Mitte zurück."
+        "cue": "Auf einem Bein stehen, mit dem freien Fuss vorne, seitlich und hinten leise antippen.",
+        "focus": "Nach jedem Antippen ruhig zur Mitte zurückkommen."
       },
       {
-        "name": "Merk-Sequenz",
+        "name": "Kopfrechnen im Stand",
         "category": "Aufmerksamkeit",
-        "image": null,
-        "icon": "🧠",
+        "icon": "kopfrechnen",
         "seconds": 30,
-        "cue": "Merke dir eine 4er-Folge: Schulter – Knie – Schulter – Knie.",
-        "focus": "Nach 10 Sek. die Folge in Gedanken rückwärts wiederholen."
+        "cue": "Locker auf der Stelle wippen.",
+        "focus": "Von 30 in 3er-Schritten rückwärts zählen: 30, 27, 24 …"
       }
     ]
   }

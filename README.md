@@ -1,7 +1,9 @@
 # D7c Training – 10 Minuten zu Hause
 
 Trainings-App für die D7c (Jungs, 11/12 Jahre). Kein Material, kein Lärm,
-zu Hause trainierbar.
+zu Hause trainierbar. Komplett eigenes Design, keine Stockfotos – alle
+Übungen sind selbst gezeichnete SVG-Piktogramme (`icons.js`) in den
+Vereinsfarben Gelb/Schwarz.
 
 ## Struktur
 
@@ -16,19 +18,16 @@ zu Hause trainierbar.
   feste, gute Auswahl statt Steigerung, damit strukturiert trainiert werden
   kann.
 
-Übungen ohne Foto (kognitive Aufmerksamkeitsübungen) zeigen ein Icon statt
-Bild.
+## Dateien
 
-## Daten
-
-`training-data.json` ist die einzige Datenquelle für alle drei Päckchen
-(Reihenfolge, Übungen, Zeiten, Cues). `app.js` rendert Startseite und
-Training rein aus dieser Datei.
-
-## Vereinsfarben
-
-Gelb (`--yellow: #FFD400`) / Schwarz (`--ink: #0b0c0c`), definiert in
-`styles.css`.
+- `training-data.json` – einzige Datenquelle für alle drei Päckchen
+  (Reihenfolge, Übungen, Zeiten, Cues, Icon-Zuordnung).
+- `icons.js` – Bibliothek aller Übungs-Piktogramme (reines SVG, kein
+  Bild-Asset nötig).
+- `app.js` – rendert Startseite und Training rein aus `training-data.json`
+  und `icons.js`, steuert den Timer.
+- `styles.css` – dunkles Design, Gelb (`--yellow: #FFD400`) als Akzent auf
+  Schwarz (`--bg: #0b0c0c`).
 
 ## Deployment
 
