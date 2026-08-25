@@ -1,8 +1,8 @@
 {
-  "name": "10 Minuten",
+  "name": "10 Minuten on Top",
   "short_name": "10 Minuten",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#F7F5EF",
-  "theme_color": "#FFD400"
+  "background_color": "#f7f3ea",
+  "theme_color": "#0b1720"
 }

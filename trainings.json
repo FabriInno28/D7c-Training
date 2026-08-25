@@ -1,0 +1,447 @@
+{
+  "1": {
+    "zone": "STARK",
+    "title": "Fester Stand",
+    "claim": "Stabile Beine. Sicherer Stand.",
+    "rounds": 3,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 45,
+    "ex": [
+      {
+        "name": "Kniebeuge",
+        "seconds": 30,
+        "cue": "Po nach hinten.",
+        "focus": "Knie bleiben stabil."
+      },
+      {
+        "name": "Rückwärtsschritt",
+        "seconds": 30,
+        "cue": "Grossen Schritt zurück.",
+        "focus": "Kräftig wieder vor."
+      },
+      {
+        "name": "Einbeinige Beuge",
+        "seconds": 25,
+        "cue": "Auf einem Bein leicht beugen.",
+        "focus": "Kontrolle vor Tiefe."
+      },
+      {
+        "name": "Beckenheben",
+        "seconds": 35,
+        "cue": "Hüfte hoch.",
+        "focus": "Po und Bauch fest."
+      }
+    ]
+  },
+  "2": {
+    "zone": "STARK",
+    "title": "Starker Körper",
+    "claim": "Starker Rumpf. Stabil im Kontakt.",
+    "rounds": 3,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 45,
+    "ex": [
+      {
+        "name": "Unterarmstütz",
+        "seconds": 30,
+        "cue": "Körper bleibt lang.",
+        "focus": "Bauch fest."
+      },
+      {
+        "name": "Schulter tippen",
+        "seconds": 25,
+        "cue": "Abwechselnd Schulter tippen.",
+        "focus": "Hüfte bleibt ruhig."
+      },
+      {
+        "name": "Seitstütz",
+        "segments": [
+          [
+            "RECHTS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            20
+          ]
+        ],
+        "cue": "Körper bildet eine Linie.",
+        "focus": "Hüfte oben halten."
+      },
+      {
+        "name": "Beckenheben",
+        "seconds": 35,
+        "cue": "Hüfte hoch.",
+        "focus": "Po und Bauch fest."
+      }
+    ]
+  },
+  "3": {
+    "zone": "STARK",
+    "title": "Zweikampf bereit",
+    "claim": "Kraft in Bewegung. Für den Kontakt.",
+    "rounds": 3,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 45,
+    "ex": [
+      {
+        "name": "Kniebeuge",
+        "seconds": 30,
+        "cue": "Tief und kontrolliert.",
+        "focus": "Kräftig hoch."
+      },
+      {
+        "name": "Seitlicher Ausfallschritt",
+        "segments": [
+          [
+            "RECHTS",
+            15
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            15
+          ]
+        ],
+        "cue": "Gross zur Seite.",
+        "focus": "Standbein bleibt stabil."
+      },
+      {
+        "name": "Rückwärtsschritt",
+        "segments": [
+          [
+            "RECHTS",
+            15
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            15
+          ]
+        ],
+        "cue": "Grossen Schritt zurück.",
+        "focus": "Sicher wieder vor."
+      },
+      {
+        "name": "Unterarmstütz",
+        "seconds": 30,
+        "cue": "Körper bleibt lang.",
+        "focus": "Spannung halten."
+      }
+    ]
+  },
+  "4": {
+    "zone": "SCHNELL",
+    "title": "Erster Schritt",
+    "claim": "Explosiv loskommen.",
+    "rounds": 4,
+    "exercise_pause": 10,
+    "round_pause": 10,
+    "breath": 40,
+    "ex": [
+      {
+        "name": "Schnelle Füsse",
+        "seconds": 15,
+        "cue": "Kleine schnelle Schritte.",
+        "focus": "Locker auf den Füssen."
+      },
+      {
+        "name": "Knie hoch",
+        "seconds": 15,
+        "cue": "Knie schnell hoch.",
+        "focus": "Arme arbeiten mit."
+      },
+      {
+        "name": "Tief und los",
+        "seconds": 15,
+        "cue": "Tief starten.",
+        "focus": "Explosiv hoch und los."
+      },
+      {
+        "name": "Vor und zurück",
+        "seconds": 15,
+        "cue": "Zwei Schritte vor.",
+        "focus": "Sofort wieder zurück."
+      }
+    ]
+  },
+  "5": {
+    "zone": "SCHNELL",
+    "title": "Schnelle Füsse",
+    "claim": "Frequenz und Richtungswechsel.",
+    "rounds": 4,
+    "exercise_pause": 10,
+    "round_pause": 10,
+    "breath": 40,
+    "ex": [
+      {
+        "name": "Vor und zurück",
+        "seconds": 15,
+        "cue": "Schnell vor und zurück.",
+        "focus": "Oberkörper bleibt ruhig."
+      },
+      {
+        "name": "Seitlich schnell",
+        "seconds": 15,
+        "cue": "Kleine Schritte seitlich.",
+        "focus": "Beide Richtungen."
+      },
+      {
+        "name": "Überkreuz",
+        "seconds": 15,
+        "cue": "Beine kontrolliert kreuzen.",
+        "focus": "Rhythmus halten."
+      },
+      {
+        "name": "Seitliche Sprünge",
+        "seconds": 20,
+        "cue": "Seitlich abspringen.",
+        "focus": "Leise stabil landen."
+      }
+    ]
+  },
+  "6": {
+    "zone": "SCHNELL",
+    "title": "Bremsen & Los",
+    "claim": "Stoppen. Drehen. Neu starten.",
+    "rounds": 4,
+    "exercise_pause": 10,
+    "round_pause": 10,
+    "breath": 40,
+    "ex": [
+      {
+        "name": "Schnell und Stopp",
+        "seconds": 15,
+        "cue": "Schnelle Füsse.",
+        "focus": "Auf Signal sofort still."
+      },
+      {
+        "name": "Seitlich und Stopp",
+        "seconds": 15,
+        "cue": "Seitlich schnell bewegen.",
+        "focus": "Stabil abbremsen."
+      },
+      {
+        "name": "Drehen und starten",
+        "seconds": 15,
+        "cue": "Halbe Drehung.",
+        "focus": "Sofort wieder beschleunigen."
+      },
+      {
+        "name": "Tief und explosiv",
+        "seconds": 15,
+        "cue": "Kurz tief gehen.",
+        "focus": "Schnell nach oben."
+      }
+    ]
+  },
+  "7": {
+    "zone": "RUHIG",
+    "title": "Volle Kontrolle",
+    "claim": "Balance und Körpergefühl.",
+    "rounds": 2,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 60,
+    "ex": [
+      {
+        "name": "Einbeinstand",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Auf einem Bein stehen.",
+        "focus": "Blick auf einen Punkt."
+      },
+      {
+        "name": "Blickwechsel",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Kopf langsam drehen.",
+        "focus": "Körper bleibt ruhig."
+      },
+      {
+        "name": "Antippen",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Vorne, Seite, hinten tippen.",
+        "focus": "Zur Mitte zurück."
+      },
+      {
+        "name": "Einbeinige Beuge",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Leicht nach vorne beugen.",
+        "focus": "Kontrolle vor Tiefe."
+      }
+    ]
+  },
+  "8": {
+    "zone": "RUHIG",
+    "title": "Kopf ruhig",
+    "claim": "Koordination und Fokus.",
+    "rounds": 2,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 60,
+    "ex": [
+      {
+        "name": "Balance und drehen",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Auf einem Bein stehen.",
+        "focus": "Kopf langsam drehen."
+      },
+      {
+        "name": "Überkreuz",
+        "seconds": 30,
+        "cue": "Hand zum anderen Knie.",
+        "focus": "Ruhiger Rhythmus."
+      },
+      {
+        "name": "Weit greifen",
+        "segments": [
+          [
+            "LINKS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "RECHTS",
+            20
+          ]
+        ],
+        "cue": "Auf einem Bein stehen.",
+        "focus": "Kontrolliert weit greifen."
+      },
+      {
+        "name": "Aufstehen und stehen",
+        "seconds": 30,
+        "cue": "Ruhig aufstehen.",
+        "focus": "Oben drei Sekunden stabil."
+      }
+    ]
+  },
+  "9": {
+    "zone": "RUHIG",
+    "title": "Runterfahren",
+    "claim": "Mobilität und Entspannung.",
+    "rounds": 2,
+    "exercise_pause": 7,
+    "round_pause": 10,
+    "breath": 60,
+    "ex": [
+      {
+        "name": "Tiefe Hocke",
+        "seconds": 35,
+        "cue": "Füsse bleiben am Boden.",
+        "focus": "Ruhig atmen."
+      },
+      {
+        "name": "Rücken rund und lang",
+        "seconds": 35,
+        "cue": "Rücken langsam rund.",
+        "focus": "Dann wieder lang."
+      },
+      {
+        "name": "Hüfte öffnen",
+        "segments": [
+          [
+            "RECHTS",
+            20
+          ],
+          [
+            "WECHSEL",
+            5
+          ],
+          [
+            "LINKS",
+            20
+          ]
+        ],
+        "cue": "Grossen Schritt nach vorne.",
+        "focus": "Hüfte locker sinken lassen."
+      },
+      {
+        "name": "Kindstellung",
+        "seconds": 40,
+        "cue": "Po Richtung Fersen.",
+        "focus": "Lang und ruhig ausatmen."
+      }
+    ]
+  }
+}

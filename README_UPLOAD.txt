@@ -1,15 +1,22 @@
-D7C TRAINING FINAL V3
+10 MINUTEN ON TOP – GITHUB FINAL
 
-Kritisch bereinigte Version.
-- STARK bleibt Qualitätsmaster
-- SCHNELL mit hochauflösenden echten Bewegungsbildern
-- RUHIG wieder Balance / Kontrolle / Fokus
-- keine Buttons oder Timer in Bildern
-- jede Übungskarte ist echt klickbar
-- Timer: vorherige Übung / Pause / nächste Übung
-- deutsche Begriffe
-- 8 Sek. zwischen Übungen
-- 10 Sek. zwischen Runden
-- keine Unterordner
+UPLOAD
+1. ZIP entpacken.
+2. ALLE Dateien direkt in das Root deines GitHub-Repositories laden.
+3. Bestehende index.html, styles.css, app.js usw. ersetzen.
+4. Keine Unterordner erstellen.
+5. GitHub Pages Build abwarten.
+6. Danach Seite einmal mit ?v=final1 öffnen.
 
-Alle Dateien direkt ins Root des GitHub-Repositories hochladen und bestehende ersetzen.
+ENTHALTEN
+- Trainingswelt mit 9 vorbereiteten Trainings
+- 4 Übungen pro Training auf einen Blick
+- Ganzes Training startbar
+- jede Übung einzeln startbar
+- echter Timer
+- Vorherige / Pause / Nächste
+- kurze Pausen
+- Anker am Ende
+- keine Fortschrittsseite
+- keine Runde-fertig-Feier
+- keine einzelnen Übungsbilder nötig
