@@ -1,186 +1,135 @@
 {
-  "stark": {
-    "label": "STARK",
-    "claim": "Ich halte dagegen.",
-    "sub": "Kraft · Stabilität · Körperspannung",
-    "accent": "#FFD400",
+  "a": {
+    "label": "TRAINING A",
+    "claim": "Bereit für alles.",
+    "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
+    "hero": "stark-kniebeuge.jpg",
     "rounds": 3,
     "exercise_pause": 8,
     "round_pause": 10,
-    "breath": 40,
+    "breath": 45,
     "exercises": [
       {
         "name": "Kniebeuge",
+        "category": "Kraft",
         "image": "stark-kniebeuge.jpg",
         "seconds": 30,
-        "cue": "Po nach hinten.",
-        "focus": "Knie bleiben stabil."
-      },
-      {
-        "name": "Unterarmstütz",
-        "image": "stark-unterarmstuetz.jpg",
-        "seconds": 35,
-        "cue": "Körper bleibt lang.",
-        "focus": "Bauch fest."
-      },
-      {
-        "name": "Rückwärtsschritt",
-        "image": "stark-rueckwaertsschritt.jpg",
-        "segments": [
-          [
-            "RECHTS",
-            15
-          ],
-          [
-            "WECHSEL",
-            5
-          ],
-          [
-            "LINKS",
-            15
-          ]
-        ],
-        "cue": "Grossen Schritt zurück.",
-        "focus": "Kräftig wieder vor."
-      },
-      {
-        "name": "Beckenheben",
-        "image": "stark-beckenheben.jpg",
-        "seconds": 40,
-        "cue": "Hüfte hoch.",
-        "focus": "Po und Bauch fest."
-      }
-    ]
-  },
-  "schnell": {
-    "label": "SCHNELL",
-    "claim": "Ich bin zuerst da.",
-    "sub": "Schnelligkeit · Reaktion · Explosivität",
-    "accent": "#FFD400",
-    "rounds": 4,
-    "exercise_pause": 8,
-    "round_pause": 10,
-    "breath": 40,
-    "exercises": [
-      {
-        "name": "Knie hoch",
-        "image": "schnell-knie-hoch.jpg",
-        "seconds": 20,
-        "cue": "Knie schnell hoch.",
-        "focus": "Arme arbeiten mit."
+        "cue": "Po nach hinten, Füsse fest am Boden.",
+        "focus": "Knie bleiben stabil, ruhig weiteratmen."
       },
       {
         "name": "Schnelle Bergsteiger",
+        "category": "Schnellkraft",
         "image": "schnell-bergsteiger.jpg",
         "seconds": 20,
-        "cue": "Knie zügig wechseln.",
-        "focus": "Bauch bleibt fest."
+        "cue": "Knie zügig abwechselnd zur Brust ziehen.",
+        "focus": "Leise landen, Bauch bleibt fest."
       },
       {
-        "name": "Seitliche Sprünge",
-        "image": "schnell-seitlich.jpg",
-        "seconds": 20,
-        "cue": "Seitlich kräftig wegdrücken.",
-        "focus": "Leise und stabil landen."
+        "name": "Einbeinstand",
+        "category": "Balance",
+        "image": "ruhig-einbeinstand.jpg",
+        "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
+        "cue": "Auf einem Bein stehen, Blick auf einen festen Punkt.",
+        "focus": "Ruhig bleiben, nicht wackeln."
       },
       {
-        "name": "Schulter tippen",
-        "image": "schnell-schulter.jpg",
-        "seconds": 20,
-        "cue": "Abwechselnd Schulter tippen.",
-        "focus": "Körper bleibt ruhig."
+        "name": "Reaktions-Stopp",
+        "category": "Aufmerksamkeit",
+        "image": null,
+        "icon": "⚡",
+        "seconds": 30,
+        "cue": "Leise auf der Stelle wippen.",
+        "focus": "Bei deinem eigenen Gedanken-Signal sofort einfrieren, 3 Sek. halten."
       }
     ]
   },
-  "ruhig": {
-    "label": "RUHIG",
-    "claim": "Ich bleibe klar.",
-    "sub": "Balance · Kontrolle · Fokus",
-    "accent": "#FFD400",
-    "rounds": 2,
+  "b": {
+    "label": "TRAINING B",
+    "claim": "Kopf und Körper wach.",
+    "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
+    "hero": "stark-unterarmstuetz.jpg",
+    "rounds": 3,
     "exercise_pause": 8,
     "round_pause": 10,
-    "breath": 60,
+    "breath": 45,
     "exercises": [
       {
-        "name": "Einbeinstand",
-        "image": "ruhig-einbeinstand.jpg",
-        "segments": [
-          [
-            "LINKS",
-            20
-          ],
-          [
-            "WECHSEL",
-            5
-          ],
-          [
-            "RECHTS",
-            20
-          ]
-        ],
-        "cue": "Auf einem Bein stehen.",
-        "focus": "Blick auf einen festen Punkt."
+        "name": "Unterarmstütz",
+        "category": "Kraft",
+        "image": "stark-unterarmstuetz.jpg",
+        "seconds": 30,
+        "cue": "Körper bleibt lang wie ein Brett.",
+        "focus": "Bauch fest, ruhig weiteratmen."
       },
       {
-        "name": "Blickwechsel",
-        "image": "ruhig-blickwechsel.jpg",
-        "segments": [
-          [
-            "LINKS",
-            20
-          ],
-          [
-            "WECHSEL",
-            5
-          ],
-          [
-            "RECHTS",
-            20
-          ]
-        ],
-        "cue": "Blick langsam links und rechts.",
-        "focus": "Körper bleibt ruhig."
-      },
-      {
-        "name": "Antippen",
-        "image": "ruhig-antippen.jpg",
-        "segments": [
-          [
-            "LINKS",
-            20
-          ],
-          [
-            "WECHSEL",
-            5
-          ],
-          [
-            "RECHTS",
-            20
-          ]
-        ],
-        "cue": "Vorne, Seite, hinten antippen.",
-        "focus": "Immer ruhig zur Mitte zurück."
+        "name": "Knie hoch",
+        "category": "Schnellkraft",
+        "image": "schnell-knie-hoch.jpg",
+        "seconds": 20,
+        "cue": "Knie schnell und hoch, Arme arbeiten mit.",
+        "focus": "Oberkörper bleibt aufrecht und ruhig."
       },
       {
         "name": "Einbeinige Beuge",
+        "category": "Balance",
         "image": "ruhig-beuge.jpg",
-        "segments": [
-          [
-            "LINKS",
-            20
-          ],
-          [
-            "WECHSEL",
-            5
-          ],
-          [
-            "RECHTS",
-            20
-          ]
-        ],
-        "cue": "Leicht nach vorne beugen.",
-        "focus": "Kontrolle vor Tiefe."
+        "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
+        "cue": "Auf einem Bein leicht nach vorne beugen.",
+        "focus": "Kontrolle vor Tiefe, langsam zurück."
+      },
+      {
+        "name": "Blickwechsel",
+        "category": "Aufmerksamkeit",
+        "image": "ruhig-blickwechsel.jpg",
+        "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
+        "cue": "Blick langsam und stabil links und rechts bewegen.",
+        "focus": "Kopf bleibt ruhig, Körper bleibt fest."
+      }
+    ]
+  },
+  "c": {
+    "label": "TRAINING C",
+    "claim": "Stark bis zum Schluss.",
+    "sub": "Kraft · Schnellkraft · Balance · Aufmerksamkeit",
+    "hero": "stark-beckenheben.jpg",
+    "rounds": 3,
+    "exercise_pause": 8,
+    "round_pause": 10,
+    "breath": 45,
+    "exercises": [
+      {
+        "name": "Beckenheben",
+        "category": "Kraft",
+        "image": "stark-beckenheben.jpg",
+        "seconds": 35,
+        "cue": "Hüfte hoch, oben kurz halten.",
+        "focus": "Po und Bauch fest anspannen."
+      },
+      {
+        "name": "Rückwärtsschritt",
+        "category": "Schnellkraft",
+        "image": "stark-rueckwaertsschritt.jpg",
+        "segments": [["RECHTS", 15], ["WECHSEL", 5], ["LINKS", 15]],
+        "cue": "Grosser Schritt zurück – explosiv wieder nach vorne.",
+        "focus": "Leise und kontrolliert landen, sofort wieder bereit."
+      },
+      {
+        "name": "Antippen",
+        "category": "Balance",
+        "image": "ruhig-antippen.jpg",
+        "segments": [["LINKS", 20], ["WECHSEL", 5], ["RECHTS", 20]],
+        "cue": "Vorne, Seite, hinten leise antippen.",
+        "focus": "Immer ruhig zur Mitte zurück."
+      },
+      {
+        "name": "Merk-Sequenz",
+        "category": "Aufmerksamkeit",
+        "image": null,
+        "icon": "🧠",
+        "seconds": 30,
+        "cue": "Merke dir eine 4er-Folge: Schulter – Knie – Schulter – Knie.",
+        "focus": "Nach 10 Sek. die Folge in Gedanken rückwärts wiederholen."
       }
     ]
   }
