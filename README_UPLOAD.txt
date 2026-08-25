@@ -1,22 +1,13 @@
-10 MINUTEN ON TOP – GITHUB FINAL
+WELTEN V2
 
-UPLOAD
-1. ZIP entpacken.
-2. ALLE Dateien direkt in das Root deines GitHub-Repositories laden.
-3. Bestehende index.html, styles.css, app.js usw. ersetzen.
-4. Keine Unterordner erstellen.
-5. GitHub Pages Build abwarten.
-6. Danach Seite einmal mit ?v=final1 öffnen.
+Korrigiert:
+• Bilder sind wieder zentraler Bestandteil.
+• 9 Trainings sind auf der Welt sichtbar beschriftet und anklickbar.
+• Jedes Training hat eine grosse visuelle Unterwelt.
+• Keine 36 Einzelbilder nötig.
+• Vier Übungen auf einen Blick.
+• Echter Timer pro Übung.
+• Kein Fortschritt. Keine Runde-fertig-Feier.
 
-ENTHALTEN
-- Trainingswelt mit 9 vorbereiteten Trainings
-- 4 Übungen pro Training auf einen Blick
-- Ganzes Training startbar
-- jede Übung einzeln startbar
-- echter Timer
-- Vorherige / Pause / Nächste
-- kurze Pausen
-- Anker am Ende
-- keine Fortschrittsseite
-- keine Runde-fertig-Feier
-- keine einzelnen Übungsbilder nötig
+Upload:
+Alle Dateien UND den Ordner assets direkt ins Root des GitHub-Repositories laden.
