@@ -1,18 +1,22 @@
-10 MINUTEN ON TOP – WELTEN V2 FLAT
+FINALER NEUBAU – FLAT
 
-DIE EINFACHE UPLOAD-VERSION
-
-Alle Dateien liegen in EINEM Ordner.
+Alles liegt in EINEM Ordner.
 Keine Unterordner.
-Kein assets-Ordner.
 
-So hochladen:
+Upload:
 1. ZIP entpacken.
-2. Alle Dateien im Ordner markieren.
-3. Direkt ins Hauptverzeichnis deines GitHub-Repositories hochladen.
+2. Alle Dateien markieren.
+3. Direkt ins Root des GitHub-Repositories laden.
 4. Bestehende Dateien ersetzen.
 5. GitHub Pages Build abwarten.
-6. Seite neu laden.
 
-Wichtig:
-Auch alle JPG-Dateien müssen im Hauptverzeichnis liegen.
+Struktur:
+Welt mit 9 sichtbaren Trainings
+→ Training mit EINER Bildwelt und 4 Übungen
+→ echter Timer pro Übung
+→ Vorherige / Pause / Nächste
+→ Anker am Schluss
+
+Keine Fake UI in den Bildern.
+Keine doppelten Beschriftungen.
+Keine undefined-Felder.
