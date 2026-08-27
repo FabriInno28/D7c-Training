@@ -1,1 +1,1 @@
-Diese Datei ist veraltet. Die aktuelle Testversion wird direkt durch ChatGPT auf dem Branch chatgpt-write-test gepflegt.
+Aktuelle Testversion: Branch chatgpt-write-test. Manuelle ZIP-Uploads sind nicht mehr nötig.
