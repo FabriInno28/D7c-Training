@@ -1,1 +1,1 @@
-Manueller Upload ist für den aktuellen Entwicklungsprozess nicht mehr nötig. Die Testversion wird direkt im Branch chatgpt-write-test gepflegt.
+Aktuelle Entwicklung: ChatGPT pflegt die Testversion direkt im Branch chatgpt-write-test. Manueller Upload ist nicht mehr nötig.
