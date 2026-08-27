@@ -1,1 +1,1 @@
-Direkter GitHub-Workflow aktiv. Änderungen werden ab jetzt direkt über den Branch chatgpt-write-test gepflegt.
+Direkter GitHub-Workflow aktiv. Testversion: chatgpt-write-test.
