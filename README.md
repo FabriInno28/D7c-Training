@@ -1,11 +1,12 @@
-# 10 Minuten – neuer Prototyp
+# 10 Minuten on Top
 
-Neue Produktlogik:
-- STARK
-- SCHNELL
-- RUHIG
+Sauberer Neuaufbau der Trainingswelt.
 
-Keine geführte Screen-für-Screen-App.
-Eine Übersicht pro Session, vier Übungen, optionales Detail, Atemabschluss.
+- 3 Welten: STARK, SCHNELL, RUHIG
+- 9 vorbereitete Trainings
+- grosse Weltillustration ohne überlagerte Klickblasen
+- pro Training eine eigene visuelle Unterwelt
+- 4 Übungen auf einen Blick
+- echter Timer pro Übung mit Vorherige, Pause und Nächste
 
-Alle Dateien liegen flach im Root und sind GitHub-Pages-tauglich.
+Der Branch `chatgpt-write-test` ist die aktuelle Testversion.
