@@ -1,6 +1,1 @@
-FINAL MASTER
-Eine einzige index.html + .nojekyll.
-Keine Bilder, keine Unterordner, keine externen Dateien.
-STARK / SCHNELL / RUHIG.
-Alle Übungen gleichzeitig sichtbar.
-Ein Timer führt durch die ganze Session.
+Diese Datei ist veraltet. Die aktuelle Testversion wird direkt durch ChatGPT auf dem Branch chatgpt-write-test gepflegt.
