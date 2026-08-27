@@ -1,1 +1,1 @@
-Aktuelle Entwicklung: ChatGPT pflegt die Testversion direkt im Branch chatgpt-write-test. Manueller Upload ist nicht mehr nötig.
+Direkter GitHub-Workflow aktiv. Änderungen werden ab jetzt direkt über den Branch chatgpt-write-test gepflegt.
