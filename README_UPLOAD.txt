@@ -1,11 +1,25 @@
-STARTWELT – MANUELLER FALLBACK
+10 MINUTEN ON TOP – KOMPLETTPAKET
 
-1. Alle fünf Dateien direkt ins Hauptverzeichnis von D7c-Training laden.
-2. Bestehende index.html, styles.css, app.js und welt.jpg ersetzen.
-3. .nojekyll ebenfalls hochladen.
-4. GitHub Pages kurz bauen lassen.
-5. Danach https://fabriinno28.github.io/D7c-Training/?v=startwelt2 öffnen.
+Enthalten:
+- bestehende Startwelt mit 9 klickbaren Trainingsorten
+- 9 Trainingswelten
+- je 4 Übungen
+- individuelle Timer
+- Rundenlogik
+- Weiter / Zurück
+- akustisches, kurzes Timersignal
+- responsive Darstellung für Handy, Tablet und Desktop
+- keine einzelnen Übungsbild-Dateien notwendig
 
-Diese Version enthält NUR die Startwelt.
-Alle 9 Trainingsorte sind klickbar.
-Es gibt noch keine Unterwelten.
+UPLOAD:
+Alle Dateien direkt ins Hauptverzeichnis des GitHub-Repositories laden und bestehende Dateien ersetzen.
+
+Dateien:
+index.html
+styles.css
+app.js
+trainings.json
+welt.jpg
+.nojekyll
+
+Danach GitHub Pages neu laden, bei Cache-Problemen mit ?v=komplett1.

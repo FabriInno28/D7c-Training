@@ -1,317 +1,416 @@
-{
-  "1": {
-    "zone": "STARK",
+[
+  {
+    "id": 1,
     "title": "Fester Stand",
     "claim": "Stabile Beine. Sicherer Stand.",
+    "accent": "#E5A900",
     "rounds": 3,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 45,
-    "ex": [
-      [
-        "Kniebeuge",
-        30,
-        "Po nach hinten.",
-        "Knie bleiben stabil."
-      ],
-      [
-        "Rückwärtsschritt",
-        30,
-        "Grossen Schritt zurück.",
-        "Kräftig wieder vor."
-      ],
-      [
-        "Einbeinige Beuge",
-        25,
-        "Kleine Beuge auf einem Bein.",
-        "Kontrolle vor Tiefe."
-      ],
-      [
-        "Beckenheben",
-        35,
-        "Hüfte hoch.",
-        "Po und Bauch fest."
-      ]
+    "exercises": [
+      {
+        "title": "Kniebeuge",
+        "duration": 30,
+        "steps": [
+          "Füsse etwa hüftbreit.",
+          "Po nach hinten. Knie stabil.",
+          "Ruhig wieder hoch."
+        ]
+      },
+      {
+        "title": "Rückwärtsschritt",
+        "duration": 30,
+        "steps": [
+          "Grossen Schritt zurück.",
+          "Vorderes Knie bleibt stabil.",
+          "Kräftig wieder nach vorne."
+        ]
+      },
+      {
+        "title": "Einbeinige Beuge",
+        "duration": 25,
+        "steps": [
+          "Steh auf einem Bein.",
+          "Beuge dich leicht nach vorne.",
+          "Rücken lang. Zurück in die Mitte."
+        ]
+      },
+      {
+        "title": "Beckenheben",
+        "duration": 35,
+        "steps": [
+          "Leg dich auf den Rücken.",
+          "Füsse aufstellen. Hüfte hoch.",
+          "Po und Bauch fest. Ruhig senken."
+        ]
+      }
     ]
   },
-  "2": {
-    "zone": "STARK",
+  {
+    "id": 2,
     "title": "Starker Körper",
     "claim": "Starker Rumpf. Stabil im Kontakt.",
+    "accent": "#C58B27",
     "rounds": 3,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 45,
-    "ex": [
-      [
-        "Unterarmstütz",
-        30,
-        "Körper bleibt lang.",
-        "Bauch fest."
-      ],
-      [
-        "Schulter tippen",
-        25,
-        "Abwechselnd Schulter tippen.",
-        "Hüfte bleibt ruhig."
-      ],
-      [
-        "Seitstütz",
-        40,
-        "20 Sekunden pro Seite.",
-        "Hüfte oben halten."
-      ],
-      [
-        "Beckenheben",
-        35,
-        "Hüfte hoch.",
-        "Po und Bauch fest."
-      ]
+    "exercises": [
+      {
+        "title": "Fels stehen",
+        "duration": 30,
+        "steps": [
+          "Stell dich hüftbreit hin.",
+          "Knie leicht beugen.",
+          "Bauch fest. Position halten."
+        ]
+      },
+      {
+        "title": "Starker Oberkörper",
+        "duration": 30,
+        "steps": [
+          "Geh in die Stützposition.",
+          "Rücken und Beine bleiben gerade.",
+          "Ruhig weiteratmen."
+        ]
+      },
+      {
+        "title": "Gewicht verlagern",
+        "duration": 30,
+        "steps": [
+          "Bleib tief.",
+          "Gewicht langsam nach links.",
+          "Dann nach rechts. Stabil bleiben."
+        ]
+      },
+      {
+        "title": "Stabil bewegen",
+        "duration": 35,
+        "steps": [
+          "Bleib tief.",
+          "Kleine Schritte vor, zurück, seitlich.",
+          "Oberkörper bleibt ruhig."
+        ]
+      }
     ]
   },
-  "3": {
-    "zone": "STARK",
+  {
+    "id": 3,
     "title": "Zweikampf bereit",
     "claim": "Kraft in Bewegung. Für den Kontakt.",
+    "accent": "#D08A22",
     "rounds": 3,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 45,
-    "ex": [
-      [
-        "Kniebeuge",
-        30,
-        "Tief und kontrolliert.",
-        "Kräftig hoch."
-      ],
-      [
-        "Seitlicher Ausfallschritt",
-        35,
-        "15 Sek. rechts, dann links.",
-        "Standbein bleibt stabil."
-      ],
-      [
-        "Rückwärtsschritt",
-        35,
-        "15 Sek. rechts, dann links.",
-        "Sicher wieder vor."
-      ],
-      [
-        "Unterarmstütz",
-        30,
-        "Körper bleibt lang.",
-        "Spannung halten."
-      ]
+    "exercises": [
+      {
+        "title": "Tiefe Position",
+        "duration": 30,
+        "steps": [
+          "Füsse etwas breiter.",
+          "Knie beugen. Brust bleibt oben.",
+          "Position ruhig halten."
+        ]
+      },
+      {
+        "title": "Seitlich drücken",
+        "duration": 30,
+        "steps": [
+          "Bleib tief.",
+          "Drück dich kräftig zur Seite.",
+          "In der Mitte wieder stabil."
+        ]
+      },
+      {
+        "title": "Stopp und halten",
+        "duration": 25,
+        "steps": [
+          "Drei kleine schnelle Schritte.",
+          "Sofort stoppen.",
+          "Zwei Sekunden stabil bleiben."
+        ]
+      },
+      {
+        "title": "Vor und zurück",
+        "duration": 35,
+        "steps": [
+          "Tief starten.",
+          "Zwei Schritte vor, zwei zurück.",
+          "Immer kontrolliert abbremsen."
+        ]
+      }
     ]
   },
-  "4": {
-    "zone": "SCHNELL",
-    "title": "Erster Schritt",
-    "claim": "Explosiv loskommen.",
-    "rounds": 4,
-    "pause": 10,
-    "roundPause": 10,
-    "breath": 40,
-    "ex": [
-      [
-        "Schnelle Füsse",
-        15,
-        "Kleine schnelle Schritte.",
-        "Locker auf den Füssen."
-      ],
-      [
-        "Knie hoch",
-        15,
-        "Knie schnell hoch.",
-        "Arme arbeiten mit."
-      ],
-      [
-        "Tief und los",
-        15,
-        "Tief starten.",
-        "Explosiv hoch und los."
-      ],
-      [
-        "Vor und zurück",
-        15,
-        "Zwei Schritte vor.",
-        "Sofort wieder zurück."
-      ]
-    ]
-  },
-  "5": {
-    "zone": "SCHNELL",
-    "title": "Schnelle Füsse",
-    "claim": "Frequenz und Richtungswechsel.",
-    "rounds": 4,
-    "pause": 10,
-    "roundPause": 10,
-    "breath": 40,
-    "ex": [
-      [
-        "Vor und zurück",
-        15,
-        "Schnell vor und zurück.",
-        "Oberkörper bleibt ruhig."
-      ],
-      [
-        "Seitlich schnell",
-        15,
-        "Kleine Schritte seitlich.",
-        "Beide Richtungen."
-      ],
-      [
-        "Überkreuz",
-        15,
-        "Beine kontrolliert kreuzen.",
-        "Rhythmus halten."
-      ],
-      [
-        "Seitliche Sprünge",
-        20,
-        "Seitlich abspringen.",
-        "Leise und stabil landen."
-      ]
-    ]
-  },
-  "6": {
-    "zone": "SCHNELL",
-    "title": "Bremsen & Los",
-    "claim": "Stoppen. Drehen. Neu starten.",
-    "rounds": 4,
-    "pause": 10,
-    "roundPause": 10,
-    "breath": 40,
-    "ex": [
-      [
-        "Schnell und Stopp",
-        15,
-        "Schnelle Füsse.",
-        "Auf Signal sofort still."
-      ],
-      [
-        "Seitlich und Stopp",
-        15,
-        "Seitlich schnell bewegen.",
-        "Stabil abbremsen."
-      ],
-      [
-        "Drehen und starten",
-        15,
-        "Halbe Drehung.",
-        "Sofort wieder beschleunigen."
-      ],
-      [
-        "Tief und explosiv",
-        15,
-        "Kurz tief gehen.",
-        "Schnell nach oben."
-      ]
-    ]
-  },
-  "7": {
-    "zone": "RUHIG",
-    "title": "Volle Kontrolle",
-    "claim": "Balance und Körpergefühl.",
+  {
+    "id": 4,
+    "title": "Beweglich bleiben",
+    "claim": "Locker bewegen. Besser drehen.",
+    "accent": "#7D8C5C",
     "rounds": 2,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 60,
-    "ex": [
-      [
-        "Einbeinstand",
-        45,
-        "20 Sek. links, dann rechts.",
-        "Blick auf einen Punkt."
-      ],
-      [
-        "Blickwechsel",
-        45,
-        "20 Sek. links, dann rechts.",
-        "Körper bleibt ruhig."
-      ],
-      [
-        "Antippen",
-        45,
-        "Vorne, Seite, hinten tippen.",
-        "Seite wechseln."
-      ],
-      [
-        "Einbeinige Beuge",
-        45,
-        "Kleine Bewegung.",
-        "Kontrolle vor Tiefe."
-      ]
+    "exercises": [
+      {
+        "title": "Locker werden",
+        "duration": 35,
+        "steps": [
+          "Schultern kreisen.",
+          "Arme kreisen.",
+          "Hüfte kreisen. Locker bleiben."
+        ]
+      },
+      {
+        "title": "Gross bewegen",
+        "duration": 35,
+        "steps": [
+          "Weit nach oben strecken.",
+          "Richtung Boden beugen.",
+          "Langsam wieder aufrichten."
+        ]
+      },
+      {
+        "title": "Drehen",
+        "duration": 35,
+        "steps": [
+          "Oberkörper nach links drehen.",
+          "Dann nach rechts.",
+          "Hüfte bleibt möglichst ruhig."
+        ]
+      },
+      {
+        "title": "Fliessend bewegen",
+        "duration": 40,
+        "steps": [
+          "Nach oben und unten.",
+          "Nach links und rechts.",
+          "Alles ruhig verbinden."
+        ]
+      }
     ]
   },
-  "8": {
-    "zone": "RUHIG",
-    "title": "Kopf ruhig",
-    "claim": "Koordination und Fokus.",
-    "rounds": 2,
+  {
+    "id": 5,
+    "title": "Schnell wie eine Welle",
+    "claim": "Schnelle Füsse. Sauberer Rhythmus.",
+    "accent": "#2D8FB8",
+    "rounds": 4,
+    "pause": 6,
+    "exercises": [
+      {
+        "title": "Knie hoch",
+        "duration": 20,
+        "steps": [
+          "Aufrecht bleiben.",
+          "Knie schnell hochziehen.",
+          "Leicht auf den Füssen bleiben."
+        ]
+      },
+      {
+        "title": "Schnelle Füsse",
+        "duration": 20,
+        "steps": [
+          "Kleine schnelle Schritte am Ort.",
+          "Arme locker mitnehmen.",
+          "Blick nach vorne."
+        ]
+      },
+      {
+        "title": "Seitlich tippen",
+        "duration": 20,
+        "steps": [
+          "Zwei Schritte nach rechts.",
+          "Zwei nach links.",
+          "Tief und leicht bleiben."
+        ]
+      },
+      {
+        "title": "Schnell und ruhig",
+        "duration": 20,
+        "steps": [
+          "Fünf Sekunden schnell.",
+          "Kurz kontrollieren.",
+          "Wieder beschleunigen."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Stark wie ein Fels",
+    "claim": "Stabil bleiben. Kraft kontrollieren.",
+    "accent": "#7B7165",
+    "rounds": 3,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 60,
-    "ex": [
-      [
-        "Balance und drehen",
-        45,
-        "Auf einem Bein stehen.",
-        "Nach 20 Sek. Seite wechseln."
-      ],
-      [
-        "Überkreuz",
-        30,
-        "Hand zum anderen Knie.",
-        "Ruhiger Rhythmus."
-      ],
-      [
-        "Weit greifen",
-        45,
-        "Auf einem Bein stehen.",
-        "Nach 20 Sek. Seite wechseln."
-      ],
-      [
-        "Aufstehen und stehen",
-        30,
-        "Ruhig aufstehen.",
-        "Oben drei Sekunden stabil."
-      ]
+    "exercises": [
+      {
+        "title": "Wandsitz",
+        "duration": 30,
+        "steps": [
+          "Rücken an die Wand.",
+          "Knie angenehm beugen.",
+          "Bauch fest. Ruhig atmen."
+        ]
+      },
+      {
+        "title": "Unterarmstütz",
+        "duration": 30,
+        "steps": [
+          "Unterarme auf den Boden.",
+          "Körper bleibt lang.",
+          "Bauch fest. Ruhig atmen."
+        ]
+      },
+      {
+        "title": "Seitstütz",
+        "duration": 20,
+        "steps": [
+          "Seitlich abstützen.",
+          "Hüfte anheben.",
+          "Nach der Hälfte Seite wechseln."
+        ]
+      },
+      {
+        "title": "Brücke halten",
+        "duration": 35,
+        "steps": [
+          "Rückenlage. Füsse aufstellen.",
+          "Hüfte anheben.",
+          "Position ruhig halten."
+        ]
+      }
     ]
   },
-  "9": {
-    "zone": "RUHIG",
+  {
+    "id": 7,
+    "title": "Reaktionskünstler",
+    "claim": "Wahrnehmen. Entscheiden. Los.",
+    "accent": "#B66B32",
+    "rounds": 4,
+    "pause": 6,
+    "exercises": [
+      {
+        "title": "Startsignal",
+        "duration": 20,
+        "steps": [
+          "Locker bereit stehen.",
+          "Beim Ton sofort tief gehen.",
+          "Wieder lösen und bereit sein."
+        ]
+      },
+      {
+        "title": "Richtung wählen",
+        "duration": 20,
+        "steps": [
+          "Blick nach vorne.",
+          "Beim Ton Seite wechseln.",
+          "Schnell starten, sauber stoppen."
+        ]
+      },
+      {
+        "title": "Drehen und bereit",
+        "duration": 20,
+        "steps": [
+          "Locker am Ort bewegen.",
+          "Beim Ton halbe Drehung.",
+          "Sofort stabile Position finden."
+        ]
+      },
+      {
+        "title": "Stopp",
+        "duration": 20,
+        "steps": [
+          "Schnelle Füsse.",
+          "Beim Ton sofort einfrieren.",
+          "Kurz stabil bleiben."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Balance Profi",
+    "claim": "Körper kontrollieren. Sicher bewegen.",
+    "accent": "#D2A53D",
+    "rounds": 3,
+    "pause": 7,
+    "exercises": [
+      {
+        "title": "Einbeinstand",
+        "duration": 30,
+        "steps": [
+          "Auf ein Bein stehen.",
+          "Punkt vor dir fixieren.",
+          "Nach der Hälfte Bein wechseln."
+        ]
+      },
+      {
+        "title": "Blick bewegen",
+        "duration": 30,
+        "steps": [
+          "Auf einem Bein bleiben.",
+          "Langsam links, rechts, oben, unten schauen.",
+          "Bein wechseln."
+        ]
+      },
+      {
+        "title": "Arme bewegen",
+        "duration": 30,
+        "steps": [
+          "Auf einem Bein stehen.",
+          "Arme vor, seitlich und hoch.",
+          "Ruhig bleiben. Bein wechseln."
+        ]
+      },
+      {
+        "title": "Balance in Bewegung",
+        "duration": 35,
+        "steps": [
+          "Auf einem Bein stehen.",
+          "Standbein leicht beugen.",
+          "Strecken. Dann Bein wechseln."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
     "title": "Runterfahren",
-    "claim": "Mobilität und Entspannung.",
+    "claim": "Mobilität. Ruhe. Fokus.",
+    "accent": "#2C6F78",
     "rounds": 2,
     "pause": 7,
-    "roundPause": 10,
-    "breath": 60,
-    "ex": [
-      [
-        "Tiefe Hocke",
-        35,
-        "Füsse bleiben am Boden.",
-        "Ruhig atmen."
-      ],
-      [
-        "Rücken rund und lang",
-        35,
-        "Rücken langsam rund.",
-        "Dann wieder lang."
-      ],
-      [
-        "Hüfte öffnen",
-        45,
-        "20 Sek. rechts, dann links.",
-        "Locker sinken lassen."
-      ],
-      [
-        "Kindstellung",
-        40,
-        "Po Richtung Fersen.",
-        "Lang und ruhig ausatmen."
-      ]
+    "exercises": [
+      {
+        "title": "Tiefe Hocke",
+        "duration": 35,
+        "steps": [
+          "Füsse bleiben am Boden.",
+          "Ruhig tief gehen.",
+          "Locker weiteratmen."
+        ]
+      },
+      {
+        "title": "Rücken rund und lang",
+        "duration": 35,
+        "steps": [
+          "Rücken langsam rund.",
+          "Dann wieder lang.",
+          "Bewegung ruhig führen."
+        ]
+      },
+      {
+        "title": "Hüfte öffnen",
+        "duration": 40,
+        "steps": [
+          "Ausfallschritt einnehmen.",
+          "Hüfte sanft nach vorne.",
+          "Nach der Hälfte Seite wechseln."
+        ]
+      },
+      {
+        "title": "Kindstellung",
+        "duration": 40,
+        "steps": [
+          "Po Richtung Fersen.",
+          "Arme nach vorne.",
+          "Lang und ruhig ausatmen."
+        ]
+      }
     ]
   }
-}
+]
