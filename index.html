@@ -1,1 +1,31 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071725"><meta name="description" content="10 Minuten on Top – Trainingswelt für junge Fussballer"><title>10 Minuten on Top</title><link rel="stylesheet" href="styles.css?v=clean2"></head><body><main id="app"></main><script src="app.js?v=clean2"></script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111820">
+  <title>10 Minuten on Top</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="world-wrap" aria-label="Trainingswelt">
+      <div class="world-stage">
+        <img class="world-img" src="./welt.jpg" alt="Illustrierte Trainingswelt mit neun Trainingsorten">
+        <button class="hot h1" data-training="1" aria-label="Training 1 Fester Stand"></button>
+        <button class="hot h2" data-training="2" aria-label="Training 2 Starker Körper"></button>
+        <button class="hot h3" data-training="3" aria-label="Training 3 Zweikampf bereit"></button>
+        <button class="hot h4" data-training="4" aria-label="Training 4 Beweglich bleiben"></button>
+        <button class="hot h5" data-training="5" aria-label="Training 5 Schnell wie eine Welle"></button>
+        <button class="hot h6" data-training="6" aria-label="Training 6 Stark wie ein Fels"></button>
+        <button class="hot h7" data-training="7" aria-label="Training 7 Reaktionskünstler"></button>
+        <button class="hot h8" data-training="8" aria-label="Training 8 Balance Profi"></button>
+        <button class="hot h9" data-training="9" aria-label="Training 9 Runterfahren"></button>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
