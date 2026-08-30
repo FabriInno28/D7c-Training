@@ -1,12 +1,12 @@
 {
   "name": "10 Minuten on Top",
   "short_name": "10 Minuten",
-  "description": "Ruhiges Bewegungstraining für junge Fussballerinnen und Fussballer.",
+  "description": "Neun Ganzkörpertrainings für 11- bis 12-jährige Jungs.",
   "lang": "de-CH",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#f5f0e5",
-  "theme_color": "#f5f0e5"
+  "theme_color": "#071824"
 }

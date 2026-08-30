@@ -1,31 +1,29 @@
 # 10 Minuten on Top
 
-Zehn Minuten Ganzkörpertraining für 11 bis 12 Jährige im eigenen Zimmer.
+Neun unterschiedliche Ganzkörpertrainings für 11- bis 12-jährige Jungs im eigenen Zimmer.
 
-## Aktueller Umfang
-
-Die neue Einstiegsseite führt zu neun vollständig ausgearbeiteten Ganzkörpertrainings:
+## Trainings
 
 1. Ganzkörper Start
-2. Stabil und schnell
-3. Kraft in Bewegung
-4. Mobil und wach
-5. Beine und Tempo
-6. Starke Mitte
-7. Reaktion und Kontrolle
-8. Leicht und stabil
-9. Ruhig und beweglich
+2. Kraft Basis
+3. Schnell und leise
+4. Beweglich und kraftvoll
+5. Rumpf und Haltung
+6. Beine und Balance
+7. Reaktion und Tempo
+8. Koordination
+9. Reset und Fokus
 
-Alle Trainings kombinieren Kraft, Beweglichkeit, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Die Übungsübersichten erklären Ausgangsposition, Bewegung, Qualitätsmerkmal und Seitenwechsel ausführlich. Während des Timers bleiben die Hinweise kurz und direkt. Trainings 2 bis 9 beginnen mit einer geführten Startminute, führen zweimal durch vier Bewegungen und enden mit einer ruhigen Schlussminute.
+Jede Einheit dauert exakt zehn Minuten: fünf Bewegungen in Runde eins, vier gesteigerte Bewegungen in Runde zwei und eine ruhige Schlussminute. Kraft, Beweglichkeit, Schnelligkeit, Balance und Konzentration werden mit unterschiedlichen Schwerpunkten verbunden.
 
-Alle Übungen verwenden eine durchgehende klassische Sportcomicwelt: derselbe Junge im gelb schwarzen Trainingsshirt, natürliche Körperproportionen, klare Konturen und eine gemeinsame Berglandschaft. Es gibt keine gemischten Zimmer, 3D oder Fantasiestile mehr.
+Alle 54 Comicillustrationen zeigen dieselbe Figur in demselben Zimmer. Die Übungen brauchen keine Geräte und sind für wenig Platz ausgelegt.
 
 ## Technischer Aufbau
 
-- `training.json` enthält alle neun Trainings und ihre Übungen.
-- `app.js` steuert Einstiegsseite, Routen, den durchgehenden Zehn Minuten Ablauf, Signaltöne und die bisherigen Einzeltrainer.
+- `training.json` enthält alle neun Trainings mit je fünf Übungen und einem Abschluss.
+- `app.js` steuert Übersicht, Trainingsseiten und den automatisch geführten Zehn-Minuten-Timer.
 - `styles.css` enthält das responsive Layout für Smartphone und Desktop.
-- `service-worker.js` macht Einstiegsseite, Trainings und Illustrationen nach dem ersten vollständigen Laden offline nutzbar.
+- `service-worker.js` macht die Anwendung nach dem ersten vollständigen Laden offline nutzbar.
 - Die Trainings sind direkt über `#training-1` bis `#training-9` erreichbar.
 
 Die Anwendung ist statisch und wird über GitHub Pages ausgeliefert.
