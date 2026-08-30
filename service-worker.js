@@ -1,16 +1,16 @@
-const CACHE_NAME = "on-top-fels-v3";
+const CACHE_NAME = "on-top-fels-v4";
 const CORE_FILES = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./app.js",
-  "./training.json",
+  "./styles.css?v=20260830-2",
+  "./app.js?v=20260830-2",
+  "./training.json?v=20260830-2",
   "./manifest.webmanifest",
-  "./world.jpg",
-  "./tiefe-hocke.jpg",
-  "./seitenstuetze.jpg",
-  "./beckenlift.jpg",
-  "./superman.jpg"
+  "./world.jpg?v=20260830-2",
+  "./tiefe-hocke.jpg?v=20260830-2",
+  "./seitenstuetze.jpg?v=20260830-2",
+  "./beckenlift.jpg?v=20260830-2",
+  "./superman.jpg?v=20260830-2"
 ];
 
 self.addEventListener("install", event => {

@@ -1,4 +1,5 @@
 const app = document.getElementById("app");
+const ASSET_REV = "20260830-2";
 
 let training = null;
 let activeRun = null;
@@ -9,7 +10,7 @@ init();
 
 async function init() {
   try {
-    const response = await fetch("./training.json", { cache: "no-cache" });
+    const response = await fetch(`./training.json?v=${ASSET_REV}`, { cache: "no-cache" });
     if (!response.ok) throw new Error(`Training konnte nicht geladen werden: ${response.status}`);
     training = await response.json();
     bindGlobalEvents();
@@ -78,7 +79,7 @@ function renderWorld() {
       </div>
       <div class="world-stage">
         <img
-          src="./world.jpg"
+          src="./world.jpg?v=${ASSET_REV}"
           alt="Die Trainingswelt mit neun Stationen. Station 6 heisst Stark wie ein Fels."
           width="1400"
           height="933"
@@ -165,7 +166,7 @@ function renderExerciseCard(exercise, index) {
 
       <div class="exercise-visual">
         <img
-          src="./${exercise.image}"
+          src="./${exercise.image}?v=${ASSET_REV}"
           alt="${exercise.alt}"
           width="${exercise.imageWidth}"
           height="${exercise.imageHeight}"
