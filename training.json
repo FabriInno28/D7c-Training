@@ -6,7 +6,7 @@
       "id": "tiefe-hocke",
       "title": "Tiefe Hocke",
       "duration": 45,
-      "image": "assets/tiefe-hocke.jpg",
+      "image": "tiefe-hocke.jpg",
       "steps": [
         "Füsse bleiben am Boden.",
         "Rücken aufrecht.",
@@ -17,7 +17,7 @@
       "id": "seitenstuetze",
       "title": "Seitenstütze",
       "duration": 35,
-      "image": "assets/seitenstuetze.jpg",
+      "image": "seitenstuetze.jpg",
       "steps": [
         "Ellbogen unter der Schulter.",
         "Körper bleibt in einer Linie.",
@@ -28,7 +28,7 @@
       "id": "beckenlift",
       "title": "Beckenlift",
       "duration": 40,
-      "image": "assets/beckenlift.jpg",
+      "image": "beckenlift.jpg",
       "steps": [
         "Rückenlage. Füsse hüftbreit.",
         "Gesäss anheben, bis der Körper eine Linie bildet.",
@@ -39,7 +39,7 @@
       "id": "superman",
       "title": "Superman",
       "duration": 40,
-      "image": "assets/superman.jpg",
+      "image": "superman.jpg",
       "steps": [
         "Auf den Bauch legen.",
         "Arme und Beine gleichzeitig anheben.",
