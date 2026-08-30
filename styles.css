@@ -117,12 +117,10 @@ img {
 
 .world-hotspot {
   position: absolute;
-  left: 53%;
-  top: 49%;
-  width: clamp(64px, 17%, 238px);
-  min-width: 64px;
+  width: clamp(50px, 13%, 190px);
+  min-width: 50px;
   min-height: 48px;
-  aspect-ratio: 1.75;
+  aspect-ratio: 1.55;
   transform: translate(-50%, -50%);
   border: 0;
   border-radius: 20px;
@@ -152,27 +150,23 @@ img {
   letter-spacing: 0.12em;
 }
 
-.world-start-button {
-  min-height: 52px;
-  border-radius: 14px;
-  padding: 12px 18px;
+.world-action span {
+  border-radius: 999px;
+  padding: 8px 11px;
   background: var(--yellow);
   color: var(--ink);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
-  font-size: 14px;
-  font-weight: 950;
-  letter-spacing: 0.025em;
-  transition: transform var(--ease), background var(--ease);
 }
 
-.world-start-button:hover {
-  transform: translateY(-2px);
-  background: #ffc535;
+.world-action strong {
+  color: var(--white);
+  font-size: clamp(13px, 3vw, 16px);
+  letter-spacing: 0.08em;
 }
 
 /* Trainingsseite */
 
 .training-shell {
+  --mission-accent: var(--teal);
   min-height: 100svh;
   background:
     radial-gradient(circle at 0 0, rgba(242, 181, 29, 0.08), transparent 32rem),
@@ -243,7 +237,7 @@ img {
 .eyebrow,
 .card-kicker {
   margin: 0 0 7px;
-  color: var(--teal);
+  color: var(--mission-accent);
   font-size: 12px;
   font-weight: 950;
   letter-spacing: 0.14em;
@@ -313,7 +307,7 @@ img {
 }
 
 .exercise-card.is-finished {
-  border-color: var(--teal);
+  border-color: var(--mission-accent);
 }
 
 .card-heading {
@@ -397,7 +391,7 @@ img {
 
 .focus-cue {
   margin: 13px 0 0;
-  color: var(--teal);
+  color: var(--mission-accent);
   font-size: 14px;
   font-weight: 850;
 }
@@ -466,7 +460,7 @@ img {
 
 .timer-cue {
   max-width: 145px;
-  color: var(--teal);
+  color: var(--mission-accent);
   font-size: 12px;
   font-weight: 950;
   line-height: 1.2;
@@ -487,14 +481,14 @@ img {
   height: 100%;
   transform-origin: left center;
   border-radius: inherit;
-  background: var(--teal);
+  background: var(--mission-accent);
   transition: transform 180ms linear;
 }
 
 .run-status {
   min-height: 1.4em;
   margin: 0 0 10px;
-  color: var(--teal);
+  color: var(--mission-accent);
   font-size: 14px;
   font-weight: 850;
 }
@@ -552,7 +546,7 @@ img {
 }
 
 .manual-finish strong {
-  color: var(--teal);
+  color: var(--mission-accent);
   font-size: 25px;
 }
 

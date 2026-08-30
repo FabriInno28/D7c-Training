@@ -1,6 +1,29 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-2";
+const ASSET_REV = "20260830-all-worlds";
 
+const WORLD_POINTS = {
+  1: [33, 31],
+  2: [50, 23],
+  3: [72, 24],
+  4: [81, 43],
+  5: [33, 54],
+  6: [53, 54],
+  7: [81, 64],
+  8: [35, 77],
+  9: [68, 83]
+};
+
+const DEFAULT_FINISH = {
+  title: "ZUM SCHLUSS",
+  steps: [
+    "Stell dich locker hin.",
+    "Atme dreimal ruhig durch die Nase ein.",
+    "Atme langsam durch den Mund aus."
+  ],
+  statement: "Ruhig werden. Du hast sauber trainiert."
+};
+
+let trainings = [];
 let training = null;
 let activeRun = null;
 let audioContext = null;
@@ -12,7 +35,10 @@ async function init() {
   try {
     const response = await fetch(`./training.json?v=${ASSET_REV}`, { cache: "no-cache" });
     if (!response.ok) throw new Error(`Training konnte nicht geladen werden: ${response.status}`);
-    training = await response.json();
+    trainings = await response.json();
+    if (!Array.isArray(trainings) || trainings.length !== 9) {
+      throw new Error("Die Trainingswelt ist unvollständig.");
+    }
     bindGlobalEvents();
     renderRoute();
     registerServiceWorker();
@@ -36,9 +62,9 @@ function handleClick(event) {
   const button = event.target.closest("[data-action]");
   if (!button) return;
 
-  const { action, exerciseId } = button.dataset;
+  const { action, exerciseId, trainingId } = button.dataset;
 
-  if (action === "open-training") navigateTo("training");
+  if (action === "open-training") navigateToTraining(Number(trainingId));
   if (action === "world") navigateTo("world");
   if (action === "start") startExercise(exerciseId);
   if (action === "pause") togglePause();
@@ -48,10 +74,15 @@ function handleClick(event) {
   if (action === "retry") init();
 }
 
+function navigateToTraining(station) {
+  stopRun();
+  history.pushState({ station }, "", `#training-${station}`);
+  renderRoute();
+}
+
 function navigateTo(view) {
   stopRun();
-  const hash = view === "training" ? "#fels" : "#welt";
-  history.pushState({ view }, "", hash);
+  history.pushState({ view }, "", "#welt");
   renderRoute();
 }
 
@@ -59,9 +90,16 @@ function renderRoute() {
   stopRun();
   if (!training) return;
 
-  if (location.hash === "#fels") {
-    renderTraining();
+  const legacyStation = location.hash === "#fels" ? 6 : null;
+  const routeMatch = location.hash.match(/^#training-([1-9])$/);
+  const station = legacyStation || Number(routeMatch?.[1]);
+
+  if (station) {
+    training = trainings.find(item => item.station === station);
+    if (training) renderTraining();
+    else renderWorld();
   } else {
+    training = null;
     renderWorld();
   }
 
@@ -74,38 +112,48 @@ function renderWorld() {
     <section class="world-screen" aria-labelledby="world-title">
       <div class="world-copy">
         <p class="world-kicker">DEIN TRAINING FÜR HEUTE</p>
-        <h1 id="world-title">Finde den Fels.</h1>
-        <p>Station 6 wartet auf dich.</p>
+        <h1 id="world-title">Wähle deine Station.</h1>
+        <p>Tippe auf ein Training in der Welt.</p>
       </div>
       <div class="world-stage">
         <img
           src="./world.jpg?v=${ASSET_REV}"
-          alt="Die Trainingswelt mit neun Stationen. Station 6 heisst Stark wie ein Fels."
+          alt="Die Trainingswelt mit neun auswählbaren Stationen."
           width="1400"
           height="933"
           fetchpriority="high"
         >
-        <button
-          class="world-hotspot"
-          type="button"
-          data-action="open-training"
-          aria-label="Station 6, Stark wie ein Fels, öffnen"
-        ></button>
+        ${trainings.map(renderWorldHotspot).join("")}
       </div>
       <div class="world-action">
-        <span>STATION 06</span>
-        <button class="world-start-button" type="button" data-action="open-training">
-          STARK WIE EIN FELS STARTEN
-        </button>
+        <span>9 TRAININGS</span>
+        <strong>TIPPE AUF EINE STATION</strong>
       </div>
     </section>
   `;
 }
 
+function renderWorldHotspot(item) {
+  const [left, top] = WORLD_POINTS[item.station];
+  return `
+    <button
+      class="world-hotspot"
+      type="button"
+      data-action="open-training"
+      data-training-id="${item.station}"
+      data-station="${item.station}"
+      style="left:${left}%;top:${top}%"
+      aria-label="Station ${item.station}, ${item.title}, öffnen"
+      title="${item.station} · ${item.title}"
+    ></button>
+  `;
+}
+
 function renderTraining() {
+  const finish = training.finish || DEFAULT_FINISH;
   document.title = `${training.shortTitle} · 10 Minuten on Top`;
   app.innerHTML = `
-    <div class="training-shell">
+    <div class="training-shell" style="--mission-accent:${training.accent}">
       <header class="topbar">
         <div class="brand" aria-label="10 Minuten on Top">
           <span class="brand-badge" aria-hidden="true">10′</span>
@@ -137,11 +185,11 @@ function renderTraining() {
         <div class="finish-number" aria-hidden="true">✓</div>
         <div>
           <p class="eyebrow">RUHIG WERDEN</p>
-          <h2 id="finish-title">${training.finish.title}</h2>
+          <h2 id="finish-title">${finish.title}</h2>
           <ol>
-            ${training.finish.steps.map(step => `<li>${step}</li>`).join("")}
+            ${finish.steps.map(step => `<li>${step}</li>`).join("")}
           </ol>
-          <p class="finish-statement">${training.finish.statement}</p>
+          <p class="finish-statement">${finish.statement}</p>
           <button class="finish-button" type="button" data-action="world">ZURÜCK ZUR WELT</button>
         </div>
       </section>
@@ -179,7 +227,7 @@ function renderExerciseCard(exercise, index) {
         <ul class="exercise-steps">
           ${exercise.steps.map(step => `<li>${step}</li>`).join("")}
         </ul>
-        <p class="focus-cue">${exercise.focus}</p>
+        ${exercise.focus ? `<p class="focus-cue">${exercise.focus}</p>` : ""}
 
         <div class="exercise-controls">
           <span class="measure">${measure}</span>
@@ -243,6 +291,8 @@ async function startExercise(exerciseId) {
     cueAtRemaining: exercise.cueAtRemaining || null,
     cue: exercise.cue || "",
     cuePlayed: false,
+    signalEvery: exercise.signalEvery || null,
+    lastSignalElapsed: 0,
     interval: null
   };
 
@@ -255,7 +305,7 @@ function timerPanelMarkup(exercise, remaining) {
   return `
     <div class="timer-readout" role="timer" aria-live="off">
       <span class="clock" data-clock>${formatTime(remaining)}</span>
-      <span class="timer-cue" data-cue>${exercise.cue ? "HALTE DEINE POSITION" : "RUHIG WEITER"}</span>
+      <span class="timer-cue" data-cue>${exercise.signalEvery ? "BEIM TON REAGIEREN" : exercise.cue ? "HALTE DEINE POSITION" : "RUHIG WEITER"}</span>
     </div>
     <div class="timer-track" aria-hidden="true">
       <div class="timer-fill" data-fill style="transform:scaleX(1)"></div>
@@ -276,6 +326,17 @@ function updateTimerFromClock() {
   if (remaining !== activeRun.remaining) {
     activeRun.remaining = remaining;
     updateTimerDisplay();
+
+    const elapsed = activeRun.total - remaining;
+    if (
+      activeRun.signalEvery &&
+      elapsed > 0 &&
+      elapsed % activeRun.signalEvery === 0 &&
+      activeRun.lastSignalElapsed !== elapsed
+    ) {
+      activeRun.lastSignalElapsed = elapsed;
+      playTone([720]);
+    }
   }
 
   if (

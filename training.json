@@ -1,85 +1,673 @@
-{
-  "id": "fels",
-  "station": 6,
-  "title": "STARK WIE EIN FELS",
-  "shortTitle": "FELS",
-  "statement": "Ich bin stark und habe eine starke Mitte.",
-  "intro": "Vier ruhige Übungen. Sauber bewegen ist wichtiger als schnell sein.",
-  "exercises": [
-    {
-      "id": "tiefe-hocke",
-      "title": "Tiefe Hocke",
-      "mode": "repetition",
-      "repetitions": 5,
-      "image": "tiefe-hocke.jpg",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
-      "alt": "Der Junge hält eine tiefe Hocke in einer Berglandschaft.",
-      "steps": [
-        "Füsse bleiben ganz am Boden.",
-        "Rücken bleibt aufrecht.",
-        "Knie zeigen nach aussen."
-      ],
-      "focus": "Fünfmal langsam und sauber."
-    },
-    {
-      "id": "seitenstuetze",
-      "title": "Seitenstütze",
-      "mode": "timer",
-      "duration": 35,
-      "cueAtRemaining": 18,
-      "cue": "SEITE WECHSELN",
-      "image": "seitenstuetze.jpg",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
-      "alt": "Der Junge hält einen geraden Seitenstütz in einer Berglandschaft.",
-      "steps": [
-        "Ellbogen bleibt unter der Schulter.",
-        "Körper bildet eine gerade Linie.",
-        "Bauch und Gesäss sind angespannt."
-      ],
-      "focus": "Beim Signal die Seite wechseln."
-    },
-    {
-      "id": "beckenlift",
-      "title": "Beckenlift",
-      "mode": "timer",
-      "duration": 40,
-      "image": "beckenlift.jpg",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
-      "alt": "Der Junge hält den Beckenlift in einer Berglandschaft.",
-      "steps": [
-        "Füsse stehen hüftbreit.",
-        "Gesäss langsam anheben.",
-        "Kontrolliert wieder senken."
-      ],
-      "focus": "Ruhig weiteratmen."
-    },
-    {
-      "id": "superman",
-      "title": "Superman",
-      "mode": "timer",
-      "duration": 40,
-      "image": "superman.jpg",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
-      "alt": "Der Junge hält die Superman-Position in einer Berglandschaft.",
-      "steps": [
-        "Auf den Bauch legen.",
-        "Arme und Beine leicht anheben.",
-        "Kurz halten und langsam senken."
-      ],
-      "focus": "Kleine, kontrollierte Bewegung."
-    }
-  ],
-  "finish": {
-    "title": "ZUM SCHLUSS",
-    "steps": [
-      "Stell dich locker hin.",
-      "Atme dreimal ruhig durch die Nase ein.",
-      "Atme langsam durch den Mund aus."
+[
+  {
+    "id": "fester-stand",
+    "station": 1,
+    "title": "FESTER STAND",
+    "shortTitle": "STAND",
+    "statement": "Stabile Beine. Sicherer Stand.",
+    "intro": "Vier Übungen. Sauber bewegen ist wichtiger als schnell sein.",
+    "accent": "#E5A900",
+    "exercises": [
+      {
+        "id": "s01-kniebeuge",
+        "title": "Kniebeuge",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s01-kniebeuge.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Kniebeuge in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Füsse etwa hüftbreit.",
+          "Po nach hinten. Knie stabil.",
+          "Ruhig wieder hoch."
+        ]
+      },
+      {
+        "id": "s01-ruckwartsschritt",
+        "title": "Rückwärtsschritt",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s01-rueckwaertsschritt.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Rückwärtsschritt in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Grossen Schritt zurück.",
+          "Vorderes Knie bleibt stabil.",
+          "Kräftig wieder nach vorne."
+        ],
+        "cueAtRemaining": 15,
+        "cue": "SEITE WECHSELN"
+      },
+      {
+        "id": "s01-einbeinige-beuge",
+        "title": "Einbeinige Beuge",
+        "mode": "timer",
+        "duration": 25,
+        "image": "s01-einbeinige-beuge.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Einbeinige Beuge in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Steh auf einem Bein.",
+          "Beuge dich leicht nach vorne.",
+          "Rücken lang. Zurück in die Mitte."
+        ]
+      },
+      {
+        "id": "s01-beckenheben",
+        "title": "Beckenheben",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s01-beckenheben.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Beckenheben in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Leg dich auf den Rücken.",
+          "Füsse aufstellen. Hüfte hoch.",
+          "Po und Bauch fest. Ruhig senken."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "starker-koerper",
+    "station": 2,
+    "title": "STARKER KÖRPER",
+    "shortTitle": "KÖRPER",
+    "statement": "Starker Rumpf. Stabil im Kontakt.",
+    "intro": "Vier Übungen. Halte deinen Körper ruhig und kontrolliert.",
+    "accent": "#C58B27",
+    "exercises": [
+      {
+        "id": "s02-fels-stehen",
+        "title": "Fels stehen",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s02-fels-stehen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Fels stehen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Stell dich hüftbreit hin.",
+          "Knie leicht beugen.",
+          "Bauch fest. Position halten."
+        ]
+      },
+      {
+        "id": "s02-starker-oberkorper",
+        "title": "Starker Oberkörper",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s02-starker-oberkoerper.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Starker Oberkörper in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Geh in die Stützposition.",
+          "Rücken und Beine bleiben gerade.",
+          "Ruhig weiteratmen."
+        ]
+      },
+      {
+        "id": "s02-gewicht-verlagern",
+        "title": "Gewicht verlagern",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s02-gewicht-verlagern.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Gewicht verlagern in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Bleib tief.",
+          "Gewicht langsam nach links.",
+          "Dann nach rechts. Stabil bleiben."
+        ]
+      },
+      {
+        "id": "s02-stabil-bewegen",
+        "title": "Stabil bewegen",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s02-stabil-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Stabil bewegen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Bleib tief.",
+          "Kleine Schritte vor, zurück, seitlich.",
+          "Oberkörper bleibt ruhig."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zweikampf-bereit",
+    "station": 3,
+    "title": "ZWEIKAMPF BEREIT",
+    "shortTitle": "ZWEIKAMPF",
+    "statement": "Kraft in Bewegung. Für den Kontakt.",
+    "intro": "Vier Übungen. Starte kraftvoll und stoppe immer kontrolliert.",
+    "accent": "#D08A22",
+    "exercises": [
+      {
+        "id": "s03-tiefe-position",
+        "title": "Tiefe Position",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s03-tiefe-position.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Tiefe Position in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Füsse etwas breiter.",
+          "Knie beugen. Brust bleibt oben.",
+          "Position ruhig halten."
+        ]
+      },
+      {
+        "id": "s03-seitlich-drucken",
+        "title": "Seitlich drücken",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s03-seitlich-druecken.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Seitlich drücken in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Bleib tief.",
+          "Drück dich kräftig zur Seite.",
+          "In der Mitte wieder stabil."
+        ]
+      },
+      {
+        "id": "s03-stopp-und-halten",
+        "title": "Stopp und halten",
+        "mode": "timer",
+        "duration": 25,
+        "image": "s03-stopp-halten.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Stopp und halten in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Drei kleine schnelle Schritte.",
+          "Sofort stoppen.",
+          "Zwei Sekunden stabil bleiben."
+        ]
+      },
+      {
+        "id": "s03-vor-und-zuruck",
+        "title": "Vor und zurück",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s03-vor-zurueck.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Vor und zurück in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Tief starten.",
+          "Zwei Schritte vor, zwei zurück.",
+          "Immer kontrolliert abbremsen."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "beweglich-bleiben",
+    "station": 4,
+    "title": "BEWEGLICH BLEIBEN",
+    "shortTitle": "BEWEGLICH",
+    "statement": "Locker bewegen. Besser drehen.",
+    "intro": "Vier ruhige Bewegungen. Gehe nur so weit, wie es angenehm ist.",
+    "accent": "#7D8C5C",
+    "exercises": [
+      {
+        "id": "s04-locker-werden",
+        "title": "Locker werden",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s04-locker-werden.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Locker werden in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Schultern kreisen.",
+          "Arme kreisen.",
+          "Hüfte kreisen. Locker bleiben."
+        ]
+      },
+      {
+        "id": "s04-gross-bewegen",
+        "title": "Gross bewegen",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s04-gross-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Gross bewegen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Weit nach oben strecken.",
+          "Richtung Boden beugen.",
+          "Langsam wieder aufrichten."
+        ]
+      },
+      {
+        "id": "s04-drehen",
+        "title": "Drehen",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s04-drehen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Drehen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Oberkörper nach links drehen.",
+          "Dann nach rechts.",
+          "Hüfte bleibt möglichst ruhig."
+        ]
+      },
+      {
+        "id": "s04-fliessend-bewegen",
+        "title": "Fliessend bewegen",
+        "mode": "timer",
+        "duration": 40,
+        "image": "s04-fliessend-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Fliessend bewegen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Nach oben und unten.",
+          "Nach links und rechts.",
+          "Alles ruhig verbinden."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "schnell-wie-eine-welle",
+    "station": 5,
+    "title": "SCHNELL WIE EINE WELLE",
+    "shortTitle": "WELLE",
+    "statement": "Schnelle Füsse. Sauberer Rhythmus.",
+    "intro": "Vier kurze Übungen. Bleib leicht, leise und kontrolliert.",
+    "accent": "#2D8FB8",
+    "exercises": [
+      {
+        "id": "s05-knie-hoch",
+        "title": "Knie hoch",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s05-knie-hoch.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Knie hoch in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Aufrecht bleiben.",
+          "Knie schnell hochziehen.",
+          "Leicht auf den Füssen bleiben."
+        ]
+      },
+      {
+        "id": "s05-schnelle-fusse",
+        "title": "Schnelle Füsse",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s05-schnelle-fuesse.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Schnelle Füsse in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Kleine schnelle Schritte am Ort.",
+          "Arme locker mitnehmen.",
+          "Blick nach vorne."
+        ]
+      },
+      {
+        "id": "s05-seitlich-tippen",
+        "title": "Seitlich tippen",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s05-seitlich-tippen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Seitlich tippen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Zwei Schritte nach rechts.",
+          "Zwei nach links.",
+          "Tief und leicht bleiben."
+        ]
+      },
+      {
+        "id": "s05-schnell-und-ruhig",
+        "title": "Schnell und ruhig",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s05-schnell-ruhig.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Schnell und ruhig in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Fünf Sekunden schnell.",
+          "Kurz kontrollieren.",
+          "Wieder beschleunigen."
+        ],
+        "signalEvery": 5
+      }
+    ]
+  },
+  {
+    "id": "fels",
+    "station": 6,
+    "title": "STARK WIE EIN FELS",
+    "shortTitle": "FELS",
+    "statement": "Ich bin stark und habe eine starke Mitte.",
+    "intro": "Vier ruhige Übungen. Sauber bewegen ist wichtiger als schnell sein.",
+    "exercises": [
+      {
+        "id": "tiefe-hocke",
+        "title": "Tiefe Hocke",
+        "mode": "repetition",
+        "repetitions": 5,
+        "image": "tiefe-hocke.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge hält eine tiefe Hocke in einer Berglandschaft.",
+        "steps": [
+          "Füsse bleiben ganz am Boden.",
+          "Rücken bleibt aufrecht.",
+          "Knie zeigen nach aussen."
+        ],
+        "focus": "Fünfmal langsam und sauber."
+      },
+      {
+        "id": "seitenstuetze",
+        "title": "Seitenstütze",
+        "mode": "timer",
+        "duration": 35,
+        "cueAtRemaining": 18,
+        "cue": "SEITE WECHSELN",
+        "image": "seitenstuetze.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge hält einen geraden Seitenstütz in einer Berglandschaft.",
+        "steps": [
+          "Ellbogen bleibt unter der Schulter.",
+          "Körper bildet eine gerade Linie.",
+          "Bauch und Gesäss sind angespannt."
+        ],
+        "focus": "Beim Signal die Seite wechseln."
+      },
+      {
+        "id": "beckenlift",
+        "title": "Beckenlift",
+        "mode": "timer",
+        "duration": 40,
+        "image": "beckenlift.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge hält den Beckenlift in einer Berglandschaft.",
+        "steps": [
+          "Füsse stehen hüftbreit.",
+          "Gesäss langsam anheben.",
+          "Kontrolliert wieder senken."
+        ],
+        "focus": "Ruhig weiteratmen."
+      },
+      {
+        "id": "superman",
+        "title": "Superman",
+        "mode": "timer",
+        "duration": 40,
+        "image": "superman.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge hält die Superman-Position in einer Berglandschaft.",
+        "steps": [
+          "Auf den Bauch legen.",
+          "Arme und Beine leicht anheben.",
+          "Kurz halten und langsam senken."
+        ],
+        "focus": "Kleine, kontrollierte Bewegung."
+      }
     ],
-    "statement": "Stark heisst: ruhig bleiben und sauber bewegen."
+    "finish": {
+      "title": "ZUM SCHLUSS",
+      "steps": [
+        "Stell dich locker hin.",
+        "Atme dreimal ruhig durch die Nase ein.",
+        "Atme langsam durch den Mund aus."
+      ],
+      "statement": "Stark heisst: ruhig bleiben und sauber bewegen."
+    },
+    "accent": "#2F7D86"
+  },
+  {
+    "id": "reaktionskuenstler",
+    "station": 7,
+    "title": "REAKTIONSKÜNSTLER",
+    "shortTitle": "REAKTION",
+    "statement": "Wahrnehmen. Entscheiden. Los.",
+    "intro": "Vier kurze Aufgaben. Reagiere auf den Ton und stoppe sauber.",
+    "accent": "#B66B32",
+    "exercises": [
+      {
+        "id": "s07-startsignal",
+        "title": "Startsignal",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s07-startsignal.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Startsignal in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Locker bereit stehen.",
+          "Beim Ton sofort tief gehen.",
+          "Wieder lösen und bereit sein."
+        ],
+        "signalEvery": 4
+      },
+      {
+        "id": "s07-richtung-wahlen",
+        "title": "Richtung wählen",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s07-richtung-waehlen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Richtung wählen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Blick nach vorne.",
+          "Beim Ton Seite wechseln.",
+          "Schnell starten, sauber stoppen."
+        ],
+        "signalEvery": 4
+      },
+      {
+        "id": "s07-drehen-und-bereit",
+        "title": "Drehen und bereit",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s07-drehen-bereit.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Drehen und bereit in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Locker am Ort bewegen.",
+          "Beim Ton halbe Drehung.",
+          "Sofort stabile Position finden."
+        ],
+        "signalEvery": 4
+      },
+      {
+        "id": "s07-stopp",
+        "title": "Stopp",
+        "mode": "timer",
+        "duration": 20,
+        "image": "s07-stopp.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Stopp in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Schnelle Füsse.",
+          "Beim Ton sofort einfrieren.",
+          "Kurz stabil bleiben."
+        ],
+        "signalEvery": 4
+      }
+    ]
+  },
+  {
+    "id": "balance-profi",
+    "station": 8,
+    "title": "BALANCE PROFI",
+    "shortTitle": "BALANCE",
+    "statement": "Körper kontrollieren. Sicher bewegen.",
+    "intro": "Vier ruhige Übungen. Wechsle beim Signal das Standbein.",
+    "accent": "#D2A53D",
+    "exercises": [
+      {
+        "id": "s08-einbeinstand",
+        "title": "Einbeinstand",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s08-einbeinstand.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Einbeinstand in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Auf ein Bein stehen.",
+          "Punkt vor dir fixieren.",
+          "Nach der Hälfte Bein wechseln."
+        ],
+        "cueAtRemaining": 15,
+        "cue": "BEIN WECHSELN"
+      },
+      {
+        "id": "s08-blick-bewegen",
+        "title": "Blick bewegen",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s08-blick-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Blick bewegen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Auf einem Bein bleiben.",
+          "Langsam links, rechts, oben, unten schauen.",
+          "Bein wechseln."
+        ],
+        "cueAtRemaining": 15,
+        "cue": "BEIN WECHSELN"
+      },
+      {
+        "id": "s08-arme-bewegen",
+        "title": "Arme bewegen",
+        "mode": "timer",
+        "duration": 30,
+        "image": "s08-arme-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Arme bewegen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Auf einem Bein stehen.",
+          "Arme vor, seitlich und hoch.",
+          "Ruhig bleiben. Bein wechseln."
+        ],
+        "cueAtRemaining": 15,
+        "cue": "BEIN WECHSELN"
+      },
+      {
+        "id": "s08-balance-in-bewegung",
+        "title": "Balance in Bewegung",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s08-balance-bewegung.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Balance in Bewegung in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Auf einem Bein stehen.",
+          "Standbein leicht beugen.",
+          "Strecken. Dann Bein wechseln."
+        ],
+        "cueAtRemaining": 18,
+        "cue": "BEIN WECHSELN"
+      }
+    ]
+  },
+  {
+    "id": "runterfahren",
+    "station": 9,
+    "title": "RUNTERFAHREN",
+    "shortTitle": "RUHE",
+    "statement": "Mobilität. Ruhe. Fokus.",
+    "intro": "Vier ruhige Bewegungen. Atme locker und ohne Druck.",
+    "accent": "#2C6F78",
+    "exercises": [
+      {
+        "id": "s09-tiefe-hocke",
+        "title": "Tiefe Hocke",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s09-tiefe-hocke.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Tiefe Hocke in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Füsse bleiben am Boden.",
+          "Ruhig tief gehen.",
+          "Locker weiteratmen."
+        ]
+      },
+      {
+        "id": "s09-rucken-rund-und-lang",
+        "title": "Rücken rund und lang",
+        "mode": "timer",
+        "duration": 35,
+        "image": "s09-ruecken-rund-lang.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Rücken rund und lang in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Rücken langsam rund.",
+          "Dann wieder lang.",
+          "Bewegung ruhig führen."
+        ]
+      },
+      {
+        "id": "s09-hufte-offnen",
+        "title": "Hüfte öffnen",
+        "mode": "timer",
+        "duration": 40,
+        "image": "s09-huefte-oeffnen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Hüfte öffnen in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Ausfallschritt einnehmen.",
+          "Hüfte sanft nach vorne.",
+          "Nach der Hälfte Seite wechseln."
+        ],
+        "cueAtRemaining": 20,
+        "cue": "SEITE WECHSELN"
+      },
+      {
+        "id": "s09-kindstellung",
+        "title": "Kindstellung",
+        "mode": "timer",
+        "duration": 40,
+        "image": "s09-kindstellung.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt Kindstellung in einer ruhigen Berglandschaft.",
+        "steps": [
+          "Po Richtung Fersen.",
+          "Arme nach vorne.",
+          "Lang und ruhig ausatmen."
+        ]
+      }
+    ]
   }
-}
+]
