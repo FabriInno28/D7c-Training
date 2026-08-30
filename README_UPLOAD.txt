@@ -1,16 +1,12 @@
-FELS MASTER – ALLES IN EINEM ORDNER
+FELS MASTER – BILDER DIREKT EINGEBETTET
 
-Kein Unterordner nötig.
+Diese Version hat KEINE externen Bilddateien.
+Alle Bilder, CSS, JavaScript und Trainingsdaten sind direkt in index.html eingebettet.
 
-Den gesamten Inhalt direkt ins Hauptverzeichnis von D7c-Training hochladen.
-Bestehende Dateien mit gleichem Namen ersetzen.
+Für GitHub:
+1. index.html ins Hauptverzeichnis von D7c-Training hochladen und bestehende index.html ersetzen.
+2. .nojekyll belassen/hochladen.
+3. GitHub Pages neu laden.
+4. Falls nötig: ?v=fels-embedded-1
 
-Die Bilder liegen direkt neben index.html:
-world.jpg
-tiefe-hocke.jpg
-seitenstuetze.jpg
-beckenlift.jpg
-superman.jpg
-
-Bei Cache-Problemen:
-?v=fels-flat-1
+Damit können keine Bildpfade mehr kaputtgehen.
