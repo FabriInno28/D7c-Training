@@ -1,14 +1,20 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-t01-anleitung-v2";
+const ASSET_REV = "20260830-alle-trainings-v3";
 
 const DEFAULT_FINISH = {
-  title: "ZUM SCHLUSS",
+  title: "ATMUNG UND FOKUS",
+  image: "t01-atmung-fokus.jpg",
+  imageWidth: 1536,
+  imageHeight: 1024,
+  alt: "Der Junge steht ruhig und konzentriert in seinem Zimmer und atmet bewusst.",
   steps: [
-    "Stell dich locker hin.",
-    "Atme dreimal ruhig durch die Nase ein.",
-    "Atme langsam durch den Mund aus."
+    "Stell die Füsse locker auf und lass die Schultern sinken.",
+    "Richte den Blick ruhig auf einen festen Punkt.",
+    "Vier Sekunden durch die Nase einatmen.",
+    "Sechs Sekunden langsam ausatmen.",
+    "Wiederhole den Atemrhythmus bis zum Schlusssignal."
   ],
-  statement: "Ruhig werden. Du hast sauber trainiert."
+  statement: "Training beendet. Ruhig werden und sauber abschliessen."
 };
 
 let trainings = [];
@@ -90,8 +96,7 @@ function renderRoute() {
   if (station) {
     training = trainings.find(item => item.station === station);
     if (!training) return renderHome();
-    if (training.station === 1) renderProgramTraining();
-    else renderLegacyTraining();
+    renderProgramTraining();
   } else {
     training = null;
     renderHome();
@@ -175,7 +180,7 @@ function renderHome() {
               <p class="home-kicker">DIE NÄCHSTEN EINHEITEN</p>
               <h2 id="library-title">Trainings 02 bis 09</h2>
             </div>
-            <p>Diese Einheiten funktionieren weiterhin. Inhalt und Bilder werden als Nächstes im neuen Stil überarbeitet.</p>
+            <p>Acht weitere Ganzkörpertrainings. Jedes verbindet Kraft, Beweglichkeit, Tempo und Kontrolle in einem geführten Ablauf von zehn Minuten.</p>
           </div>
 
           <div class="archive-grid">
@@ -197,7 +202,7 @@ function renderArchiveCard(item) {
     <button class="archive-card" type="button" data-action="open-training" data-training-id="${item.station}">
       <span class="archive-number">${String(item.station).padStart(2, "0")}</span>
       <span class="archive-copy">
-        <small>BISHERIGE VERSION</small>
+        <small>10 MINUTEN · GANZKÖRPER</small>
         <strong>${item.title}</strong>
         <span>${item.statement}</span>
       </span>
@@ -217,12 +222,16 @@ function topbarMarkup(showBack = true) {
         <button class="back-button" type="button" data-action="home">
           <span aria-hidden="true">←</span> ZUR ÜBERSICHT
         </button>
-      ` : `<span class="topbar-note">TRAINING 01 IST BEREIT</span>`}
+      ` : `<span class="topbar-note">NEUN TRAININGS SIND BEREIT</span>`}
     </header>
   `;
 }
 
 function renderProgramTraining() {
+  const finish = training.finish || DEFAULT_FINISH;
+  const exerciseCount = training.exercises.length;
+  const heroImage = training.heroImage || training.exercises[0].image;
+  const heroAlt = training.heroAlt || training.exercises[0].alt;
   document.title = `${training.title} · 10 Minuten on Top`;
   app.innerHTML = `
     <div class="training-shell new-training-shell" style="--mission-accent:${training.accent}">
@@ -231,14 +240,14 @@ function renderProgramTraining() {
       <main>
         <section class="new-training-hero" aria-labelledby="training-title">
           <div class="new-training-copy">
-            <p class="eyebrow">TRAINING 01 · KOMPLETT NEU</p>
+            <p class="eyebrow">TRAINING ${String(training.station).padStart(2, "0")} · GANZKÖRPER</p>
             <h1 id="training-title">${training.title}</h1>
             <p class="statement">${training.statement}</p>
             <p class="intro-text">${training.intro}</p>
 
             <div class="training-stats" aria-label="Dauer und Ausstattung">
               <span><strong>10</strong> MINUTEN</span>
-              <span><strong>5</strong> BEWEGUNGEN</span>
+              <span><strong>${exerciseCount}</strong> BEWEGUNGEN</span>
               <span><strong>0</strong> GERÄTE</span>
             </div>
 
@@ -251,8 +260,8 @@ function renderProgramTraining() {
 
           <figure class="new-training-visual">
             <img
-              src="./t01-ausfallschritt-drehung.jpg?v=${ASSET_REV}"
-              alt="Ein Junge zeigt einen Ausfallschritt mit Drehung in seinem Zimmer."
+              src="./${heroImage}?v=${ASSET_REV}"
+              alt="${heroAlt}"
               width="1536"
               height="1024"
               fetchpriority="high"
@@ -271,16 +280,18 @@ function renderProgramTraining() {
           <div class="section-heading">
             <div>
               <p class="home-kicker">DEIN ABLAUF</p>
-              <h2 id="overview-title">Fünf klare Bewegungen</h2>
+              <h2 id="overview-title">${exerciseCount} klare Bewegungen</h2>
             </div>
-            <p>Jede Bewegung ist Schritt für Schritt erklärt. Bei einseitigen Übungen wechselst du regelmässig rechts und links. Während des Trainings bleiben die Hinweise bewusst kurz.</p>
+            <p>Jede Bewegung ist Schritt für Schritt erklärt. Bei einseitigen Übungen wechselst du regelmässig rechts und links. Runde zwei bringt eine kleine, kontrollierte Steigerung.</p>
           </div>
+
+          ${training.prepare ? renderPreparationPreview(training.prepare) : ""}
 
           <div class="program-card-grid">
             ${training.exercises.map(renderProgramCard).join("")}
           </div>
 
-          ${renderFinishPreview(training.finish)}
+          ${renderFinishPreview(finish)}
 
           <div class="bottom-start">
             <div>
@@ -314,7 +325,7 @@ function renderProgramCard(exercise, index) {
       </div>
       <div class="program-card-copy">
         <div class="program-card-meta">
-          <span>${exercise.category}</span>
+          <span>${exercise.category || "GANZKÖRPER"}</span>
           <strong>45 SEK</strong>
         </div>
         <h3>${exercise.title}</h3>
@@ -360,10 +371,35 @@ function renderFinishPreview(finish) {
   `;
 }
 
+function renderPreparationPreview(prepare) {
+  return `
+    <article class="preparation-preview">
+      <div>
+        <p class="home-kicker">MINUTE 1 · VORBEREITUNG</p>
+        <h3>${prepare.title}</h3>
+      </div>
+      <p>${prepare.cue}</p>
+    </article>
+  `;
+}
+
 function buildProgramSegments() {
   const segments = [];
+  const finish = training.finish || DEFAULT_FINISH;
   const firstRound = training.exercises;
-  const secondRound = training.exercises.slice(0, 4);
+  const secondRound = training.station === 1 ? training.exercises.slice(0, 4) : training.exercises;
+
+  if (training.prepare) {
+    segments.push({
+      kind: "prepare",
+      duration: 60,
+      label: "MINUTE 1 · VORBEREITUNG",
+      title: training.prepare.title,
+      cue: training.prepare.cue,
+      image: training.prepare.image || training.exercises[0].image,
+      alt: training.prepare.alt || training.exercises[0].alt
+    });
+  }
 
   firstRound.forEach((exercise, index) => {
     segments.push(makeWorkSegment(exercise, 1, index + 1, firstRound.length));
@@ -382,8 +418,8 @@ function buildProgramSegments() {
         label: "WECHSEL · 15 SEKUNDEN",
         title: "Ruhig hinstellen",
         cue: "Die letzte Minute gehört deiner Atmung.",
-        image: training.finish.image,
-        alt: training.finish.alt
+        image: finish.image,
+        alt: finish.alt
       });
     }
   });
@@ -392,10 +428,10 @@ function buildProgramSegments() {
     kind: "finish",
     duration: 60,
     label: "MINUTE 10 · RUHE UND FOKUS",
-    title: training.finish.title,
+    title: finish.title,
     cue: "Vier Sekunden einatmen. Sechs Sekunden ausatmen.",
-    image: training.finish.image,
-    alt: training.finish.alt
+    image: finish.image,
+    alt: finish.alt
   });
 
   return segments;
@@ -409,7 +445,8 @@ function makeWorkSegment(exercise, round, position, roundLength) {
     title: exercise.title,
     cue: round === 2 && exercise.round2Cue ? exercise.round2Cue : exercise.cue,
     image: exercise.image,
-    alt: exercise.alt
+    alt: exercise.alt,
+    signalEvery: exercise.signalEvery || null
   };
 }
 
@@ -438,6 +475,7 @@ async function startProgram() {
     endAt: Date.now() + segments[0].duration * 1000,
     paused: false,
     completed: false,
+    lastSignalIndex: 0,
     interval: null
   };
 
@@ -454,7 +492,7 @@ function renderProgramOverlay() {
       <header class="program-topbar">
         <div class="brand program-brand">
           <span class="brand-badge" aria-hidden="true">10′</span>
-          <span>GANZKÖRPER START</span>
+          <span>${training.shortTitle}</span>
         </div>
         <button class="program-close" type="button" data-action="program-close" aria-label="Training schliessen">SCHLIESSEN <span aria-hidden="true">×</span></button>
       </header>
@@ -473,7 +511,7 @@ function renderProgramStage() {
   frame.innerHTML = `
     <figure class="program-live-image">
       <img src="./${segment.image}?v=${ASSET_REV}" alt="${segment.alt}" width="1536" height="1024">
-      <figcaption>${segment.kind === "transition" ? "WECHSEL" : segment.kind === "finish" ? "RUHIG WERDEN" : "JETZT TRAINIEREN"}</figcaption>
+      <figcaption>${segment.kind === "transition" ? "WECHSEL" : segment.kind === "finish" ? "RUHIG WERDEN" : segment.kind === "prepare" ? "VORBEREITEN" : "JETZT TRAINIEREN"}</figcaption>
     </figure>
 
     <section class="program-live-panel ${segment.kind === "transition" ? "is-transition" : ""}">
@@ -507,6 +545,16 @@ function updateProgramFromClock() {
   const now = Date.now();
   programRun.remainingMs = Math.max(0, programRun.endAt - now);
 
+  const currentSegment = programRun.segments[programRun.index];
+  if (currentSegment?.signalEvery) {
+    const elapsedSeconds = Math.floor(currentSegment.duration - programRun.remainingMs / 1000);
+    const signalIndex = Math.floor(elapsedSeconds / currentSegment.signalEvery);
+    if (signalIndex > 0 && signalIndex !== programRun.lastSignalIndex) {
+      programRun.lastSignalIndex = signalIndex;
+      playTone([720]);
+    }
+  }
+
   while (programRun && !programRun.completed && now >= programRun.endAt) {
     const overrunMs = now - programRun.endAt;
     if (!moveToNextSegment(overrunMs)) return;
@@ -531,6 +579,7 @@ function moveToNextSegment(overrunMs = 0) {
   const durationMs = segment.duration * 1000;
   programRun.remainingMs = Math.max(0, durationMs - overrunMs);
   programRun.endAt = Date.now() + durationMs - overrunMs;
+  programRun.lastSignalIndex = 0;
   renderProgramStage();
 
   if (overrunMs < 1200) {
@@ -588,6 +637,7 @@ function restartProgram() {
   programRun.endAt = Date.now() + programRun.remainingMs;
   programRun.paused = false;
   programRun.completed = false;
+  programRun.lastSignalIndex = 0;
   if (!programRun.interval) {
     programRun.interval = window.setInterval(updateProgramFromClock, 150);
   }
@@ -606,9 +656,10 @@ function finishProgram() {
 
   const frame = document.querySelector("[data-program-frame]");
   if (!frame) return;
+  const finish = training.finish || DEFAULT_FINISH;
   frame.innerHTML = `
     <figure class="program-live-image program-complete-image">
-      <img src="./${training.finish.image}?v=${ASSET_REV}" alt="${training.finish.alt}" width="1536" height="1024">
+      <img src="./${finish.image}?v=${ASSET_REV}" alt="${finish.alt}" width="1536" height="1024">
       <figcaption>10 MINUTEN GESCHAFFT</figcaption>
     </figure>
     <section class="program-live-panel program-complete-panel">

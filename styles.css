@@ -1185,6 +1185,30 @@ img {
   gap: 18px;
 }
 
+.preparation-preview {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #b9cecb;
+  border-radius: 18px;
+  padding: 18px;
+  background: #e8f0ef;
+}
+
+.preparation-preview h3 {
+  margin: 5px 0 0;
+  font-size: clamp(24px, 5vw, 34px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.preparation-preview > p {
+  margin: 0;
+  color: #40585c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .program-card {
   overflow: hidden;
   border: 1px solid #d1cabf;

@@ -133,598 +133,780 @@
   {
     "id": "starker-koerper",
     "station": 2,
-    "title": "STARKER KÖRPER",
-    "shortTitle": "KÖRPER",
-    "statement": "Starker Rumpf. Stabil im Kontakt.",
-    "intro": "Vier Übungen. Halte deinen Körper ruhig und kontrolliert.",
+    "title": "STABIL UND SCHNELL",
+    "shortTitle": "STABIL",
+    "statement": "Körperspannung. Beweglichkeit. Schnelle Füsse.",
+    "intro": "Eine aktive Startminute, vier unterschiedliche Bewegungen und zwei Runden. Kraft, Tempo und Balance greifen ineinander.",
     "accent": "#C58B27",
+    "status": "ready",
+    "prepare": {
+      "title": "Körper aktivieren",
+      "cue": "Geh locker am Ort. Kreise die Schultern und beuge die Knie leicht. Der Körper wird warm, aber du sparst noch Kraft.",
+      "image": "s02-starker-oberkoerper.jpg"
+    },
     "exercises": [
       {
-        "id": "s02-fels-stehen",
-        "title": "Fels stehen",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s02-fels-stehen.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Fels stehen in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Stell dich hüftbreit hin.",
-          "Knie leicht beugen.",
-          "Bauch fest. Position halten."
-        ]
-      },
-      {
-        "id": "s02-starker-oberkorper",
-        "title": "Starker Oberkörper",
-        "mode": "timer",
-        "duration": 30,
+        "id": "s02-stuetz-schulterkontakt",
+        "title": "Stütz mit Schulterkontakt",
+        "category": "KRAFT UND RUMPF",
+        "duration": 45,
         "image": "s02-starker-oberkoerper.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Starker Oberkörper in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge zeigt einen stabilen Stütz in einer ruhigen Berglandschaft.",
+        "cue": "Stabil stützen. Rechts tippen. Links tippen.",
         "steps": [
-          "Geh in die Stützposition.",
-          "Rücken und Beine bleiben gerade.",
-          "Ruhig weiteratmen."
-        ]
+          "Setz die Hände direkt unter den Schultern auf den Boden.",
+          "Streck die Beine oder setz die Knie ab. Wähle die saubere Variante.",
+          "Spann Bauch und Po an. Der Rücken bleibt lang.",
+          "Lös die rechte Hand und berühre kurz die linke Schulter.",
+          "Setz die Hand zurück. Danach ist die andere Seite dran."
+        ],
+        "sideChange": "Bei jeder Berührung rechts und links abwechseln.",
+        "round2Cue": "Füsse etwas enger stellen. Die Hüfte bleibt trotzdem ruhig."
       },
       {
-        "id": "s02-gewicht-verlagern",
-        "title": "Gewicht verlagern",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s02-gewicht-verlagern.jpg",
+        "id": "s02-oberkoerper-drehen",
+        "title": "Oberkörper drehen",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s04-drehen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Gewicht verlagern in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge dreht den Oberkörper kontrolliert in einer ruhigen Berglandschaft.",
+        "cue": "Links drehen. Zur Mitte. Rechts drehen.",
         "steps": [
-          "Bleib tief.",
-          "Gewicht langsam nach links.",
-          "Dann nach rechts. Stabil bleiben."
-        ]
+          "Stell die Füsse etwas breiter als die Hüften.",
+          "Beug die Knie leicht und nimm die Hände vor die Brust.",
+          "Dreh den Oberkörper langsam nach links.",
+          "Komm kontrolliert zur Mitte zurück.",
+          "Dreh danach nach rechts. Die Hüfte zeigt weiter nach vorne."
+        ],
+        "sideChange": "Nach jeder Drehung die Richtung wechseln.",
+        "round2Cue": "Die Drehung etwas grösser machen, ohne die Knie mitzudrehen."
       },
       {
-        "id": "s02-stabil-bewegen",
-        "title": "Stabil bewegen",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s02-stabil-bewegen.jpg",
+        "id": "s02-schnelle-fuesse",
+        "title": "Schnelle Füsse",
+        "category": "SCHNELLIGKEIT",
+        "duration": 45,
+        "image": "s05-schnelle-fuesse.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Stabil bewegen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge bewegt die Füsse schnell und kontrolliert in einer ruhigen Berglandschaft.",
+        "cue": "Kleine Schritte. Leise bleiben. Führenden Fuss wechseln.",
         "steps": [
-          "Bleib tief.",
-          "Kleine Schritte vor, zurück, seitlich.",
-          "Oberkörper bleibt ruhig."
-        ]
+          "Stell dich aufrecht hin und geh leicht in die Knie.",
+          "Mach kleine, schnelle Schritte direkt am Ort.",
+          "Nimm die Arme locker im Laufrhythmus mit.",
+          "Bleib auf dem Vorderfuss und berühre den Boden leise.",
+          "Wechsle regelmässig, welcher Fuss die Bewegung beginnt."
+        ],
+        "sideChange": "Nach fünf Sekunden den führenden Fuss wechseln.",
+        "round2Cue": "Fünf Sekunden schnell, zwei Sekunden ruhig stehen. Dann die andere Seite beginnt."
+      },
+      {
+        "id": "s02-einbeinstand",
+        "title": "Einbeinstand mit Antippen",
+        "category": "BALANCE UND FOKUS",
+        "duration": 45,
+        "image": "s08-einbeinstand.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge steht kontrolliert auf einem Bein in einer ruhigen Berglandschaft.",
+        "cue": "Links stehen und tippen. Dann rechts.",
+        "steps": [
+          "Stell dich auf das linke Bein und fixiere einen Punkt vor dir.",
+          "Beug das Standbein leicht und halte den Oberkörper aufrecht.",
+          "Tipp mit dem rechten Fuss vorne auf den Boden.",
+          "Tipp danach seitlich und hinten auf.",
+          "Komm zur Mitte zurück und wechsle auf das rechte Standbein."
+        ],
+        "sideChange": "Nach der Folge vorne, seitlich, hinten das Standbein wechseln.",
+        "round2Cue": "Die Antippunkte etwas weiter entfernt setzen. Der Stand bleibt ruhig."
       }
     ]
   },
   {
     "id": "zweikampf-bereit",
     "station": 3,
-    "title": "ZWEIKAMPF BEREIT",
-    "shortTitle": "ZWEIKAMPF",
-    "statement": "Kraft in Bewegung. Für den Kontakt.",
-    "intro": "Vier Übungen. Starte kraftvoll und stoppe immer kontrolliert.",
+    "title": "KRAFT IN BEWEGUNG",
+    "shortTitle": "BEWEGUNG",
+    "statement": "Tief stehen. Kraftvoll starten. Sicher ankommen.",
+    "intro": "Eine aktive Startminute, vier unterschiedliche Bewegungen und zwei Runden. Du verbindest Beinkraft mit Reaktion und Balance.",
     "accent": "#D08A22",
+    "status": "ready",
+    "prepare": {
+      "title": "Tief und bereit",
+      "cue": "Geh locker am Ort. Mach drei ruhige Kniebeugen und verlagere das Gewicht von rechts nach links. Noch nicht beschleunigen.",
+      "image": "s03-tiefe-position.jpg"
+    },
     "exercises": [
       {
         "id": "s03-tiefe-position",
-        "title": "Tiefe Position",
-        "mode": "timer",
-        "duration": 30,
+        "title": "Tiefe Bereitschaft",
+        "category": "BEINKRAFT",
+        "duration": 45,
         "image": "s03-tiefe-position.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt Tiefe Position in einer ruhigen Berglandschaft.",
+        "cue": "Tief stehen. Druck nach rechts. Druck nach links.",
         "steps": [
-          "Füsse etwas breiter.",
-          "Knie beugen. Brust bleibt oben.",
-          "Position ruhig halten."
-        ]
+          "Stell die Füsse etwas breiter als die Schultern.",
+          "Schieb den Po nach hinten und beug beide Knie.",
+          "Halte die Brust oben und den Rücken lang.",
+          "Verlagere den Druck langsam auf das rechte Bein.",
+          "Komm über die Mitte und verlagere danach nach links."
+        ],
+        "sideChange": "Nach jeder Verlagerung über die Mitte zur anderen Seite wechseln.",
+        "round2Cue": "Etwas tiefer stehen und jede Seite zwei Sekunden ruhig halten."
       },
       {
-        "id": "s03-seitlich-drucken",
-        "title": "Seitlich drücken",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s03-seitlich-druecken.jpg",
+        "id": "s03-huefte-oeffnen",
+        "title": "Hüfte dynamisch öffnen",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s09-huefte-oeffnen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Seitlich drücken in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge öffnet die Hüfte in einem kontrollierten Ausfallschritt.",
+        "cue": "Rechts zurück und öffnen. Dann links.",
         "steps": [
-          "Bleib tief.",
-          "Drück dich kräftig zur Seite.",
-          "In der Mitte wieder stabil."
-        ]
+          "Stell dich aufrecht hin und nimm die Hände an die Hüfte.",
+          "Setz den rechten Fuss weit nach hinten.",
+          "Beug das vordere Knie und schieb die Hüfte sanft nach vorne.",
+          "Halte den Oberkörper aufrecht und feder nicht.",
+          "Drück dich zurück in den Stand. Danach folgt die linke Seite."
+        ],
+        "sideChange": "Nach jeder ruhigen Wiederholung das Bein wechseln.",
+        "round2Cue": "In der geöffneten Position zwei Sekunden bleiben und ruhig ausatmen."
       },
       {
-        "id": "s03-stopp-und-halten",
-        "title": "Stopp und halten",
-        "mode": "timer",
-        "duration": 25,
-        "image": "s03-stopp-halten.jpg",
+        "id": "s03-reaktionsstart",
+        "title": "Reaktionsstart",
+        "category": "REAKTION UND TEMPO",
+        "duration": 45,
+        "image": "s07-startsignal.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Stopp und halten in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge reagiert aus einer aufmerksamen Startposition.",
+        "cue": "Bereit bleiben. Beim Ton tief und seitlich starten.",
         "steps": [
-          "Drei kleine schnelle Schritte.",
-          "Sofort stoppen.",
-          "Zwei Sekunden stabil bleiben."
-        ]
+          "Stell dich locker hin und bewege die Füsse leicht am Ort.",
+          "Halte den Blick nach vorne und warte auf das Signal.",
+          "Beim Ton gehst du schnell tief und machst einen Schritt nach rechts.",
+          "Komm sofort kontrolliert in die Mitte zurück.",
+          "Beim nächsten Ton startest du nach links."
+        ],
+        "sideChange": "Bei jedem Signal die Startrichtung wechseln.",
+        "round2Cue": "Nach dem Seitwärtsschritt eine Sekunde stabil bleiben, bevor du zurückkommst.",
+        "signalEvery": 5
       },
       {
-        "id": "s03-vor-und-zuruck",
-        "title": "Vor und zurück",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s03-vor-zurueck.jpg",
+        "id": "s03-balance-armbewegung",
+        "title": "Balance mit Armbewegung",
+        "category": "BALANCE UND KONTROLLE",
+        "duration": 45,
+        "image": "s08-arme-bewegen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Vor und zurück in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge bewegt die Arme kontrolliert im Einbeinstand.",
+        "cue": "Links stehen und Arme führen. Dann rechts.",
         "steps": [
-          "Tief starten.",
-          "Zwei Schritte vor, zwei zurück.",
-          "Immer kontrolliert abbremsen."
-        ]
+          "Stell dich auf das linke Bein und beug das Knie leicht.",
+          "Führ beide Arme langsam nach vorne.",
+          "Öffne die Arme zur Seite und heb sie danach über den Kopf.",
+          "Bring die Arme ruhig zurück, ohne den Fuss abzusetzen.",
+          "Wechsle das Standbein und wiederhole die ganze Folge."
+        ],
+        "sideChange": "Nach jeder vollständigen Armfolge das Standbein wechseln.",
+        "round2Cue": "Die Arme langsamer bewegen und das freie Knie etwas höher halten."
       }
     ]
   },
   {
     "id": "beweglich-bleiben",
     "station": 4,
-    "title": "BEWEGLICH BLEIBEN",
-    "shortTitle": "BEWEGLICH",
-    "statement": "Locker bewegen. Besser drehen.",
-    "intro": "Vier ruhige Bewegungen. Gehe nur so weit, wie es angenehm ist.",
+    "title": "MOBIL UND WACH",
+    "shortTitle": "MOBIL",
+    "statement": "Locker werden. Reagieren. Balance halten.",
+    "intro": "Eine ruhige Startminute, vier unterschiedliche Bewegungen und zwei Runden. Beweglichkeit trifft auf Rumpfkraft und Reaktion.",
     "accent": "#7D8C5C",
+    "status": "ready",
+    "prepare": {
+      "title": "Locker ankommen",
+      "cue": "Geh langsam am Ort. Lass die Arme mitschwingen, kreise die Schultern und atme ruhig. Jede Bewegung bleibt angenehm.",
+      "image": "s04-locker-werden.jpg"
+    },
     "exercises": [
       {
-        "id": "s04-locker-werden",
-        "title": "Locker werden",
-        "mode": "timer",
-        "duration": 35,
+        "id": "s04-beckenheben",
+        "title": "Beckenheben",
+        "category": "KRAFT UND RUMPF",
+        "duration": 45,
+        "image": "beckenlift.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge hebt das Becken kontrolliert aus der Rückenlage an.",
+        "cue": "Becken hoch. Rechts belasten. Links belasten.",
+        "steps": [
+          "Leg dich auf den Rücken und stell beide Füsse hüftbreit auf.",
+          "Drück die Fersen in den Boden und heb das Becken an.",
+          "Spann Bauch und Po an. Der Rücken bleibt lang.",
+          "Verlagere den Druck leicht auf den rechten Fuss.",
+          "Komm zur Mitte, belaste links und senk danach langsam ab."
+        ],
+        "sideChange": "Oben rechts und links abwechselnd etwas stärker belasten.",
+        "round2Cue": "Das Becken oben zwei Sekunden halten. Erst dann kontrolliert senken."
+      },
+      {
+        "id": "s04-schulter-huefte",
+        "title": "Schulter und Hüfte mobilisieren",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
         "image": "s04-locker-werden.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Locker werden in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge mobilisiert Schultern und Hüfte in einer ruhigen Berglandschaft.",
+        "cue": "Schultern vor und zurück. Hüfte links und rechts.",
         "steps": [
-          "Schultern kreisen.",
-          "Arme kreisen.",
-          "Hüfte kreisen. Locker bleiben."
-        ]
+          "Stell dich locker hin und lass die Arme neben dem Körper hängen.",
+          "Kreise beide Schultern langsam nach vorne.",
+          "Wechsle die Richtung und kreise nach hinten.",
+          "Stütz die Hände an der Hüfte ab und zeichne einen grossen Kreis.",
+          "Wechsle danach auch bei der Hüfte die Drehrichtung."
+        ],
+        "sideChange": "Bei Schultern und Hüfte beide Drehrichtungen gleich lang nutzen.",
+        "round2Cue": "Die Kreise etwas grösser machen. Der Kopf bleibt ruhig."
       },
       {
-        "id": "s04-gross-bewegen",
-        "title": "Gross bewegen",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s04-gross-bewegen.jpg",
+        "id": "s04-seitliche-reaktion",
+        "title": "Seitliche Reaktion",
+        "category": "REAKTION UND TEMPO",
+        "duration": 45,
+        "image": "s07-richtung-waehlen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Gross bewegen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge reagiert mit einem schnellen Schritt zur Seite.",
+        "cue": "Beim Ton rechts. Zur Mitte. Beim nächsten Ton links.",
         "steps": [
-          "Weit nach oben strecken.",
-          "Richtung Boden beugen.",
-          "Langsam wieder aufrichten."
-        ]
+          "Stell dich bereit hin und bewege die Füsse locker am Ort.",
+          "Halte die Knie leicht gebeugt und den Blick nach vorne.",
+          "Beim Ton machst du einen schnellen Schritt nach rechts.",
+          "Bremse leise ab und komm kontrolliert in die Mitte.",
+          "Beim nächsten Ton geht die Bewegung nach links."
+        ],
+        "sideChange": "Bei jedem Signal die Bewegungsrichtung wechseln.",
+        "round2Cue": "Die Seite schneller erreichen und dort eine Sekunde stabil stehen.",
+        "signalEvery": 5
       },
       {
-        "id": "s04-drehen",
-        "title": "Drehen",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s04-drehen.jpg",
+        "id": "s04-blickwechsel",
+        "title": "Einbeinstand mit Blickwechsel",
+        "category": "BALANCE UND FOKUS",
+        "duration": 45,
+        "image": "s08-blick-bewegen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Drehen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge bewegt den Blick kontrolliert im Einbeinstand.",
+        "cue": "Links stehen und schauen. Dann rechts.",
         "steps": [
-          "Oberkörper nach links drehen.",
-          "Dann nach rechts.",
-          "Hüfte bleibt möglichst ruhig."
-        ]
-      },
-      {
-        "id": "s04-fliessend-bewegen",
-        "title": "Fliessend bewegen",
-        "mode": "timer",
-        "duration": 40,
-        "image": "s04-fliessend-bewegen.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Fliessend bewegen in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Nach oben und unten.",
-          "Nach links und rechts.",
-          "Alles ruhig verbinden."
-        ]
+          "Stell dich auf das linke Bein und fixiere einen Punkt vor dir.",
+          "Beug das Standbein leicht und halte den Bauch aktiv.",
+          "Schau langsam nach links, zur Mitte und nach rechts.",
+          "Beweg danach den Blick einmal nach oben und unten.",
+          "Stell beide Füsse ab und wechsle auf das rechte Bein."
+        ],
+        "sideChange": "Nach einer vollständigen Blickfolge das Standbein wechseln.",
+        "round2Cue": "Den Kopf etwas weiter drehen. Der Körper bleibt dabei ganz ruhig."
       }
     ]
   },
   {
     "id": "schnell-wie-eine-welle",
     "station": 5,
-    "title": "SCHNELL WIE EINE WELLE",
-    "shortTitle": "WELLE",
-    "statement": "Schnelle Füsse. Sauberer Rhythmus.",
-    "intro": "Vier kurze Übungen. Bleib leicht, leise und kontrolliert.",
+    "title": "BEINE UND TEMPO",
+    "shortTitle": "TEMPO",
+    "statement": "Kräftige Beine. Schneller Rhythmus. Ruhige Kontrolle.",
+    "intro": "Eine aktive Startminute, vier unterschiedliche Bewegungen und zwei Runden. Du verbindest Kraft, Tempo, Mobilität und Balance.",
     "accent": "#2D8FB8",
+    "status": "ready",
+    "prepare": {
+      "title": "Füsse wecken",
+      "cue": "Geh locker am Ort. Roll über den ganzen Fuss ab und heb die Knie abwechselnd etwas an. Alles bleibt leicht und leise.",
+      "image": "s05-knie-hoch.jpg"
+    },
     "exercises": [
       {
-        "id": "s05-knie-hoch",
-        "title": "Knie hoch",
-        "mode": "timer",
-        "duration": 20,
+        "id": "s05-seitlicher-abdruck",
+        "title": "Seitlicher Abdruck",
+        "category": "BEINKRAFT",
+        "duration": 45,
+        "image": "s03-seitlich-druecken.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge drückt sich kraftvoll und kontrolliert zur Seite ab.",
+        "cue": "Rechts abdrücken. Mitte finden. Links abdrücken.",
+        "steps": [
+          "Stell die Füsse breit und geh leicht in die Knie.",
+          "Verlagere das Gewicht auf das rechte Bein.",
+          "Drück dich kräftig zurück in die Mitte.",
+          "Bremse die Bewegung kontrolliert und bleib kurz stabil.",
+          "Verlagere danach nach links und drück dich wieder ab."
+        ],
+        "sideChange": "Nach jedem Abdruck zur anderen Seite wechseln.",
+        "round2Cue": "Etwas kräftiger abdrücken und in der Mitte zwei Sekunden stabil bleiben."
+      },
+      {
+        "id": "s05-strecken-beugen",
+        "title": "Strecken und beugen",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s04-gross-bewegen.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge streckt und beugt den ganzen Körper kontrolliert.",
+        "cue": "Nach rechts hoch. Zur Mitte tief. Nach links hoch.",
+        "steps": [
+          "Stell dich aufrecht hin und atme ruhig ein.",
+          "Streck beide Arme weit nach oben und leicht nach rechts.",
+          "Beug Knie und Hüfte und führ die Hände Richtung Boden.",
+          "Richte dich langsam wieder auf.",
+          "Streck dich bei der nächsten Wiederholung leicht nach links."
+        ],
+        "sideChange": "Bei jeder Streckung rechts und links abwechseln.",
+        "round2Cue": "Die Bewegung grösser machen und unten kurz ruhig ausatmen."
+      },
+      {
+        "id": "s05-kniehebelauf",
+        "title": "Kniehebelauf",
+        "category": "SCHNELLIGKEIT",
+        "duration": 45,
         "image": "s05-knie-hoch.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Knie hoch in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge hebt die Knie schnell und kontrolliert an.",
+        "cue": "Rechts hoch. Links hoch. Leicht und schnell.",
         "steps": [
-          "Aufrecht bleiben.",
-          "Knie schnell hochziehen.",
-          "Leicht auf den Füssen bleiben."
-        ]
-      },
-      {
-        "id": "s05-schnelle-fusse",
-        "title": "Schnelle Füsse",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s05-schnelle-fuesse.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Schnelle Füsse in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Kleine schnelle Schritte am Ort.",
-          "Arme locker mitnehmen.",
-          "Blick nach vorne."
-        ]
-      },
-      {
-        "id": "s05-seitlich-tippen",
-        "title": "Seitlich tippen",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s05-seitlich-tippen.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Seitlich tippen in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Zwei Schritte nach rechts.",
-          "Zwei nach links.",
-          "Tief und leicht bleiben."
-        ]
-      },
-      {
-        "id": "s05-schnell-und-ruhig",
-        "title": "Schnell und ruhig",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s05-schnell-ruhig.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Schnell und ruhig in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Fünf Sekunden schnell.",
-          "Kurz kontrollieren.",
-          "Wieder beschleunigen."
+          "Stell dich aufrecht hin und nimm die Arme in Laufposition.",
+          "Zieh das rechte Knie zügig bis etwa auf Hüfthöhe.",
+          "Setz den Fuss leise unter dem Körper ab.",
+          "Zieh sofort das linke Knie nach oben.",
+          "Halte den Rhythmus schnell, aber den Oberkörper ruhig."
         ],
-        "signalEvery": 5
+        "sideChange": "Die Knie bei jedem Schritt konsequent abwechseln.",
+        "round2Cue": "Fünf Sekunden beschleunigen, zwei Sekunden locker weiterlaufen."
+      },
+      {
+        "id": "s05-balance-kniebeuge",
+        "title": "Balance Kniebeuge",
+        "category": "BALANCE UND KONTROLLE",
+        "duration": 45,
+        "image": "s08-balance-bewegung.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge beugt das Standbein kontrolliert im Einbeinstand.",
+        "cue": "Links beugen und strecken. Dann rechts.",
+        "steps": [
+          "Stell dich auf das linke Bein und heb den rechten Fuss leicht an.",
+          "Schieb den Po nach hinten und beug das Standbein wenig.",
+          "Halte Knie, Fuss und Hüfte in einer Linie.",
+          "Streck das Bein kontrolliert, ohne Schwung zu holen.",
+          "Setz den Fuss ab und wechsle auf das rechte Bein."
+        ],
+        "sideChange": "Nach zwei ruhigen Wiederholungen das Standbein wechseln.",
+        "round2Cue": "Etwas tiefer beugen. Die Bewegung bleibt langsam und stabil."
       }
     ]
   },
   {
     "id": "fels",
     "station": 6,
-    "title": "STARK WIE EIN FELS",
-    "shortTitle": "FELS",
-    "statement": "Ich bin stark und habe eine starke Mitte.",
-    "intro": "Vier ruhige Übungen. Sauber bewegen ist wichtiger als schnell sein.",
+    "title": "STARKE MITTE",
+    "shortTitle": "MITTE",
+    "statement": "Rumpf kontrollieren. Sauber bremsen. Stabil bleiben.",
+    "intro": "Eine konzentrierte Startminute, vier unterschiedliche Bewegungen und zwei Runden. Deine Mitte arbeitet in Ruhe und in Bewegung.",
+    "status": "ready",
+    "prepare": {
+      "title": "Mitte aktivieren",
+      "cue": "Stell dich aufrecht hin. Atme ruhig aus, spann den Bauch sanft an und löse wieder. Verbinde das mit kleinen Kniebeugen.",
+      "image": "seitenstuetze.jpg"
+    },
     "exercises": [
       {
-        "id": "tiefe-hocke",
-        "title": "Tiefe Hocke",
-        "mode": "repetition",
-        "repetitions": 5,
-        "image": "tiefe-hocke.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge hält eine tiefe Hocke in einer Berglandschaft.",
-        "steps": [
-          "Füsse bleiben ganz am Boden.",
-          "Rücken bleibt aufrecht.",
-          "Knie zeigen nach aussen."
-        ],
-        "focus": "Fünfmal langsam und sauber."
-      },
-      {
-        "id": "seitenstuetze",
-        "title": "Seitenstütze",
-        "mode": "timer",
-        "duration": 35,
-        "cueAtRemaining": 18,
-        "cue": "SEITE WECHSELN",
+        "id": "s06-seitenstuetz",
+        "title": "Seitenstütz",
+        "category": "RUMPFKRAFT",
+        "duration": 45,
         "image": "seitenstuetze.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge hält einen geraden Seitenstütz in einer Berglandschaft.",
+        "cue": "Links stützen. Absetzen. Rechts stützen.",
         "steps": [
-          "Ellbogen bleibt unter der Schulter.",
-          "Körper bildet eine gerade Linie.",
-          "Bauch und Gesäss sind angespannt."
+          "Leg dich auf die linke Seite und stütz dich auf dem Unterarm ab.",
+          "Der Ellbogen bleibt direkt unter der Schulter.",
+          "Heb die Hüfte an. Kopf, Rücken und Beine bilden eine Linie.",
+          "Halte kurz und atme ruhig weiter.",
+          "Senk die Hüfte kontrolliert ab und wechsel auf die rechte Seite."
         ],
-        "focus": "Beim Signal die Seite wechseln."
+        "sideChange": "Nach jeder gehaltenen Wiederholung die Seite wechseln.",
+        "round2Cue": "Oben zwei Sekunden länger halten. Die Schulter bleibt weg vom Ohr."
       },
       {
-        "id": "beckenlift",
-        "title": "Beckenlift",
-        "mode": "timer",
-        "duration": 40,
-        "image": "beckenlift.jpg",
+        "id": "s06-ruecken-rund-lang",
+        "title": "Rücken rund und lang",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s09-ruecken-rund-lang.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge hält den Beckenlift in einer Berglandschaft.",
+        "alt": "Der Junge bewegt den Rücken langsam zwischen rund und lang.",
+        "cue": "Rund werden. Lang werden. Ruhig atmen.",
         "steps": [
-          "Füsse stehen hüftbreit.",
-          "Gesäss langsam anheben.",
-          "Kontrolliert wieder senken."
+          "Komm auf Hände und Knie. Die Hände stehen unter den Schultern.",
+          "Drück den Boden weg und mach den Rücken langsam rund.",
+          "Lass den Kopf locker zwischen die Arme sinken.",
+          "Beweg Brustbein und Blick sanft nach vorne und mach den Rücken lang.",
+          "Wechsle ruhig zwischen beiden Positionen, ohne ins Hohlkreuz zu fallen."
         ],
-        "focus": "Ruhig weiteratmen."
+        "sideChange": "Rund und lang immer abwechseln. Keine Position erzwingen.",
+        "round2Cue": "Jede Endposition einen Atemzug lang halten."
       },
       {
-        "id": "superman",
-        "title": "Superman",
-        "mode": "timer",
-        "duration": 40,
-        "image": "superman.jpg",
+        "id": "s06-beschleunigen-stoppen",
+        "title": "Beschleunigen und stoppen",
+        "category": "TEMPO UND BREMSEN",
+        "duration": 45,
+        "image": "s03-stopp-halten.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge hält die Superman-Position in einer Berglandschaft.",
+        "alt": "Der Junge stoppt nach schnellen Schritten in einer stabilen Position.",
+        "cue": "Drei schnelle Schritte. Rechts stoppen. Dann links.",
         "steps": [
-          "Auf den Bauch legen.",
-          "Arme und Beine leicht anheben.",
-          "Kurz halten und langsam senken."
+          "Stell dich leicht in die Knie und halte den Blick nach vorne.",
+          "Mach drei kleine, schnelle Schritte am Ort.",
+          "Setz den rechten Fuss etwas nach aussen und stoppe sofort.",
+          "Halte die Position eine Sekunde stabil.",
+          "Starte wieder schnell. Beim nächsten Stopp führt der linke Fuss."
         ],
-        "focus": "Kleine, kontrollierte Bewegung."
+        "sideChange": "Bei jedem Stopp den bremsenden Fuss wechseln.",
+        "round2Cue": "Etwas schneller starten und beim Stopp zwei Sekunden ruhig bleiben."
+      },
+      {
+        "id": "s06-gewichtsverlagerung",
+        "title": "Tiefe Gewichtsverlagerung",
+        "category": "BALANCE UND KONTROLLE",
+        "duration": 45,
+        "image": "s02-gewicht-verlagern.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge verlagert sein Gewicht kontrolliert von einer Seite zur anderen.",
+        "cue": "Rechts tief. Mitte. Links tief.",
+        "steps": [
+          "Stell die Füsse deutlich breiter als die Hüften.",
+          "Schieb den Po nach hinten und verlagere das Gewicht nach rechts.",
+          "Das rechte Knie beugt sich. Das linke Bein bleibt lang.",
+          "Drück dich kontrolliert zurück in die Mitte.",
+          "Verlagere das Gewicht danach nach links."
+        ],
+        "sideChange": "Bei jeder Wiederholung über die Mitte zur anderen Seite wechseln.",
+        "round2Cue": "Etwas tiefer verlagern und die Ferse am Boden lassen."
       }
     ],
-    "finish": {
-      "title": "ZUM SCHLUSS",
-      "steps": [
-        "Stell dich locker hin.",
-        "Atme dreimal ruhig durch die Nase ein.",
-        "Atme langsam durch den Mund aus."
-      ],
-      "statement": "Stark heisst: ruhig bleiben und sauber bewegen."
-    },
     "accent": "#2F7D86"
   },
   {
     "id": "reaktionskuenstler",
     "station": 7,
-    "title": "REAKTIONSKÜNSTLER",
+    "title": "REAKTION UND KONTROLLE",
     "shortTitle": "REAKTION",
-    "statement": "Wahrnehmen. Entscheiden. Los.",
-    "intro": "Vier kurze Aufgaben. Reagiere auf den Ton und stoppe sauber.",
+    "statement": "Bewegen. Wahrnehmen. Im richtigen Moment stoppen.",
+    "intro": "Eine aufmerksame Startminute, vier unterschiedliche Bewegungen und zwei Runden. Rücken, Beweglichkeit und Reaktion arbeiten zusammen.",
     "accent": "#B66B32",
+    "status": "ready",
+    "prepare": {
+      "title": "Augen und Füsse bereit",
+      "cue": "Bewege dich locker am Ort. Schau abwechselnd nach links und rechts. Stoppe zweimal bewusst und finde sofort einen ruhigen Stand.",
+      "image": "s07-drehen-bereit.jpg"
+    },
     "exercises": [
       {
-        "id": "s07-startsignal",
-        "title": "Startsignal",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s07-startsignal.jpg",
+        "id": "s07-rueckenstrecker",
+        "title": "Rückenstrecker",
+        "category": "KRAFT UND RUMPF",
+        "duration": 45,
+        "image": "superman.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Startsignal in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge hebt diagonal Arm und Bein in Bauchlage kontrolliert an.",
+        "cue": "Rechter Arm und linkes Bein. Dann wechseln.",
         "steps": [
-          "Locker bereit stehen.",
-          "Beim Ton sofort tief gehen.",
-          "Wieder lösen und bereit sein."
+          "Leg dich auf den Bauch und streck Arme und Beine lang aus.",
+          "Richte den Blick zum Boden und spann den Bauch leicht an.",
+          "Heb den rechten Arm und das linke Bein wenige Zentimeter an.",
+          "Halte kurz und leg beide langsam wieder ab.",
+          "Heb danach den linken Arm und das rechte Bein."
         ],
-        "signalEvery": 4
+        "sideChange": "Bei jeder Wiederholung diagonal die Seite wechseln.",
+        "round2Cue": "Die Position oben zwei Sekunden halten. Die Bewegung bleibt klein."
       },
       {
-        "id": "s07-richtung-wahlen",
-        "title": "Richtung wählen",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s07-richtung-waehlen.jpg",
+        "id": "s07-bewegungsfluss",
+        "title": "Bewegungsfluss",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s04-fliessend-bewegen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Richtung wählen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge verbindet mehrere grosse Bewegungen zu einem ruhigen Ablauf.",
+        "cue": "Rechts öffnen. Mitte tief. Links öffnen.",
         "steps": [
-          "Blick nach vorne.",
-          "Beim Ton Seite wechseln.",
-          "Schnell starten, sauber stoppen."
+          "Stell dich aufrecht hin und streck beide Arme nach oben.",
+          "Öffne den rechten Arm und dreh den Oberkörper nach rechts.",
+          "Komm zur Mitte und beug Knie und Hüfte Richtung Boden.",
+          "Richte dich wieder auf und streck dich lang.",
+          "Öffne bei der nächsten Wiederholung nach links."
         ],
-        "signalEvery": 4
+        "sideChange": "Bei jeder vollständigen Bewegung die Drehrichtung wechseln.",
+        "round2Cue": "Die Übergänge ohne Pause verbinden und trotzdem ruhig atmen."
       },
       {
         "id": "s07-drehen-und-bereit",
         "title": "Drehen und bereit",
-        "mode": "timer",
-        "duration": 20,
+        "category": "REAKTION UND TEMPO",
+        "duration": 45,
         "image": "s07-drehen-bereit.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt Drehen und bereit in einer ruhigen Berglandschaft.",
+        "cue": "Beim Ton rechts drehen. Beim nächsten Ton links.",
         "steps": [
-          "Locker am Ort bewegen.",
-          "Beim Ton halbe Drehung.",
-          "Sofort stabile Position finden."
+          "Bewege die Füsse locker und schnell direkt am Ort.",
+          "Halte die Knie leicht gebeugt und warte auf das Signal.",
+          "Beim Ton drehst du dich mit kleinen Schritten nach rechts.",
+          "Stoppe nach einer halben Drehung in einer stabilen Position.",
+          "Dreh beim nächsten Ton über die linke Seite zurück."
         ],
-        "signalEvery": 4
+        "sideChange": "Die Drehrichtung bei jedem Signal wechseln.",
+        "round2Cue": "Nach der Drehung tief stoppen und zwei Sekunden stabil bleiben.",
+        "signalEvery": 5
       },
       {
-        "id": "s07-stopp",
-        "title": "Stopp",
-        "mode": "timer",
-        "duration": 20,
-        "image": "s07-stopp.jpg",
+        "id": "s07-vier-richtungen",
+        "title": "Vier Richtungen",
+        "category": "KOORDINATION UND KONTROLLE",
+        "duration": 45,
+        "image": "s02-stabil-bewegen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Stopp in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge bewegt sich kontrolliert in verschiedene Richtungen.",
+        "cue": "Vor. Mitte. Rechts. Mitte. Zurück. Links.",
         "steps": [
-          "Schnelle Füsse.",
-          "Beim Ton sofort einfrieren.",
-          "Kurz stabil bleiben."
+          "Starte in einer leicht gebeugten, stabilen Position.",
+          "Mach zwei kleine Schritte nach vorne und zurück zur Mitte.",
+          "Mach zwei kleine Schritte nach rechts und zurück.",
+          "Geh danach zwei Schritte zurück und wieder zur Mitte.",
+          "Beende die Folge links und starte anschliessend neu."
         ],
-        "signalEvery": 4
+        "sideChange": "In der nächsten Folge zuerst nach links statt nach rechts gehen.",
+        "round2Cue": "Die Schritte schneller machen. In der Mitte jedes Mal sauber abbremsen."
       }
     ]
   },
   {
     "id": "balance-profi",
     "station": 8,
-    "title": "BALANCE PROFI",
-    "shortTitle": "BALANCE",
-    "statement": "Körper kontrollieren. Sicher bewegen.",
-    "intro": "Vier ruhige Übungen. Wechsle beim Signal das Standbein.",
+    "title": "LEICHT UND STABIL",
+    "shortTitle": "STABIL",
+    "statement": "Locker bewegen. Schnell reagieren. Sicher stehen.",
+    "intro": "Eine ruhige Startminute, vier unterschiedliche Bewegungen und zwei Runden. Du wechselst zwischen Beweglichkeit, Tempo und stabilen Stopps.",
     "accent": "#D2A53D",
+    "status": "ready",
+    "prepare": {
+      "title": "Gleichgewicht finden",
+      "cue": "Verlagere das Gewicht langsam von rechts nach links. Heb den freien Fuss jeweils kurz an und finde ohne Eile einen sicheren Stand.",
+      "image": "s02-fels-stehen.jpg"
+    },
     "exercises": [
       {
-        "id": "s08-einbeinstand",
-        "title": "Einbeinstand",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s08-einbeinstand.jpg",
+        "id": "s08-hocke-gewichtswechsel",
+        "title": "Hocke mit Gewichtswechsel",
+        "category": "KRAFT UND BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "s09-tiefe-hocke.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Einbeinstand in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge hält eine tiefe, kontrollierte Hocke.",
+        "cue": "Tief bleiben. Rechts belasten. Links belasten.",
         "steps": [
-          "Auf ein Bein stehen.",
-          "Punkt vor dir fixieren.",
-          "Nach der Hälfte Bein wechseln."
+          "Stell die Füsse etwas breiter als die Hüften.",
+          "Schieb den Po nach hinten und geh so tief, wie es angenehm ist.",
+          "Halte die Fersen am Boden und den Rücken lang.",
+          "Verlagere das Gewicht langsam nach rechts.",
+          "Komm über die Mitte und verlagere danach nach links."
         ],
-        "cueAtRemaining": 15,
-        "cue": "BEIN WECHSELN"
+        "sideChange": "Bei jeder Verlagerung über die Mitte zur anderen Seite wechseln.",
+        "round2Cue": "In jeder Seite zwei Sekunden bleiben und ruhig ausatmen."
       },
       {
-        "id": "s08-blick-bewegen",
-        "title": "Blick bewegen",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s08-blick-bewegen.jpg",
+        "id": "s08-seitliche-schritte",
+        "title": "Seitliche Schritte",
+        "category": "SCHNELLIGKEIT",
+        "duration": 45,
+        "image": "s05-seitlich-tippen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Blick bewegen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge bewegt sich mit schnellen kleinen Schritten zur Seite.",
+        "cue": "Zwei rechts. Mitte. Zwei links. Leise bleiben.",
         "steps": [
-          "Auf einem Bein bleiben.",
-          "Langsam links, rechts, oben, unten schauen.",
-          "Bein wechseln."
+          "Stell dich leicht in die Knie und halte den Blick nach vorne.",
+          "Mach zwei kleine, schnelle Schritte nach rechts.",
+          "Tipp den linken Fuss kurz neben dem rechten auf.",
+          "Drück dich sofort zurück Richtung Mitte.",
+          "Mach danach zwei schnelle Schritte nach links."
         ],
-        "cueAtRemaining": 15,
-        "cue": "BEIN WECHSELN"
+        "sideChange": "Nach jedem Doppelschritt die Richtung wechseln.",
+        "round2Cue": "Drei schnelle Schritte pro Seite. Der letzte Kontakt bleibt stabil."
       },
       {
-        "id": "s08-arme-bewegen",
-        "title": "Arme bewegen",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s08-arme-bewegen.jpg",
+        "id": "s08-schnell-still",
+        "title": "Schnell und still",
+        "category": "REAKTION UND BREMSEN",
+        "duration": 45,
+        "image": "s07-stopp.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Arme bewegen in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge stoppt aus schnellen Füssen in einer stabilen Position.",
+        "cue": "Schnelle Füsse. Beim Ton still. Seite wechseln.",
         "steps": [
-          "Auf einem Bein stehen.",
-          "Arme vor, seitlich und hoch.",
-          "Ruhig bleiben. Bein wechseln."
+          "Bewege beide Füsse schnell und leise direkt am Ort.",
+          "Halte die Knie locker und den Oberkörper aufrecht.",
+          "Beim Ton stoppst du sofort auf dem rechten Bein.",
+          "Bleib eine Sekunde ganz ruhig stehen.",
+          "Starte erneut. Beim nächsten Ton stoppst du auf dem linken Bein."
         ],
-        "cueAtRemaining": 15,
-        "cue": "BEIN WECHSELN"
+        "sideChange": "Bei jedem Stopp das Standbein wechseln.",
+        "round2Cue": "Beim Stopp das freie Knie anheben und zwei Sekunden halten.",
+        "signalEvery": 5
       },
       {
-        "id": "s08-balance-in-bewegung",
-        "title": "Balance in Bewegung",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s08-balance-bewegung.jpg",
+        "id": "s08-grundstand",
+        "title": "Stabiler Grundstand",
+        "category": "BALANCE UND FOKUS",
+        "duration": 45,
+        "image": "s02-fels-stehen.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Balance in Bewegung in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge steht tief und stabil in einer ruhigen Berglandschaft.",
+        "cue": "Rechts lösen. Mitte. Links lösen. Stand halten.",
         "steps": [
-          "Auf einem Bein stehen.",
-          "Standbein leicht beugen.",
-          "Strecken. Dann Bein wechseln."
+          "Stell die Füsse hüftbreit und beug die Knie leicht.",
+          "Spann Bauch und Po an. Der Oberkörper bleibt aufrecht.",
+          "Lös die rechte Ferse kurz vom Boden, ohne zur Seite zu kippen.",
+          "Setz sie wieder ab und finde die Mitte.",
+          "Lös danach die linke Ferse und bleib wieder ruhig."
         ],
-        "cueAtRemaining": 18,
-        "cue": "BEIN WECHSELN"
+        "sideChange": "Rechte und linke Ferse bei jeder Wiederholung abwechseln.",
+        "round2Cue": "Statt der Ferse den ganzen Fuss kurz anheben. Der Körper bleibt stabil."
       }
     ]
   },
   {
     "id": "runterfahren",
     "station": 9,
-    "title": "RUNTERFAHREN",
+    "title": "RUHIG UND BEWEGLICH",
     "shortTitle": "RUHE",
-    "statement": "Mobilität. Ruhe. Fokus.",
-    "intro": "Vier ruhige Bewegungen. Atme locker und ohne Druck.",
+    "statement": "Den Körper lösen. Noch einmal Tempo. Ruhig abschliessen.",
+    "intro": "Eine ruhige Startminute, vier unterschiedliche Bewegungen und zwei Runden. Auch diese Einheit trainiert den ganzen Körper, aber mit weniger Druck.",
     "accent": "#2C6F78",
+    "status": "ready",
+    "prepare": {
+      "title": "Ruhig starten",
+      "cue": "Steh locker. Atme tief ein, führ die Arme nach oben und beim Ausatmen wieder nach unten. Geh danach langsam am Ort.",
+      "image": "s09-kindstellung.jpg"
+    },
     "exercises": [
       {
-        "id": "s09-tiefe-hocke",
-        "title": "Tiefe Hocke",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s09-tiefe-hocke.jpg",
+        "id": "s09-tiefe-hocke-atmung",
+        "title": "Tiefe Hocke mit Atmung",
+        "category": "KRAFT UND BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "tiefe-hocke.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Tiefe Hocke in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge hält eine tiefe Hocke ruhig und kontrolliert.",
+        "cue": "Tief gehen. Rechts öffnen. Links öffnen.",
         "steps": [
-          "Füsse bleiben am Boden.",
-          "Ruhig tief gehen.",
-          "Locker weiteratmen."
-        ]
-      },
-      {
-        "id": "s09-rucken-rund-und-lang",
-        "title": "Rücken rund und lang",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s09-ruecken-rund-lang.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Rücken rund und lang in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Rücken langsam rund.",
-          "Dann wieder lang.",
-          "Bewegung ruhig führen."
-        ]
-      },
-      {
-        "id": "s09-hufte-offnen",
-        "title": "Hüfte öffnen",
-        "mode": "timer",
-        "duration": 40,
-        "image": "s09-huefte-oeffnen.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Hüfte öffnen in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Ausfallschritt einnehmen.",
-          "Hüfte sanft nach vorne.",
-          "Nach der Hälfte Seite wechseln."
+          "Stell die Füsse etwas breiter als die Hüften.",
+          "Schieb den Po nach hinten und geh langsam in die Hocke.",
+          "Halte die Fersen am Boden und den Rücken möglichst lang.",
+          "Drück mit der rechten Hand das rechte Knie sanft nach aussen.",
+          "Löse die Hand und öffne danach die linke Seite."
         ],
-        "cueAtRemaining": 20,
-        "cue": "SEITE WECHSELN"
+        "sideChange": "Bei jedem ruhigen Atemzug rechts und links abwechseln.",
+        "round2Cue": "Unten bleiben und beim Ausatmen die jeweilige Seite sanft öffnen."
+      },
+      {
+        "id": "s09-vor-zurueck",
+        "title": "Vor und zurück",
+        "category": "KOORDINATION UND TEMPO",
+        "duration": 45,
+        "image": "s03-vor-zurueck.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge bewegt sich kontrolliert vorwärts und rückwärts.",
+        "cue": "Rechts beginnt vor. Zurück. Links beginnt vor.",
+        "steps": [
+          "Stell dich leicht in die Knie und halte den Blick nach vorne.",
+          "Mach mit rechts beginnend zwei kleine Schritte nach vorne.",
+          "Bremse kurz ab und geh zwei Schritte zurück.",
+          "Bleib in der Mitte eine Sekunde stabil.",
+          "Starte die nächste Folge mit dem linken Fuss."
+        ],
+        "sideChange": "Bei jeder neuen Folge den startenden Fuss wechseln.",
+        "round2Cue": "Die Schritte etwas schneller machen. In der Mitte trotzdem ruhig stoppen."
+      },
+      {
+        "id": "s09-tempo-pause",
+        "title": "Tempo und Pause",
+        "category": "SCHNELLIGKEIT UND FOKUS",
+        "duration": 45,
+        "image": "s05-schnell-ruhig.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge wechselt zwischen schnellen Füssen und einer ruhigen Position.",
+        "cue": "Schnell. Still auf rechts. Schnell. Still auf links.",
+        "steps": [
+          "Bewege die Füsse fünf Sekunden schnell und leise am Ort.",
+          "Stoppe danach auf dem rechten Bein.",
+          "Atme einmal ruhig aus und halte den Blick nach vorne.",
+          "Starte wieder für fünf Sekunden.",
+          "Stoppe bei der nächsten Pause auf dem linken Bein."
+        ],
+        "sideChange": "Bei jeder Pause das Standbein wechseln.",
+        "round2Cue": "In der Pause das freie Knie anheben. Zwei Sekunden ruhig halten."
       },
       {
         "id": "s09-kindstellung",
         "title": "Kindstellung",
-        "mode": "timer",
-        "duration": 40,
+        "category": "RUHE UND FOKUS",
+        "duration": 45,
         "image": "s09-kindstellung.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt Kindstellung in einer ruhigen Berglandschaft.",
+        "cue": "Rechts lang werden. Mitte. Links lang werden.",
         "steps": [
-          "Po Richtung Fersen.",
-          "Arme nach vorne.",
-          "Lang und ruhig ausatmen."
-        ]
+          "Komm auf Hände und Knie und schieb den Po Richtung Fersen.",
+          "Streck beide Arme weit nach vorne und leg den Kopf locker ab.",
+          "Wandere mit beiden Händen etwas nach rechts.",
+          "Atme ruhig in die linke Körperseite und komm zur Mitte zurück.",
+          "Wandere danach mit beiden Händen nach links."
+        ],
+        "sideChange": "Nach jedem langen Atemzug die Dehnseite wechseln.",
+        "round2Cue": "Die Hände weiter nach vorne schieben und die Schultern bewusst locker lassen."
       }
     ]
   }

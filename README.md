@@ -4,21 +4,19 @@ Zehn Minuten Ganzkörpertraining für 11 bis 12 Jährige im eigenen Zimmer.
 
 ## Aktueller Umfang
 
-Die neue Einstiegsseite führt zu neun Trainingseinheiten. Training 1 ist vollständig im neuen System umgesetzt:
+Die neue Einstiegsseite führt zu neun vollständig ausgearbeiteten Ganzkörpertrainings:
 
 1. Ganzkörper Start
-2. Starker Körper
-3. Zweikampf bereit
-4. Beweglich bleiben
-5. Schnell wie eine Welle
-6. Stark wie ein Fels
-7. Reaktionskünstler
-8. Balance-Profi
-9. Runterfahren
+2. Stabil und schnell
+3. Kraft in Bewegung
+4. Mobil und wach
+5. Beine und Tempo
+6. Starke Mitte
+7. Reaktion und Kontrolle
+8. Leicht und stabil
+9. Ruhig und beweglich
 
-Training 1 kombiniert Beweglichkeit, Kraft, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Fünf neue, zusammenhängende Comicillustrationen und ein eigenes Schlussmotiv zeigen die Bewegungen im selben Zimmer mit derselben Figur. Die Übungsübersicht erklärt Ausgangsposition, Bewegung, Qualitätsmerkmal und Seitenwechsel ausführlich. Während des Timers bleiben die Hinweise kurz und direkt.
-
-Trainings 2 bis 9 bleiben als bisherige Versionen erreichbar und sind in der Oberfläche klar als noch nicht überarbeitet gekennzeichnet.
+Alle Trainings kombinieren Kraft, Beweglichkeit, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Die Übungsübersichten erklären Ausgangsposition, Bewegung, Qualitätsmerkmal und Seitenwechsel ausführlich. Während des Timers bleiben die Hinweise kurz und direkt. Trainings 2 bis 9 beginnen mit einer geführten Startminute, führen zweimal durch vier Bewegungen und enden mit einer ruhigen Schlussminute.
 
 ## Technischer Aufbau
 
