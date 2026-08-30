@@ -1,17 +1,5 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-all-worlds-2";
-
-const WORLD_POINTS = {
-  1: [33, 31],
-  2: [50, 23],
-  3: [72, 24],
-  4: [81, 43],
-  5: [33, 54],
-  6: [53, 54],
-  7: [81, 64],
-  8: [35, 77],
-  9: [68, 83]
-};
+const ASSET_REV = "20260830-redesign-t01-v1";
 
 const DEFAULT_FINISH = {
   title: "ZUM SCHLUSS",
@@ -26,6 +14,7 @@ const DEFAULT_FINISH = {
 let trainings = [];
 let training = null;
 let activeRun = null;
+let programRun = null;
 let audioContext = null;
 let wakeLock = null;
 
@@ -37,7 +26,7 @@ async function init() {
     if (!response.ok) throw new Error(`Training konnte nicht geladen werden: ${response.status}`);
     trainings = await response.json();
     if (!Array.isArray(trainings) || trainings.length !== 9) {
-      throw new Error("Die Trainingswelt ist unvollständig.");
+      throw new Error("Die Trainingsübersicht ist unvollständig.");
     }
     bindGlobalEvents();
     renderRoute();
@@ -52,9 +41,9 @@ function bindGlobalEvents() {
   app.addEventListener("click", handleClick);
   window.addEventListener("popstate", renderRoute);
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && activeRun?.mode === "timer" && !activeRun.paused) {
-      updateTimerFromClock();
-    }
+    if (document.hidden) return;
+    if (programRun && !programRun.paused && !programRun.completed) updateProgramFromClock();
+    if (activeRun?.mode === "timer" && !activeRun.paused) updateTimerFromClock();
   });
 }
 
@@ -65,7 +54,11 @@ function handleClick(event) {
   const { action, exerciseId, trainingId } = button.dataset;
 
   if (action === "open-training") navigateToTraining(Number(trainingId));
-  if (action === "world") navigateTo("world");
+  if (action === "home") navigateHome();
+  if (action === "start-program") startProgram();
+  if (action === "program-pause") toggleProgramPause();
+  if (action === "program-restart") restartProgram();
+  if (action === "program-close") closeProgram();
   if (action === "start") startExercise(exerciseId);
   if (action === "pause") togglePause();
   if (action === "restart") startExercise(exerciseId);
@@ -75,19 +68,19 @@ function handleClick(event) {
 }
 
 function navigateToTraining(station) {
-  stopRun();
+  stopAllRuns();
   history.pushState({ station }, "", `#training-${station}`);
   renderRoute();
 }
 
-function navigateTo(view) {
-  stopRun();
-  history.pushState({ view }, "", "#welt");
+function navigateHome() {
+  stopAllRuns();
+  history.pushState({ view: "home" }, "", "#start");
   renderRoute();
 }
 
 function renderRoute() {
-  stopRun();
+  stopAllRuns();
   if (!trainings.length) return;
 
   const legacyStation = location.hash === "#fels" ? 6 : null;
@@ -96,89 +89,574 @@ function renderRoute() {
 
   if (station) {
     training = trainings.find(item => item.station === station);
-    if (training) renderTraining();
-    else renderWorld();
+    if (!training) return renderHome();
+    if (training.station === 1) renderProgramTraining();
+    else renderLegacyTraining();
   } else {
     training = null;
-    renderWorld();
+    renderHome();
   }
 
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
-function renderWorld() {
+function renderHome() {
+  const current = trainings.find(item => item.station === 1);
+  const archive = trainings.filter(item => item.station !== 1);
   document.title = "10 Minuten on Top";
+
   app.innerHTML = `
-    <section class="world-screen" aria-labelledby="world-title">
-      <div class="world-copy">
-        <p class="world-kicker">DEIN TRAINING FÜR HEUTE</p>
-        <h1 id="world-title">Wähle deine Station.</h1>
-        <p>Tippe auf ein Training in der Welt.</p>
+    <div class="home-shell">
+      ${topbarMarkup(false)}
+
+      <main>
+        <section class="home-hero" aria-labelledby="home-title">
+          <div class="home-hero-copy">
+            <p class="home-kicker">TRAINING FÜR DEIN ZIMMER</p>
+            <h1 id="home-title">Dein Training.<br>Dein Zimmer.<br><span>Zehn Minuten.</span></h1>
+            <p class="home-lead">Kraft, Beweglichkeit, Schnelligkeit und Fokus. Ohne Geräte. Mit klarer Anleitung.</p>
+
+            <div class="home-facts" aria-label="Trainingsmerkmale">
+              <span>10 MINUTEN</span>
+              <span>GANZKÖRPER</span>
+              <span>OHNE MATERIAL</span>
+            </div>
+
+            <button class="hero-start" type="button" data-action="open-training" data-training-id="1">
+              TRAINING 01 ÖFFNEN <span aria-hidden="true">→</span>
+            </button>
+            <p class="home-sequence">Zwei Runden. Fünf Bewegungen. Eine ruhige Schlussminute.</p>
+          </div>
+
+          <figure class="home-hero-visual">
+            <img
+              src="./t01-linienschritte.jpg?v=${ASSET_REV}"
+              alt="Ein Junge trainiert schnelle Linienschritte in seinem Zimmer."
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+            >
+            <figcaption>
+              <span>NEU</span>
+              <strong>${current.title}</strong>
+              <small>${current.statement}</small>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="home-current" aria-labelledby="current-title">
+          <div class="section-heading">
+            <div>
+              <p class="home-kicker">BEREIT</p>
+              <h2 id="current-title">Ein komplettes Training</h2>
+            </div>
+            <p>Mobilisieren, kräftigen, Tempo aufnehmen und ruhig abschliessen. Der Ablauf führt automatisch durch alle zehn Minuten.</p>
+          </div>
+
+          <div class="current-strip" aria-label="Inhalte von Training 1">
+            ${current.exercises.map((exercise, index) => `
+              <div class="current-item">
+                <span>${String(index + 1).padStart(2, "0")}</span>
+                <strong>${exercise.category}</strong>
+                <small>${exercise.title}</small>
+              </div>
+            `).join("")}
+            <div class="current-item current-item-finish">
+              <span>10</span>
+              <strong>RUHE</strong>
+              <small>${current.finish.title}</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="training-library" aria-labelledby="library-title">
+          <div class="section-heading">
+            <div>
+              <p class="home-kicker">DIE NÄCHSTEN EINHEITEN</p>
+              <h2 id="library-title">Trainings 02 bis 09</h2>
+            </div>
+            <p>Diese Einheiten funktionieren weiterhin. Inhalt und Bilder werden als Nächstes im neuen Stil überarbeitet.</p>
+          </div>
+
+          <div class="archive-grid">
+            ${archive.map(renderArchiveCard).join("")}
+          </div>
+        </section>
+      </main>
+
+      <footer class="home-footer">
+        <strong>10 MINUTEN ON TOP</strong>
+        <span>Sauber bewegen. Regelmässig trainieren.</span>
+      </footer>
+    </div>
+  `;
+}
+
+function renderArchiveCard(item) {
+  return `
+    <button class="archive-card" type="button" data-action="open-training" data-training-id="${item.station}">
+      <span class="archive-number">${String(item.station).padStart(2, "0")}</span>
+      <span class="archive-copy">
+        <small>BISHERIGE VERSION</small>
+        <strong>${item.title}</strong>
+        <span>${item.statement}</span>
+      </span>
+      <span class="archive-arrow" aria-hidden="true">→</span>
+    </button>
+  `;
+}
+
+function topbarMarkup(showBack = true) {
+  return `
+    <header class="topbar">
+      <div class="brand" aria-label="10 Minuten on Top">
+        <span class="brand-badge" aria-hidden="true">10′</span>
+        <span>MINUTEN ON TOP</span>
       </div>
-      <div class="world-stage">
+      ${showBack ? `
+        <button class="back-button" type="button" data-action="home">
+          <span aria-hidden="true">←</span> ZUR ÜBERSICHT
+        </button>
+      ` : `<span class="topbar-note">TRAINING 01 IST BEREIT</span>`}
+    </header>
+  `;
+}
+
+function renderProgramTraining() {
+  document.title = `${training.title} · 10 Minuten on Top`;
+  app.innerHTML = `
+    <div class="training-shell new-training-shell" style="--mission-accent:${training.accent}">
+      ${topbarMarkup(true)}
+
+      <main>
+        <section class="new-training-hero" aria-labelledby="training-title">
+          <div class="new-training-copy">
+            <p class="eyebrow">TRAINING 01 · KOMPLETT NEU</p>
+            <h1 id="training-title">${training.title}</h1>
+            <p class="statement">${training.statement}</p>
+            <p class="intro-text">${training.intro}</p>
+
+            <div class="training-stats" aria-label="Dauer und Ausstattung">
+              <span><strong>10</strong> MINUTEN</span>
+              <span><strong>5</strong> BEWEGUNGEN</span>
+              <span><strong>0</strong> GERÄTE</span>
+            </div>
+
+            <button class="program-start" type="button" data-action="start-program">
+              <span>10 MINUTEN STARTEN</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="start-hint">Der Timer führt dich automatisch durch Training und Wechsel.</p>
+          </div>
+
+          <figure class="new-training-visual">
+            <img
+              src="./t01-ausfallschritt-drehung.jpg?v=${ASSET_REV}"
+              alt="Ein Junge zeigt einen Ausfallschritt mit Drehung in seinem Zimmer."
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+            >
+          </figure>
+        </section>
+
+        <section class="training-safety" aria-label="Sicherheit">
+          <strong>VOR DEM START</strong>
+          <span>Räume etwa zwei Quadratmeter frei.</span>
+          <span>Lande bei schnellen Schritten leise.</span>
+          <span>Bei Schmerzen sofort stoppen.</span>
+        </section>
+
+        <section class="program-overview" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <div>
+              <p class="home-kicker">DEIN ABLAUF</p>
+              <h2 id="overview-title">Fünf klare Bewegungen</h2>
+            </div>
+            <p>Jede Bewegung dauert 45 Sekunden. Dazwischen hast du 15 Sekunden für den Wechsel. In Runde zwei kommt eine kleine Steigerung dazu.</p>
+          </div>
+
+          <div class="program-card-grid">
+            ${training.exercises.map(renderProgramCard).join("")}
+          </div>
+
+          ${renderFinishPreview(training.finish)}
+
+          <div class="bottom-start">
+            <div>
+              <strong>Bereit für die ganzen zehn Minuten?</strong>
+              <span>Start drücken. Der Rest läuft automatisch.</span>
+            </div>
+            <button class="program-start" type="button" data-action="start-program">
+              <span>TRAINING STARTEN</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  `;
+}
+
+function renderProgramCard(exercise, index) {
+  return `
+    <article class="program-card">
+      <div class="program-card-image">
         <img
-          src="./world.jpg?v=${ASSET_REV}"
-          alt="Die Trainingswelt mit neun auswählbaren Stationen."
-          width="1400"
-          height="933"
-          fetchpriority="high"
+          src="./${exercise.image}?v=${ASSET_REV}"
+          alt="${exercise.alt}"
+          width="${exercise.imageWidth}"
+          height="${exercise.imageHeight}"
+          loading="${index < 2 ? "eager" : "lazy"}"
+          decoding="async"
         >
-        ${trainings.map(renderWorldHotspot).join("")}
+        <span>${String(index + 1).padStart(2, "0")}</span>
       </div>
-      <div class="world-action">
-        <span>9 TRAININGS</span>
-        <strong>TIPPE AUF EINE STATION</strong>
+      <div class="program-card-copy">
+        <div class="program-card-meta">
+          <span>${exercise.category}</span>
+          <strong>45 SEK</strong>
+        </div>
+        <h3>${exercise.title}</h3>
+        <ul>
+          ${exercise.steps.map(step => `<li>${step}</li>`).join("")}
+        </ul>
+        ${exercise.options ? `
+          <div class="level-options" aria-label="Drei Varianten">
+            ${exercise.options.map(option => `<span>${option}</span>`).join("")}
+          </div>
+        ` : ""}
+        ${exercise.round2Cue ? `<p class="round-two"><strong>RUNDE 2</strong> ${exercise.round2Cue}</p>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+function renderFinishPreview(finish) {
+  return `
+    <article class="finish-preview">
+      <div class="finish-preview-image">
+        <img
+          src="./${finish.image}?v=${ASSET_REV}"
+          alt="${finish.alt}"
+          width="${finish.imageWidth}"
+          height="${finish.imageHeight}"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="finish-preview-copy">
+        <p class="home-kicker">MINUTE 10 · RUHE UND FOKUS</p>
+        <h2>${finish.title}</h2>
+        <ul>
+          ${finish.steps.map(step => `<li>${step}</li>`).join("")}
+        </ul>
+        <p>${finish.statement}</p>
+      </div>
+    </article>
+  `;
+}
+
+function buildProgramSegments() {
+  const segments = [];
+  const firstRound = training.exercises;
+  const secondRound = training.exercises.slice(0, 4);
+
+  firstRound.forEach((exercise, index) => {
+    segments.push(makeWorkSegment(exercise, 1, index + 1, firstRound.length));
+    const next = index < firstRound.length - 1 ? firstRound[index + 1] : secondRound[0];
+    segments.push(makeTransitionSegment(next, index === firstRound.length - 1 ? 2 : 1));
+  });
+
+  secondRound.forEach((exercise, index) => {
+    segments.push(makeWorkSegment(exercise, 2, index + 1, secondRound.length));
+    if (index < secondRound.length - 1) {
+      segments.push(makeTransitionSegment(secondRound[index + 1], 2));
+    } else {
+      segments.push({
+        kind: "transition",
+        duration: 15,
+        label: "WECHSEL · 15 SEKUNDEN",
+        title: "Ruhig hinstellen",
+        cue: "Die letzte Minute gehört deiner Atmung.",
+        image: training.finish.image,
+        alt: training.finish.alt
+      });
+    }
+  });
+
+  segments.push({
+    kind: "finish",
+    duration: 60,
+    label: "MINUTE 10 · RUHE UND FOKUS",
+    title: training.finish.title,
+    cue: "Vier Sekunden einatmen. Sechs Sekunden ausatmen.",
+    image: training.finish.image,
+    alt: training.finish.alt
+  });
+
+  return segments;
+}
+
+function makeWorkSegment(exercise, round, position, roundLength) {
+  return {
+    kind: "work",
+    duration: 45,
+    label: `RUNDE ${round} · BEWEGUNG ${position} VON ${roundLength}`,
+    title: exercise.title,
+    cue: round === 2 && exercise.round2Cue ? exercise.round2Cue : exercise.cue,
+    image: exercise.image,
+    alt: exercise.alt
+  };
+}
+
+function makeTransitionSegment(nextExercise, round) {
+  return {
+    kind: "transition",
+    duration: 15,
+    label: `WECHSEL · RUNDE ${round}`,
+    title: "Als Nächstes",
+    cue: nextExercise.title,
+    image: nextExercise.image,
+    alt: nextExercise.alt
+  };
+}
+
+async function startProgram() {
+  stopAllRuns();
+  await prepareAudio();
+
+  const segments = buildProgramSegments();
+  programRun = {
+    segments,
+    index: 0,
+    totalMs: segments.reduce((sum, segment) => sum + segment.duration * 1000, 0),
+    remainingMs: segments[0].duration * 1000,
+    endAt: Date.now() + segments[0].duration * 1000,
+    paused: false,
+    completed: false,
+    interval: null
+  };
+
+  renderProgramOverlay();
+  programRun.interval = window.setInterval(updateProgramFromClock, 150);
+  requestWakeLock();
+  playTone([700, 900]);
+}
+
+function renderProgramOverlay() {
+  document.body.classList.add("program-is-open");
+  app.insertAdjacentHTML("beforeend", `
+    <section class="program-overlay" role="dialog" aria-modal="true" aria-labelledby="program-title">
+      <header class="program-topbar">
+        <div class="brand program-brand">
+          <span class="brand-badge" aria-hidden="true">10′</span>
+          <span>GANZKÖRPER START</span>
+        </div>
+        <button class="program-close" type="button" data-action="program-close" aria-label="Training schliessen">SCHLIESSEN <span aria-hidden="true">×</span></button>
+      </header>
+      <div class="program-frame" data-program-frame></div>
+    </section>
+  `);
+  renderProgramStage();
+}
+
+function renderProgramStage() {
+  if (!programRun || programRun.completed) return;
+  const segment = programRun.segments[programRun.index];
+  const frame = document.querySelector("[data-program-frame]");
+  if (!frame) return;
+
+  frame.innerHTML = `
+    <figure class="program-live-image">
+      <img src="./${segment.image}?v=${ASSET_REV}" alt="${segment.alt}" width="1536" height="1024">
+      <figcaption>${segment.kind === "transition" ? "WECHSEL" : segment.kind === "finish" ? "RUHIG WERDEN" : "JETZT TRAINIEREN"}</figcaption>
+    </figure>
+
+    <section class="program-live-panel ${segment.kind === "transition" ? "is-transition" : ""}">
+      <div>
+        <p class="program-label">${segment.label}</p>
+        <h1 id="program-title">${segment.title}</h1>
+        <p class="program-cue">${segment.cue}</p>
+      </div>
+
+      <div class="program-clocks">
+        <div><small>DIESE PHASE</small><strong data-program-clock>${formatTimeMs(programRun.remainingMs)}</strong></div>
+        <div><small>NOCH GESAMT</small><strong data-program-total>${formatTimeMs(totalProgramRemainingMs())}</strong></div>
+      </div>
+
+      <div class="program-progress" role="progressbar" aria-label="Fortschritt des Trainings" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-program-progress>
+        <div data-program-fill></div>
+      </div>
+
+      <div class="program-actions">
+        <button class="program-main-action" type="button" data-action="program-pause">PAUSE</button>
+        <button class="program-secondary-action" type="button" data-action="program-restart">VON VORNE</button>
+      </div>
+    </section>
+  `;
+  updateProgramDisplay();
+}
+
+function updateProgramFromClock() {
+  if (!programRun || programRun.paused || programRun.completed) return;
+
+  const now = Date.now();
+  programRun.remainingMs = Math.max(0, programRun.endAt - now);
+
+  while (programRun && !programRun.completed && now >= programRun.endAt) {
+    const overrunMs = now - programRun.endAt;
+    if (!moveToNextSegment(overrunMs)) return;
+  }
+
+  if (programRun && !programRun.completed) {
+    programRun.remainingMs = Math.max(0, programRun.endAt - Date.now());
+    updateProgramDisplay();
+  }
+}
+
+function moveToNextSegment(overrunMs = 0) {
+  if (!programRun) return false;
+  programRun.index += 1;
+
+  if (programRun.index >= programRun.segments.length) {
+    finishProgram();
+    return false;
+  }
+
+  const segment = programRun.segments[programRun.index];
+  const durationMs = segment.duration * 1000;
+  programRun.remainingMs = Math.max(0, durationMs - overrunMs);
+  programRun.endAt = Date.now() + durationMs - overrunMs;
+  renderProgramStage();
+
+  if (overrunMs < 1200) {
+    playTone(segment.kind === "work" ? [720] : segment.kind === "finish" ? [620, 820] : [520]);
+  }
+  return true;
+}
+
+function updateProgramDisplay() {
+  if (!programRun || programRun.completed) return;
+  const clock = document.querySelector("[data-program-clock]");
+  const total = document.querySelector("[data-program-total]");
+  const fill = document.querySelector("[data-program-fill]");
+  const progress = document.querySelector("[data-program-progress]");
+  const remaining = totalProgramRemainingMs();
+  const completedRatio = Math.min(1, Math.max(0, 1 - remaining / programRun.totalMs));
+
+  if (clock) clock.textContent = formatTimeMs(programRun.remainingMs);
+  if (total) total.textContent = formatTimeMs(remaining);
+  if (fill) fill.style.transform = `scaleX(${completedRatio})`;
+  if (progress) progress.setAttribute("aria-valuenow", String(Math.round(completedRatio * 100)));
+}
+
+function totalProgramRemainingMs() {
+  if (!programRun) return 0;
+  return programRun.remainingMs + programRun.segments.slice(programRun.index + 1).reduce((sum, segment) => sum + segment.duration * 1000, 0);
+}
+
+function toggleProgramPause() {
+  if (!programRun || programRun.completed) return;
+  const button = document.querySelector("[data-action='program-pause']");
+  const panel = document.querySelector(".program-live-panel");
+
+  if (programRun.paused) {
+    programRun.paused = false;
+    programRun.endAt = Date.now() + programRun.remainingMs;
+    if (button) button.textContent = "PAUSE";
+    panel?.classList.remove("is-paused");
+    requestWakeLock();
+  } else {
+    programRun.remainingMs = Math.max(0, programRun.endAt - Date.now());
+    programRun.paused = true;
+    if (button) button.textContent = "WEITER";
+    panel?.classList.add("is-paused");
+    updateProgramDisplay();
+    releaseWakeLock();
+  }
+}
+
+function restartProgram() {
+  if (!programRun) return;
+  const segments = programRun.segments;
+  programRun.index = 0;
+  programRun.remainingMs = segments[0].duration * 1000;
+  programRun.endAt = Date.now() + programRun.remainingMs;
+  programRun.paused = false;
+  programRun.completed = false;
+  if (!programRun.interval) {
+    programRun.interval = window.setInterval(updateProgramFromClock, 150);
+  }
+  renderProgramStage();
+  requestWakeLock();
+  playTone([700, 900]);
+}
+
+function finishProgram() {
+  if (!programRun) return;
+  if (programRun.interval) clearInterval(programRun.interval);
+  programRun.interval = null;
+  programRun.completed = true;
+  releaseWakeLock();
+  playTone([700, 860, 1040]);
+
+  const frame = document.querySelector("[data-program-frame]");
+  if (!frame) return;
+  frame.innerHTML = `
+    <figure class="program-live-image program-complete-image">
+      <img src="./${training.finish.image}?v=${ASSET_REV}" alt="${training.finish.alt}" width="1536" height="1024">
+      <figcaption>10 MINUTEN GESCHAFFT</figcaption>
+    </figure>
+    <section class="program-live-panel program-complete-panel">
+      <div>
+        <p class="program-label">TRAINING BEENDET</p>
+        <h1 id="program-title">Sauber abgeschlossen.</h1>
+        <p class="program-cue">Atme noch einmal ruhig durch. Dann bist du fertig.</p>
+      </div>
+      <div class="complete-mark" aria-hidden="true">✓</div>
+      <div class="program-actions">
+        <button class="program-main-action" type="button" data-action="program-close">ZURÜCK ZUM TRAINING</button>
+        <button class="program-secondary-action" type="button" data-action="program-restart">NOCHMALS</button>
       </div>
     </section>
   `;
 }
 
-function renderWorldHotspot(item) {
-  const [left, top] = WORLD_POINTS[item.station];
-  return `
-    <button
-      class="world-hotspot"
-      type="button"
-      data-action="open-training"
-      data-training-id="${item.station}"
-      data-station="${item.station}"
-      style="left:${left}%;top:${top}%"
-      aria-label="Station ${item.station}, ${item.title}, öffnen"
-      title="${item.station} · ${item.title}"
-    ></button>
-  `;
+function closeProgram() {
+  stopProgram();
 }
 
-function renderTraining() {
+function stopProgram() {
+  if (programRun?.interval) clearInterval(programRun.interval);
+  programRun = null;
+  document.querySelector(".program-overlay")?.remove();
+  document.body.classList.remove("program-is-open");
+  releaseWakeLock();
+}
+
+function renderLegacyTraining() {
   const finish = training.finish || DEFAULT_FINISH;
   document.title = `${training.shortTitle} · 10 Minuten on Top`;
   app.innerHTML = `
     <div class="training-shell" style="--mission-accent:${training.accent}">
-      <header class="topbar">
-        <div class="brand" aria-label="10 Minuten on Top">
-          <span class="brand-badge" aria-hidden="true">10′</span>
-          <span>MINUTEN ON TOP</span>
-        </div>
-        <button class="back-button" type="button" data-action="world">
-          <span aria-hidden="true">←</span> ZUR WELT
-        </button>
-      </header>
+      ${topbarMarkup(true)}
 
       <section class="training-intro" aria-labelledby="training-title">
         <div>
-          <p class="eyebrow">TRAINING ${training.station}</p>
+          <p class="eyebrow">TRAINING ${String(training.station).padStart(2, "0")} · BISHERIGE VERSION</p>
           <h1 id="training-title">${training.title}</h1>
           <p class="statement">${training.statement}</p>
           <p class="intro-text">${training.intro}</p>
         </div>
-        <aside class="safety-note">
-          <strong>WICHTIG</strong>
-          <span>Du brauchst etwas freien Platz. Bei Schmerzen stoppst du.</span>
+        <aside class="safety-note review-note">
+          <strong>WIRD ÜBERARBEITET</strong>
+          <span>Diese Einheit funktioniert weiterhin. Inhalt und Bilder werden noch in den neuen Stil gebracht.</span>
         </aside>
       </section>
 
       <section class="exercise-grid" aria-label="Vier Übungen">
-        ${training.exercises.map(renderExerciseCard).join("")}
+        ${training.exercises.map(renderLegacyExerciseCard).join("")}
       </section>
 
       <section class="finish-card" aria-labelledby="finish-title">
@@ -186,61 +664,33 @@ function renderTraining() {
         <div>
           <p class="eyebrow">RUHIG WERDEN</p>
           <h2 id="finish-title">${finish.title}</h2>
-          <ol>
-            ${finish.steps.map(step => `<li>${step}</li>`).join("")}
-          </ol>
+          <ol>${finish.steps.map(step => `<li>${step}</li>`).join("")}</ol>
           <p class="finish-statement">${finish.statement}</p>
-          <button class="finish-button" type="button" data-action="world">ZURÜCK ZUR WELT</button>
+          <button class="finish-button" type="button" data-action="home">ZURÜCK ZUR ÜBERSICHT</button>
         </div>
       </section>
     </div>
   `;
 }
 
-function renderExerciseCard(exercise, index) {
-  const measure = exercise.mode === "timer"
-    ? `${exercise.duration} SEKUNDEN`
-    : `${exercise.repetitions} WIEDERHOLUNGEN`;
-
+function renderLegacyExerciseCard(exercise, index) {
+  const measure = exercise.mode === "timer" ? `${exercise.duration} SEKUNDEN` : `${exercise.repetitions} WIEDERHOLUNGEN`;
   return `
     <article class="exercise-card" id="card-${exercise.id}">
       <header class="card-heading">
         <span class="exercise-number">${index + 1}</span>
-        <div>
-          <p class="card-kicker">ÜBUNG ${index + 1}</p>
-          <h2>${exercise.title}</h2>
-        </div>
+        <div><p class="card-kicker">ÜBUNG ${index + 1}</p><h2>${exercise.title}</h2></div>
       </header>
-
       <div class="exercise-visual">
-        <img
-          src="./${exercise.image}?v=${ASSET_REV}"
-          alt="${exercise.alt}"
-          width="${exercise.imageWidth}"
-          height="${exercise.imageHeight}"
-          loading="${index === 0 ? "eager" : "lazy"}"
-          decoding="async"
-        >
+        <img src="./${exercise.image}?v=${ASSET_REV}" alt="${exercise.alt}" width="${exercise.imageWidth}" height="${exercise.imageHeight}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
       </div>
-
       <div class="card-content">
-        <ul class="exercise-steps">
-          ${exercise.steps.map(step => `<li>${step}</li>`).join("")}
-        </ul>
+        <ul class="exercise-steps">${exercise.steps.map(step => `<li>${step}</li>`).join("")}</ul>
         ${exercise.focus ? `<p class="focus-cue">${exercise.focus}</p>` : ""}
-
         <div class="exercise-controls">
           <span class="measure">${measure}</span>
-          <button
-            class="start-button"
-            type="button"
-            data-action="start"
-            data-exercise-id="${exercise.id}"
-          >
-            START
-          </button>
+          <button class="start-button" type="button" data-action="start" data-exercise-id="${exercise.id}">START</button>
         </div>
-
         <div class="run-panel" data-panel="${exercise.id}" hidden></div>
       </div>
     </article>
@@ -253,7 +703,6 @@ async function startExercise(exerciseId) {
 
   stopRun();
   closeAllPanels();
-
   const card = document.getElementById(`card-${exerciseId}`);
   const panel = card.querySelector("[data-panel]");
   card.classList.add("is-active");
@@ -264,10 +713,7 @@ async function startExercise(exerciseId) {
     panel.innerHTML = `
       <div class="repetition-run" role="status">
         <span class="repetition-count">${exercise.repetitions}</span>
-        <div>
-          <strong>LANGSAME WIEDERHOLUNGEN</strong>
-          <p>Zähle nur Bewegungen, die sich sauber anfühlen.</p>
-        </div>
+        <div><strong>LANGSAME WIEDERHOLUNGEN</strong><p>Zähle nur Bewegungen, die sich sauber anfühlen.</p></div>
       </div>
       <div class="run-actions">
         <button class="complete-button" type="button" data-action="complete" data-exercise-id="${exercise.id}">FERTIG</button>
@@ -280,7 +726,6 @@ async function startExercise(exerciseId) {
 
   await prepareAudio();
   requestWakeLock();
-
   activeRun = {
     id: exercise.id,
     mode: "timer",
@@ -307,9 +752,7 @@ function timerPanelMarkup(exercise, remaining) {
       <span class="clock" data-clock>${formatTime(remaining)}</span>
       <span class="timer-cue" data-cue>${exercise.signalEvery ? "BEIM TON REAGIEREN" : exercise.cue ? "HALTE DEINE POSITION" : "RUHIG WEITER"}</span>
     </div>
-    <div class="timer-track" aria-hidden="true">
-      <div class="timer-fill" data-fill style="transform:scaleX(1)"></div>
-    </div>
+    <div class="timer-track" aria-hidden="true"><div class="timer-fill" data-fill style="transform:scaleX(1)"></div></div>
     <p class="run-status" data-status aria-live="assertive"></p>
     <div class="run-actions">
       <button class="quiet-button" type="button" data-action="pause">PAUSE</button>
@@ -321,41 +764,28 @@ function timerPanelMarkup(exercise, remaining) {
 
 function updateTimerFromClock() {
   if (!activeRun || activeRun.mode !== "timer" || activeRun.paused) return;
-
   const remaining = Math.max(0, Math.ceil((activeRun.endAt - Date.now()) / 1000));
+
   if (remaining !== activeRun.remaining) {
     activeRun.remaining = remaining;
     updateTimerDisplay();
-
     const elapsed = activeRun.total - remaining;
-    if (
-      activeRun.signalEvery &&
-      elapsed > 0 &&
-      elapsed % activeRun.signalEvery === 0 &&
-      activeRun.lastSignalElapsed !== elapsed
-    ) {
+    if (activeRun.signalEvery && elapsed > 0 && elapsed % activeRun.signalEvery === 0 && activeRun.lastSignalElapsed !== elapsed) {
       activeRun.lastSignalElapsed = elapsed;
       playTone([720]);
     }
   }
 
-  if (
-    activeRun.cueAtRemaining &&
-    !activeRun.cuePlayed &&
-    remaining <= activeRun.cueAtRemaining &&
-    remaining > 0
-  ) {
+  if (activeRun.cueAtRemaining && !activeRun.cuePlayed && remaining <= activeRun.cueAtRemaining && remaining > 0) {
     activeRun.cuePlayed = true;
     showMidwayCue();
   }
-
   if (remaining <= 0) finishTimer();
 }
 
 function updateTimerDisplay() {
   const card = document.getElementById(`card-${activeRun.id}`);
   if (!card) return;
-
   const clock = card.querySelector("[data-clock]");
   const fill = card.querySelector("[data-fill]");
   clock.textContent = formatTime(activeRun.remaining);
@@ -373,7 +803,6 @@ function showMidwayCue() {
 
 function togglePause() {
   if (!activeRun || activeRun.mode !== "timer") return;
-
   const card = document.getElementById(`card-${activeRun.id}`);
   const button = card?.querySelector("[data-action='pause']");
   const status = card?.querySelector("[data-status]");
@@ -395,20 +824,17 @@ function togglePause() {
 
 function finishTimer() {
   if (!activeRun) return;
-
   const exerciseId = activeRun.id;
   const card = document.getElementById(`card-${exerciseId}`);
   const cue = card?.querySelector("[data-cue]");
   const status = card?.querySelector("[data-status]");
   const pauseButton = card?.querySelector("[data-action='pause']");
-
   if (activeRun.interval) clearInterval(activeRun.interval);
   activeRun.interval = null;
   if (cue) cue.textContent = "GESCHAFFT";
   if (status) status.textContent = "Fertig. Atme einmal ruhig durch.";
   if (pauseButton) pauseButton.disabled = true;
   card?.classList.add("is-finished");
-
   playTone([700, 860, 1040]);
   releaseWakeLock();
 }
@@ -417,13 +843,9 @@ function completeExercise(exerciseId) {
   const card = document.getElementById(`card-${exerciseId}`);
   const panel = card?.querySelector("[data-panel]");
   if (!card || !panel) return;
-
   card.classList.add("is-finished");
   panel.innerHTML = `
-    <div class="manual-finish" role="status">
-      <strong>FERTIG</strong>
-      <span>Atme einmal ruhig durch.</span>
-    </div>
+    <div class="manual-finish" role="status"><strong>FERTIG</strong><span>Atme einmal ruhig durch.</span></div>
     <div class="run-actions">
       <button class="yellow-button" type="button" data-action="restart" data-exercise-id="${exerciseId}">NOCHMALS</button>
       <button class="dark-button" type="button" data-action="close">SCHLIESSEN</button>
@@ -451,10 +873,19 @@ function stopRun() {
   releaseWakeLock();
 }
 
+function stopAllRuns() {
+  stopRun();
+  stopProgram();
+}
+
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const rest = seconds % 60;
   return `${String(minutes).padStart(2, "0")}:${String(rest).padStart(2, "0")}`;
+}
+
+function formatTimeMs(milliseconds) {
+  return formatTime(Math.max(0, Math.ceil(milliseconds / 1000)));
 }
 
 async function prepareAudio() {
@@ -470,12 +901,10 @@ async function prepareAudio() {
 
 function playTone(frequencies) {
   if (!audioContext) return;
-
   frequencies.forEach((frequency, index) => {
     const oscillator = audioContext.createOscillator();
     const gain = audioContext.createGain();
     const startsAt = audioContext.currentTime + index * 0.13;
-
     oscillator.connect(gain);
     gain.connect(audioContext.destination);
     oscillator.frequency.value = frequency;
@@ -496,7 +925,7 @@ async function requestWakeLock() {
       });
     }
   } catch (error) {
-    console.info("Bildschirm-Wachhalter ist auf diesem Gerät nicht verfügbar.");
+    console.info("Bildschirm Wachhalter ist auf diesem Gerät nicht verfügbar.");
   }
 }
 
@@ -522,7 +951,7 @@ function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./service-worker.js").catch(error => {
-      console.warn("Offline-Modus konnte nicht aktiviert werden.", error);
+      console.warn("Offline Modus konnte nicht aktiviert werden.", error);
     });
   });
 }

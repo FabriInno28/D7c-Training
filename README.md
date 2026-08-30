@@ -1,12 +1,12 @@
 # 10 Minuten on Top
 
-Auslieferbare Trainingswelt für Fussballerinnen und Fussballer von 10 bis 12 Jahren.
+Zehn Minuten Ganzkörpertraining für 11 bis 12 Jährige im eigenen Zimmer.
 
 ## Aktueller Umfang
 
-Die Weltkarte ist der Einstieg und führt zu neun Trainingsstationen:
+Die neue Einstiegsseite führt zu neun Trainingseinheiten. Training 1 ist vollständig im neuen System umgesetzt:
 
-1. Fester Stand
+1. Ganzkörper Start
 2. Starker Körper
 3. Zweikampf bereit
 4. Beweglich bleiben
@@ -16,14 +16,16 @@ Die Weltkarte ist der Einstieg und führt zu neun Trainingsstationen:
 8. Balance-Profi
 9. Runterfahren
 
-Jede Station enthält vier Übungen und einen ruhigen Abschluss. Die insgesamt 36 Übungen verwenden eine durchgängige Figur, eigenständige Landschaften und stationsbezogene Farbakzente.
+Training 1 kombiniert Beweglichkeit, Kraft, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Fünf neue, zusammenhängende Comicillustrationen und ein eigenes Schlussmotiv zeigen die Bewegungen im selben Zimmer mit derselben Figur.
+
+Trainings 2 bis 9 bleiben als bisherige Versionen erreichbar und sind in der Oberfläche klar als noch nicht überarbeitet gekennzeichnet.
 
 ## Technischer Aufbau
 
 - `training.json` enthält alle neun Trainings und ihre Übungen.
-- `app.js` steuert Weltkarte, Routen, Timer, Signaltöne und Abschlüsse.
+- `app.js` steuert Einstiegsseite, Routen, den durchgehenden Zehn Minuten Ablauf, Signaltöne und die bisherigen Einzeltrainer.
 - `styles.css` enthält das responsive Layout für Smartphone und Desktop.
-- `service-worker.js` macht Weltkarte, Trainings und alle Illustrationen nach dem ersten vollständigen Laden offline nutzbar.
+- `service-worker.js` macht Einstiegsseite, Trainings und Illustrationen nach dem ersten vollständigen Laden offline nutzbar.
 - Die Trainings sind direkt über `#training-1` bis `#training-9` erreichbar.
 
 Die Anwendung ist statisch und wird über GitHub Pages ausgeliefert.

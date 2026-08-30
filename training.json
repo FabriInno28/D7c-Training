@@ -1,76 +1,117 @@
 [
   {
-    "id": "fester-stand",
+    "id": "ganzkoerper-start",
     "station": 1,
-    "title": "FESTER STAND",
-    "shortTitle": "STAND",
-    "statement": "Stabile Beine. Sicherer Stand.",
-    "intro": "Vier Übungen. Sauber bewegen ist wichtiger als schnell sein.",
-    "accent": "#E5A900",
+    "title": "GANZKÖRPER START",
+    "shortTitle": "START",
+    "statement": "Mobilisieren. Kräftigen. Tempo aufnehmen.",
+    "intro": "Fünf Bewegungen, zwei Runden und eine ruhige Schlussminute. Zehn Minuten für den ganzen Körper.",
+    "accent": "#D9A11E",
+    "status": "ready",
     "exercises": [
       {
-        "id": "s01-kniebeuge",
-        "title": "Kniebeuge",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s01-kniebeuge.jpg",
+        "id": "ausfallschritt-drehung",
+        "title": "Ausfallschritt mit Drehung",
+        "category": "BEWEGLICHKEIT",
+        "duration": 45,
+        "image": "t01-ausfallschritt-drehung.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Kniebeuge in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge zeigt einen Ausfallschritt mit Oberkörperdrehung in seinem Zimmer.",
+        "cue": "Schritt zurück. Zur vorderen Seite drehen.",
         "steps": [
-          "Füsse etwa hüftbreit.",
-          "Po nach hinten. Knie stabil.",
-          "Ruhig wieder hoch."
-        ]
-      },
-      {
-        "id": "s01-ruckwartsschritt",
-        "title": "Rückwärtsschritt",
-        "mode": "timer",
-        "duration": 30,
-        "image": "s01-rueckwaertsschritt.jpg",
-        "imageWidth": 1536,
-        "imageHeight": 1024,
-        "alt": "Der Junge zeigt Rückwärtsschritt in einer ruhigen Berglandschaft.",
-        "steps": [
-          "Grossen Schritt zurück.",
+          "Schritt kontrolliert zurück.",
           "Vorderes Knie bleibt stabil.",
-          "Kräftig wieder nach vorne."
+          "Oberkörper zur vorderen Seite drehen."
         ],
-        "cueAtRemaining": 15,
-        "cue": "SEITE WECHSELN"
+        "round2Cue": "Bewegung etwas grösser. Nicht schneller."
       },
       {
-        "id": "s01-einbeinige-beuge",
-        "title": "Einbeinige Beuge",
-        "mode": "timer",
-        "duration": 25,
-        "image": "s01-einbeinige-beuge.jpg",
+        "id": "kniebeuge-knieheben",
+        "title": "Kniebeuge mit Knieheben",
+        "category": "KRAFT UND BALANCE",
+        "duration": 45,
+        "image": "t01-kniebeuge-knieheben.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Einbeinige Beuge in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge zeigt eine Kniebeuge mit anschliessendem Knieheben in seinem Zimmer.",
+        "cue": "Tief beugen. Knie oben ruhig halten.",
         "steps": [
-          "Steh auf einem Bein.",
-          "Beuge dich leicht nach vorne.",
-          "Rücken lang. Zurück in die Mitte."
-        ]
+          "Tief und kontrolliert beugen.",
+          "Kräftig aufrichten.",
+          "Knie oben eine Sekunde ruhig halten."
+        ],
+        "round2Cue": "Knie oben eine Sekunde halten."
       },
       {
-        "id": "s01-beckenheben",
-        "title": "Beckenheben",
-        "mode": "timer",
-        "duration": 35,
-        "image": "s01-beckenheben.jpg",
+        "id": "liegestuetz",
+        "title": "Liegestütz",
+        "category": "OBERKÖRPER UND RUMPF",
+        "duration": 45,
+        "image": "t01-liegestuetz.jpg",
         "imageWidth": 1536,
         "imageHeight": 1024,
-        "alt": "Der Junge zeigt Beckenheben in einer ruhigen Berglandschaft.",
+        "alt": "Der Junge zeigt einen sauberen Liegestütz in seinem Zimmer.",
+        "cue": "Körper bleibt in einer Linie.",
         "steps": [
-          "Leg dich auf den Rücken.",
-          "Füsse aufstellen. Hüfte hoch.",
-          "Po und Bauch fest. Ruhig senken."
+          "Körper bleibt in einer Linie.",
+          "Brust kontrolliert senken.",
+          "Wähle die Variante, die sauber gelingt."
+        ],
+        "options": [
+          "Auf den Knien",
+          "Klassisch",
+          "Mit Schulterberührung"
+        ],
+        "round2Cue": "Wenn sauber möglich, nach jeder Wiederholung eine Schulter berühren."
+      },
+      {
+        "id": "linienschritte",
+        "title": "Schnelle Linienschritte",
+        "category": "SCHNELLIGKEIT",
+        "duration": 45,
+        "image": "t01-linienschritte.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge trainiert schnelle Linienschritte in seinem Zimmer.",
+        "cue": "Schnell über die Linie. Leise landen.",
+        "steps": [
+          "Eine Linie am Boden vorstellen.",
+          "Mit beiden Füssen vor und zurück.",
+          "Schnell, aber leise bleiben."
+        ],
+        "round2Cue": "Fünf Sekunden schnell. Zwei Sekunden stoppen."
+      },
+      {
+        "id": "standwaage",
+        "title": "Standwaage mit Bodentipp",
+        "category": "BALANCE UND FOKUS",
+        "duration": 45,
+        "image": "t01-standwaage.jpg",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "alt": "Der Junge zeigt eine einbeinige Standwaage mit Bodentipp in seinem Zimmer.",
+        "cue": "Oberkörper vor. Freies Bein zurück.",
+        "steps": [
+          "Auf einem Bein stehen.",
+          "Oberkörper vor, freies Bein zurück.",
+          "Boden kurz berühren und kontrolliert aufrichten."
         ]
       }
-    ]
+    ],
+    "finish": {
+      "title": "ATMUNG UND FOKUS",
+      "image": "t01-atmung-fokus.jpg",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "alt": "Der Junge steht ruhig und konzentriert in seinem Zimmer und atmet bewusst.",
+      "steps": [
+        "Vier Sekunden durch die Nase einatmen.",
+        "Sechs Sekunden langsam ausatmen.",
+        "Blick ruhig auf einen Punkt richten."
+      ],
+      "statement": "Training beendet. Ruhig werden und sauber abschliessen."
+    }
   },
   {
     "id": "starker-koerper",
