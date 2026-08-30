@@ -1,5 +1,5 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-all-worlds";
+const ASSET_REV = "20260830-all-worlds-2";
 
 const WORLD_POINTS = {
   1: [33, 31],
@@ -88,7 +88,7 @@ function navigateTo(view) {
 
 function renderRoute() {
   stopRun();
-  if (!training) return;
+  if (!trainings.length) return;
 
   const legacyStation = location.hash === "#fels" ? 6 : null;
   const routeMatch = location.hash.match(/^#training-([1-9])$/);
