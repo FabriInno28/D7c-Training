@@ -1,50 +1,85 @@
 {
-  "title": "FELS",
+  "id": "fels",
+  "station": 6,
+  "title": "STARK WIE EIN FELS",
+  "shortTitle": "FELS",
   "statement": "Ich bin stark und habe eine starke Mitte.",
+  "intro": "Vier ruhige Übungen. Sauber bewegen ist wichtiger als schnell sein.",
   "exercises": [
     {
       "id": "tiefe-hocke",
       "title": "Tiefe Hocke",
-      "duration": 45,
+      "mode": "repetition",
+      "repetitions": 5,
       "image": "tiefe-hocke.jpg",
+      "imageWidth": 660,
+      "imageHeight": 250,
+      "alt": "Der Junge zeigt die tiefe Hocke in zwei Bewegungsphasen.",
       "steps": [
-        "Füsse bleiben am Boden.",
-        "Rücken aufrecht.",
-        "Tief gehen. Knie zeigen nach aussen."
-      ]
+        "Füsse bleiben ganz am Boden.",
+        "Rücken bleibt aufrecht.",
+        "Knie zeigen nach aussen."
+      ],
+      "focus": "Fünfmal langsam und sauber."
     },
     {
       "id": "seitenstuetze",
       "title": "Seitenstütze",
+      "mode": "timer",
       "duration": 35,
+      "cueAtRemaining": 18,
+      "cue": "SEITE WECHSELN",
       "image": "seitenstuetze.jpg",
+      "imageWidth": 655,
+      "imageHeight": 250,
+      "alt": "Der Junge zeigt zwei Varianten des Seitenstützes.",
       "steps": [
-        "Ellbogen unter der Schulter.",
-        "Körper bleibt in einer Linie.",
-        "Bauch und Gesäss anspannen."
-      ]
+        "Ellbogen bleibt unter der Schulter.",
+        "Körper bildet eine gerade Linie.",
+        "Bauch und Gesäss sind angespannt."
+      ],
+      "focus": "Beim Signal die Seite wechseln."
     },
     {
       "id": "beckenlift",
       "title": "Beckenlift",
+      "mode": "timer",
       "duration": 40,
       "image": "beckenlift.jpg",
+      "imageWidth": 660,
+      "imageHeight": 200,
+      "alt": "Der Junge hebt in Rückenlage langsam das Becken an.",
       "steps": [
-        "Rückenlage. Füsse hüftbreit.",
-        "Gesäss anheben, bis der Körper eine Linie bildet.",
-        "Langsam senken."
-      ]
+        "Füsse stehen hüftbreit.",
+        "Gesäss langsam anheben.",
+        "Kontrolliert wieder senken."
+      ],
+      "focus": "Ruhig weiteratmen."
     },
     {
       "id": "superman",
       "title": "Superman",
+      "mode": "timer",
       "duration": 40,
       "image": "superman.jpg",
+      "imageWidth": 655,
+      "imageHeight": 200,
+      "alt": "Der Junge hebt in Bauchlage Arme und Beine kontrolliert an.",
       "steps": [
         "Auf den Bauch legen.",
-        "Arme und Beine gleichzeitig anheben.",
-        "Kurz halten, dann langsam absenken."
-      ]
+        "Arme und Beine leicht anheben.",
+        "Kurz halten und langsam senken."
+      ],
+      "focus": "Kleine, kontrollierte Bewegung."
     }
-  ]
+  ],
+  "finish": {
+    "title": "ZUM SCHLUSS",
+    "steps": [
+      "Stell dich locker hin.",
+      "Atme dreimal ruhig durch die Nase ein.",
+      "Atme langsam durch den Mund aus."
+    ],
+    "statement": "Stark heisst: ruhig bleiben und sauber bewegen."
+  }
 }

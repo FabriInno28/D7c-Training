@@ -1,13 +1,31 @@
 # 10 Minuten on Top
 
-Sauberer Neuaufbau der Trainingswelt.
+Auslieferbare erste Trainingseinheit für Fussballerinnen und Fussballer von 10 bis 12 Jahren.
 
-- 3 Welten: STARK, SCHNELL, RUHIG
-- 9 vorbereitete Trainings
-- grosse Weltillustration als ruhiger Einstieg
-- Auswahl darunter statt störender Klickblasen auf der Karte
-- pro Training eine eigene visuelle Unterwelt
-- 4 Übungen auf einen Blick
-- echter Timer pro Übung mit Vorherige, Pause und Nächste
+## Aktueller Umfang
 
-Die Testversion liegt auf `chatgpt-write-test` und ist bereit für den nächsten visuellen Feinschliff.
+Die Trainingswelt ist der Einstieg. Aktiv ist Station 6 «Stark wie ein Fels».
+
+Die Einheit umfasst:
+
+1. Tiefe Hocke
+2. Seitenstütze
+3. Beckenlift
+4. Superman
+5. Ruhiger Abschluss
+
+## Aktive Dateien
+
+- `index.html`
+- `styles.css`
+- `app.js`
+- `training.json`
+- `manifest.webmanifest`
+- `service-worker.js`
+- `world.jpg`
+- `tiefe-hocke.jpg`
+- `seitenstuetze.jpg`
+- `beckenlift.jpg`
+- `superman.jpg`
+
+Die Anwendung ist statisch, responsive und nach dem ersten vollständigen Laden offline nutzbar.

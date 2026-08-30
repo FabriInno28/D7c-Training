@@ -1,8 +1,12 @@
 {
   "name": "10 Minuten on Top",
   "short_name": "10 Minuten",
+  "description": "Ruhiges Bewegungstraining für junge Fussballerinnen und Fussballer.",
+  "lang": "de-CH",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f3ea",
-  "theme_color": "#0b1720"
+  "orientation": "any",
+  "background_color": "#f5f0e5",
+  "theme_color": "#f5f0e5"
 }
