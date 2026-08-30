@@ -124,34 +124,50 @@ img {
   min-height: 48px;
   aspect-ratio: 1.75;
   transform: translate(-50%, -50%);
-  border: 3px solid var(--yellow);
-  border-radius: 18px;
-  background: rgba(11, 29, 44, 0.12);
-  box-shadow: 0 0 0 5px rgba(242, 181, 29, 0.2), 0 8px 24px rgba(0, 0, 0, 0.22);
-  color: var(--ink);
-  transition: transform var(--ease), background var(--ease), box-shadow var(--ease);
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  transition: background var(--ease);
 }
 
-.world-hotspot span {
-  position: absolute;
-  left: 50%;
-  bottom: -18px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  padding: 6px 10px;
-  background: var(--yellow);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
-  font-size: clamp(10px, 1.6vw, 14px);
-  font-weight: 950;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+.world-hotspot:focus-visible {
+  outline-color: var(--yellow);
+  outline-offset: 4px;
 }
 
 .world-hotspot:hover {
-  transform: translate(-50%, -50%) scale(1.035);
-  background: rgba(242, 181, 29, 0.14);
-  box-shadow: 0 0 0 8px rgba(242, 181, 29, 0.22), 0 10px 28px rgba(0, 0, 0, 0.26);
+  background: rgba(242, 181, 29, 0.09);
+}
+
+.world-action {
+  width: min(100% - 32px, 720px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+}
+
+.world-start-button {
+  min-height: 52px;
+  border-radius: 14px;
+  padding: 12px 18px;
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: 0.025em;
+  transition: transform var(--ease), background var(--ease);
+}
+
+.world-start-button:hover {
+  transform: translateY(-2px);
+  background: #ffc535;
 }
 
 /* Trainingsseite */
@@ -333,7 +349,7 @@ img {
 }
 
 .exercise-visual {
-  min-height: 118px;
+  aspect-ratio: 3 / 2;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -343,7 +359,8 @@ img {
 
 .exercise-visual img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-content {
@@ -607,6 +624,10 @@ img {
     display: none;
   }
 
+  .world-action {
+    width: min(100% - 52px, 620px);
+  }
+
   .training-intro,
   .exercise-grid,
   .finish-card {
@@ -653,6 +674,11 @@ img {
 }
 
 @media (max-width: 380px) {
+  .world-action {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
   .brand > span:last-child {
     max-width: 88px;
     line-height: 0.95;

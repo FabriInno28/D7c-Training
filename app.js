@@ -74,7 +74,7 @@ function renderWorld() {
       <div class="world-copy">
         <p class="world-kicker">DEIN TRAINING FÜR HEUTE</p>
         <h1 id="world-title">Finde den Fels.</h1>
-        <p>Tippe auf Station 6 und starte dein Training.</p>
+        <p>Station 6 wartet auf dich.</p>
       </div>
       <div class="world-stage">
         <img
@@ -89,8 +89,12 @@ function renderWorld() {
           type="button"
           data-action="open-training"
           aria-label="Station 6, Stark wie ein Fels, öffnen"
-        >
-          <span>START</span>
+        ></button>
+      </div>
+      <div class="world-action">
+        <span>STATION 06</span>
+        <button class="world-start-button" type="button" data-action="open-training">
+          STARK WIE EIN FELS STARTEN
         </button>
       </div>
     </section>
