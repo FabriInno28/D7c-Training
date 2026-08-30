@@ -1,5 +1,5 @@
-const CACHE_NAME = "on-top-alle-trainings-v3";
-const REVISION = "20260830-alle-trainings-v3";
+const CACHE_NAME = "on-top-comicwelt-v4";
+const REVISION = "20260830-comicwelt-v4";
 const CORE_FILES = [
   "./",
   "./index.html",
@@ -7,12 +7,12 @@ const CORE_FILES = [
   `./app.js?v=${REVISION}`,
   `./training.json?v=${REVISION}`,
   "./manifest.webmanifest",
-  `./t01-ausfallschritt-drehung.jpg?v=${REVISION}`,
-  `./t01-kniebeuge-knieheben.jpg?v=${REVISION}`,
-  `./t01-liegestuetz.jpg?v=${REVISION}`,
-  `./t01-linienschritte.jpg?v=${REVISION}`,
-  `./t01-standwaage.jpg?v=${REVISION}`,
-  `./t01-atmung-fokus.jpg?v=${REVISION}`,
+  `./comic-t01-ausfallschritt-drehung.jpg?v=${REVISION}`,
+  `./comic-t01-kniebeuge-knieheben.jpg?v=${REVISION}`,
+  `./comic-t01-liegestuetz.jpg?v=${REVISION}`,
+  `./comic-t01-linienschritte.jpg?v=${REVISION}`,
+  `./comic-t01-standwaage.jpg?v=${REVISION}`,
+  `./comic-t01-atmung-fokus.jpg?v=${REVISION}`,
   `./s02-fels-stehen.jpg?v=${REVISION}`,
   `./s02-starker-oberkoerper.jpg?v=${REVISION}`,
   `./s02-gewicht-verlagern.jpg?v=${REVISION}`,

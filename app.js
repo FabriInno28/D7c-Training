@@ -1,12 +1,12 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-alle-trainings-v3";
+const ASSET_REV = "20260830-comicwelt-v4";
 
 const DEFAULT_FINISH = {
   title: "ATMUNG UND FOKUS",
-  image: "t01-atmung-fokus.jpg",
+  image: "comic-t01-atmung-fokus.jpg",
   imageWidth: 1536,
   imageHeight: 1024,
-  alt: "Der Junge steht ruhig und konzentriert in seinem Zimmer und atmet bewusst.",
+  alt: "Der Junge steht ruhig und konzentriert in einer Berglandschaft und atmet bewusst.",
   steps: [
     "Stell die Füsse locker auf und lass die Schultern sinken.",
     "Richte den Blick ruhig auf einen festen Punkt.",
@@ -135,8 +135,8 @@ function renderHome() {
 
           <figure class="home-hero-visual">
             <img
-              src="./t01-linienschritte.jpg?v=${ASSET_REV}"
-              alt="Ein Junge trainiert schnelle Linienschritte in seinem Zimmer."
+              src="./comic-t01-linienschritte.jpg?v=${ASSET_REV}"
+              alt="Ein Junge trainiert schnelle Linienschritte in einer Berglandschaft."
               width="1536"
               height="1024"
               fetchpriority="high"
