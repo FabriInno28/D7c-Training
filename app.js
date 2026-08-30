@@ -1,5 +1,5 @@
 const app = document.getElementById("app");
-const ASSET_REV = "20260830-redesign-t01-v1";
+const ASSET_REV = "20260830-t01-anleitung-v2";
 
 const DEFAULT_FINISH = {
   title: "ZUM SCHLUSS",
@@ -273,7 +273,7 @@ function renderProgramTraining() {
               <p class="home-kicker">DEIN ABLAUF</p>
               <h2 id="overview-title">Fünf klare Bewegungen</h2>
             </div>
-            <p>Jede Bewegung dauert 45 Sekunden. Dazwischen hast du 15 Sekunden für den Wechsel. In Runde zwei kommt eine kleine Steigerung dazu.</p>
+            <p>Jede Bewegung ist Schritt für Schritt erklärt. Bei einseitigen Übungen wechselst du regelmässig rechts und links. Während des Trainings bleiben die Hinweise bewusst kurz.</p>
           </div>
 
           <div class="program-card-grid">
@@ -325,6 +325,9 @@ function renderProgramCard(exercise, index) {
           <div class="level-options" aria-label="Drei Varianten">
             ${exercise.options.map(option => `<span>${option}</span>`).join("")}
           </div>
+        ` : ""}
+        ${exercise.sideChange ? `
+          <p class="side-change"><strong>SEITENWECHSEL</strong><span>${exercise.sideChange}</span></p>
         ` : ""}
         ${exercise.round2Cue ? `<p class="round-two"><strong>RUNDE 2</strong> ${exercise.round2Cue}</p>` : ""}
       </div>

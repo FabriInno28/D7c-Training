@@ -5,7 +5,7 @@
     "title": "GANZKÖRPER START",
     "shortTitle": "START",
     "statement": "Mobilisieren. Kräftigen. Tempo aufnehmen.",
-    "intro": "Fünf Bewegungen, zwei Runden und eine ruhige Schlussminute. Zehn Minuten für den ganzen Körper.",
+    "intro": "Fünf Bewegungen, zwei Runden und eine ruhige Schlussminute. Die Anleitung zeigt dir genau, wie du dich bewegst und wann du die Seite wechselst.",
     "accent": "#D9A11E",
     "status": "ready",
     "exercises": [
@@ -18,13 +18,16 @@
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt einen Ausfallschritt mit Oberkörperdrehung in seinem Zimmer.",
-        "cue": "Schritt zurück. Zur vorderen Seite drehen.",
+        "cue": "Rechts zurück und drehen. Dann links.",
         "steps": [
-          "Schritt kontrolliert zurück.",
-          "Vorderes Knie bleibt stabil.",
-          "Oberkörper zur vorderen Seite drehen."
+          "Stell dich aufrecht hin und nimm die Hände vor den Körper.",
+          "Setz den rechten Fuss kontrolliert weit zurück.",
+          "Beuge beide Knie. Das vordere Knie bleibt stabil über dem Fuss.",
+          "Drehe den Oberkörper langsam zur Seite des vorderen Beins.",
+          "Drück dich zurück in den Stand. Die nächste Wiederholung beginnt links."
         ],
-        "round2Cue": "Bewegung etwas grösser. Nicht schneller."
+        "sideChange": "Nach jeder Wiederholung das Bein wechseln.",
+        "round2Cue": "Drehung etwas grösser ausführen. Die Bewegung bleibt langsam und sauber."
       },
       {
         "id": "kniebeuge-knieheben",
@@ -35,13 +38,16 @@
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt eine Kniebeuge mit anschliessendem Knieheben in seinem Zimmer.",
-        "cue": "Tief beugen. Knie oben ruhig halten.",
+        "cue": "Kniebeuge. Rechts hoch. Kniebeuge. Links hoch.",
         "steps": [
-          "Tief und kontrolliert beugen.",
-          "Kräftig aufrichten.",
-          "Knie oben eine Sekunde ruhig halten."
+          "Stell die Füsse etwa hüftbreit und richte den Blick nach vorne.",
+          "Schieb den Po nach hinten und geh kontrolliert in die Kniebeuge.",
+          "Richte dich kräftig auf und zieh das rechte Knie nach oben.",
+          "Halte das Knie kurz ruhig, ohne den Oberkörper zur Seite zu kippen.",
+          "Geh wieder in die Kniebeuge. Danach kommt das linke Knie nach oben."
         ],
-        "round2Cue": "Knie oben eine Sekunde halten."
+        "sideChange": "Bei jeder Wiederholung das angehobene Knie wechseln.",
+        "round2Cue": "Knie oben zwei Sekunden ruhig halten. Erst dann wieder beugen."
       },
       {
         "id": "liegestuetz",
@@ -52,18 +58,21 @@
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt einen sauberen Liegestütz in seinem Zimmer.",
-        "cue": "Körper bleibt in einer Linie.",
+        "cue": "Ruhig absenken. Kräftig hochdrücken.",
         "steps": [
-          "Körper bleibt in einer Linie.",
-          "Brust kontrolliert senken.",
-          "Wähle die Variante, die sauber gelingt."
+          "Setz die Hände etwas breiter als die Schultern auf den Boden.",
+          "Wähle die Position auf den Knien oder auf den Füssen.",
+          "Spann Bauch und Po an. Kopf, Rücken und Beine bilden eine Linie.",
+          "Senk die Brust langsam zwischen den Händen ab.",
+          "Drück dich wieder hoch. Hör auf, bevor die Haltung unsauber wird."
         ],
         "options": [
           "Auf den Knien",
           "Klassisch",
           "Mit Schulterberührung"
         ],
-        "round2Cue": "Wenn sauber möglich, nach jeder Wiederholung eine Schulter berühren."
+        "sideChange": "Bei Schulterberührungen immer rechts und links abwechseln.",
+        "round2Cue": "Wenn die Haltung stabil bleibt, nach jedem Liegestütz abwechselnd eine Schulter berühren."
       },
       {
         "id": "linienschritte",
@@ -74,13 +83,16 @@
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge trainiert schnelle Linienschritte in seinem Zimmer.",
-        "cue": "Schnell über die Linie. Leise landen.",
+        "cue": "Beide Füsse vor und zurück. Führenden Fuss wechseln.",
         "steps": [
-          "Eine Linie am Boden vorstellen.",
-          "Mit beiden Füssen vor und zurück.",
-          "Schnell, aber leise bleiben."
+          "Stell dir direkt vor deinen Füssen eine Linie am Boden vor.",
+          "Setz zuerst den rechten, dann den linken Fuss über die Linie.",
+          "Geh in derselben Reihenfolge wieder zurück.",
+          "Bleib leicht in den Knien und berühre den Boden leise.",
+          "Wechsle nach einigen Schritten. Jetzt führt der linke Fuss."
         ],
-        "round2Cue": "Fünf Sekunden schnell. Zwei Sekunden stoppen."
+        "sideChange": "Regelmässig wechseln, welcher Fuss die Bewegung beginnt.",
+        "round2Cue": "Fünf Sekunden schnell, zwei Sekunden stabil stoppen. Danach mit dem anderen Fuss beginnen."
       },
       {
         "id": "standwaage",
@@ -91,12 +103,15 @@
         "imageWidth": 1536,
         "imageHeight": 1024,
         "alt": "Der Junge zeigt eine einbeinige Standwaage mit Bodentipp in seinem Zimmer.",
-        "cue": "Oberkörper vor. Freies Bein zurück.",
+        "cue": "Links stehen und tippen. Dann rechts.",
         "steps": [
-          "Auf einem Bein stehen.",
-          "Oberkörper vor, freies Bein zurück.",
-          "Boden kurz berühren und kontrolliert aufrichten."
-        ]
+          "Stell dich auf das linke Bein und beuge das Standbein leicht.",
+          "Führ den Oberkörper langsam nach vorne und das rechte Bein nach hinten.",
+          "Halte Rücken und Hüfte möglichst gerade.",
+          "Berühre den Boden kurz mit einer Hand.",
+          "Richte dich kontrolliert auf. Die nächste Wiederholung ist auf dem rechten Bein."
+        ],
+        "sideChange": "Nach jeder Wiederholung das Standbein wechseln."
       }
     ],
     "finish": {
@@ -106,9 +121,11 @@
       "imageHeight": 1024,
       "alt": "Der Junge steht ruhig und konzentriert in seinem Zimmer und atmet bewusst.",
       "steps": [
+        "Stell die Füsse locker auf und lass die Schultern sinken.",
+        "Richte den Blick ruhig auf einen festen Punkt.",
         "Vier Sekunden durch die Nase einatmen.",
         "Sechs Sekunden langsam ausatmen.",
-        "Blick ruhig auf einen Punkt richten."
+        "Wiederhole den Atemrhythmus bis zum Schlusssignal."
       ],
       "statement": "Training beendet. Ruhig werden und sauber abschliessen."
     }

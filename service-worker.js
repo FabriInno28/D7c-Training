@@ -1,5 +1,5 @@
-const CACHE_NAME = "on-top-redesign-t01-v1";
-const REVISION = "20260830-redesign-t01-v1";
+const CACHE_NAME = "on-top-t01-anleitung-v2";
+const REVISION = "20260830-t01-anleitung-v2";
 const CORE_FILES = [
   "./",
   "./index.html",

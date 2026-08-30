@@ -1299,6 +1299,24 @@ img {
   font-weight: 800;
 }
 
+.side-change {
+  display: grid;
+  gap: 3px;
+  margin: 14px 0 0;
+  border-radius: 12px;
+  padding: 10px 11px;
+  background: #e8f0ef;
+  color: #384b4f;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.side-change strong {
+  color: var(--teal);
+  font-size: 9px;
+  letter-spacing: 0.09em;
+}
+
 .round-two {
   margin: 15px 0 0;
   border-top: 1px solid #e5dfd5;

@@ -16,7 +16,7 @@ Die neue Einstiegsseite führt zu neun Trainingseinheiten. Training 1 ist vollst
 8. Balance-Profi
 9. Runterfahren
 
-Training 1 kombiniert Beweglichkeit, Kraft, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Fünf neue, zusammenhängende Comicillustrationen und ein eigenes Schlussmotiv zeigen die Bewegungen im selben Zimmer mit derselben Figur.
+Training 1 kombiniert Beweglichkeit, Kraft, Schnelligkeit, Balance und Fokus in einem automatisch geführten Ablauf von exakt zehn Minuten. Fünf neue, zusammenhängende Comicillustrationen und ein eigenes Schlussmotiv zeigen die Bewegungen im selben Zimmer mit derselben Figur. Die Übungsübersicht erklärt Ausgangsposition, Bewegung, Qualitätsmerkmal und Seitenwechsel ausführlich. Während des Timers bleiben die Hinweise kurz und direkt.
 
 Trainings 2 bis 9 bleiben als bisherige Versionen erreichbar und sind in der Oberfläche klar als noch nicht überarbeitet gekennzeichnet.
 
