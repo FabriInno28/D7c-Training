@@ -1,0 +1,50 @@
+{
+  "title": "FELS",
+  "statement": "Ich bin stark und habe eine starke Mitte.",
+  "exercises": [
+    {
+      "id": "tiefe-hocke",
+      "title": "Tiefe Hocke",
+      "duration": 45,
+      "image": "assets/tiefe-hocke.jpg",
+      "steps": [
+        "Füsse bleiben am Boden.",
+        "Rücken aufrecht.",
+        "Tief gehen. Knie zeigen nach aussen."
+      ]
+    },
+    {
+      "id": "seitenstuetze",
+      "title": "Seitenstütze",
+      "duration": 35,
+      "image": "assets/seitenstuetze.jpg",
+      "steps": [
+        "Ellbogen unter der Schulter.",
+        "Körper bleibt in einer Linie.",
+        "Bauch und Gesäss anspannen."
+      ]
+    },
+    {
+      "id": "beckenlift",
+      "title": "Beckenlift",
+      "duration": 40,
+      "image": "assets/beckenlift.jpg",
+      "steps": [
+        "Rückenlage. Füsse hüftbreit.",
+        "Gesäss anheben, bis der Körper eine Linie bildet.",
+        "Langsam senken."
+      ]
+    },
+    {
+      "id": "superman",
+      "title": "Superman",
+      "duration": 40,
+      "image": "assets/superman.jpg",
+      "steps": [
+        "Auf den Bauch legen.",
+        "Arme und Beine gleichzeitig anheben.",
+        "Kurz halten, dann langsam absenken."
+      ]
+    }
+  ]
+}
